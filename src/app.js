@@ -1,3 +1,5 @@
-import * as flsFunctions from './assets/scripts/functions.js'
+import { isWebp } from './assets/scripts/functions.js'
+isWebp()
 
-flsFunctions.isWebp()
+import "./assets/scripts/convert-svg.js"
+import "./assets/scripts/drop-down.js"

@@ -1,0 +1,3 @@
+@mixin transition($property: all, $duration: 0.4s, $animation: cubic-bezier(0.45, 0, 0.55, 1), $delay: 0s) {
+  transition: $property $duration $animation $delay;
+}

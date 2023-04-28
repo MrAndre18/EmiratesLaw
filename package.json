@@ -8,7 +8,6 @@
     "dev": "gulp",
     "build": "gulp build --build",
     "zip": "gulp deployZIP --build"
-
   },
   "author": "Andrew Sidorenko andrew09200@mail.ru",
   "license": "ISC",

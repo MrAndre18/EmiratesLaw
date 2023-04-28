@@ -1,0 +1,13 @@
+mixin drop-down(text, className, elementsList)
+  button.drop-down(class= className ? className : "")
+    p.drop-down__text= text
+    .drop-down__img
+      if className
+        img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+      else
+        img.svg(src="@img/svg/drop-down.svg", alt="")
+  if elementsList
+    ul.drop-down__list
+      each element in elementsList
+        li.drop-down__list-item
+          button= element.text

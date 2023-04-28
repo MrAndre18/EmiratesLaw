@@ -15,7 +15,7 @@ export const scss_to_css = () => {
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: "SCSS",
-        message: "Error: <%= error.message %>"
+        message: "Еблуша, тут ошибочка: <%= error.message %>"
       })
     ))
 

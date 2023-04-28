@@ -1,14 +1,36 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="@css/index.min.css")
-    title Document
-  body
-    include ../layouts/test
-    
-    img(src="@img/beautiful-shot-of-sheikh-zayed-grand-mosque-in-abu-dhabi-at-daytime.jpg", alt="")
+extends ../layouts/master.pug
 
-    script(src="@js/app.min.js") 
+block header
+  .index-page
+    include ../partials/_header.pug
+
+block content
+  main.index
+    // Первый блок с картинкой
+    .index__title-block.title-block
+      .title-block__body
+        .title-block__content
+          span.title-block__content-subtitle Просто
+          h1.title-block__content-title Законодательство <span>Арабских Эмиратов</span>
+        .title-block__navigation
+          // Кнопки переключения слайдера
+          .title-block__navigation-buttons
+            p.title-block__navigation-prev prev
+            .title-block__navigation-line
+            p.title-block__navigation-next next
+          // Номера слайдов
+          .title-block__pages
+            .title-block__pages-loading
+            .title-block__pages-item.active
+              p.title-block__pages-number 01
+              p.title-block__pages-text Просто
+            .title-block__pages-item
+              p.title-block__pages-number 02
+              p.title-block__pages-text Быстро
+            .title-block__pages-item
+              p.title-block__pages-number 03
+              p.title-block__pages-text Эффективно
+
+block footer
+  .index-page
+    include ../partials/_footer.pug

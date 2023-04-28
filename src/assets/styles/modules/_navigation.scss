@@ -1,0 +1,22 @@
+.navigation {
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: $gold;
+      @include transition();
+    }
+
+    &:hover::before {
+      $width: 60%;
+      left: calc((100% - $width) / 2);
+      width: $width;
+    }
+  }
+}

@@ -9,7 +9,7 @@ export const pug_to_html = () => {
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: "PUG",
-        message: "Error: <%= error.message %>"
+        message: "Еблуша, тут ошибочка: <%= error.message %>"
       })
     ))
 

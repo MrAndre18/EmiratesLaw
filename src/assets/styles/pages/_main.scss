@@ -1,0 +1,68 @@
+.index {
+  .title-block {
+    position: relative;
+    height: 100vh;
+    max-height: 900px;
+    width: 100%;
+    background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
+                      linear-gradient(to top, $black, $black),
+                      url('@img/main/title-block.jpg');
+    background-blend-mode: multiply, color, normal;
+    background-size: cover;
+    background-position: bottom;
+
+    &__body {
+      width: 100%;
+      height: 100%;
+      padding: 110px $page-padding 0 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__navigation {
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+    }
+
+    &__pages {
+      position: relative;
+      width: 600px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      background: rgba(39, 39, 39, 0.7);
+
+      &-loading {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 60%;
+        background: $gold;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+
+        &.active .title-block__pages-number {
+          color: $gold;
+        }
+      }
+
+      &-number {
+        font-size: 36px;
+        font-weight: 700;
+        margin-right: 15px;
+      }
+
+      &-text {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
