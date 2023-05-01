@@ -83,11 +83,11 @@ video {
   padding: 0;
   border: 0;
   outline: none;
-  font-size: 100%;
-  font: inherit;
   box-sizing: border-box;
   display: block;
-  line-height: inherit;
+  font-family: $font-family;
+  line-height: $line-hight;
+  font-size: $font-size;
 
   &::before,
   &::after {

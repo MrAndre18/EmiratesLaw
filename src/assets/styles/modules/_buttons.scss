@@ -1,0 +1,38 @@
+// Кнопка "Подробнее" со стрелкой
+.more-btn-arrow {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    position: relative;
+    letter-spacing: 10%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      z-index: -1;
+      width: 0;
+      height: 4px;
+      background: $gold;
+      @include transition();
+    }
+  }
+
+  &__img {
+    width: 10px;
+    height: 20px;
+    margin-left: 10px;
+    @include transition();
+  }
+
+  &:hover &__img {
+    margin-left: 12px;
+    scale: 1.1;
+  }
+
+  &:hover &__text::before {
+    width: 40%;
+  }
+}

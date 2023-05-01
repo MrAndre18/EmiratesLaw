@@ -11,3 +11,8 @@ mixin drop-down(text, className, elementsList)
       each element in elementsList
         li.drop-down__list-item
           button= element.text
+
+mixin more-btn-arrow(text, className)
+  a(href="#").more-btn-arrow(class= className ? className : "")
+    p.more-btn-arrow__text= text
+    img.more-btn-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")

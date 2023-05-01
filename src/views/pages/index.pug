@@ -4,20 +4,46 @@ block header
   .index-page
     include ../partials/_header.pug
 
+  -
+    const main_slides = [
+      {
+        title: 'Законодательство </br><span>Арабских Эмиратов</span>',
+        subtitle: 'Просто',
+        button: ''
+      },
+      {
+        title: 'Вся <span>информация</span> </br>на одном сайте',
+        subtitle: 'быстро',
+        button: 'Справочная информация'
+      },
+      {
+        title: 'Только актуальные </br><span>законы</span> ОАЭ',
+        subtitle: 'Эффективно',
+        button: 'Законодательство ОАЭ'
+      },
+    ]
+
 block content
   main.index
     // Первый блок с картинкой
     .index__title-block.title-block
       .title-block__body
-        .title-block__content
-          span.title-block__content-subtitle Просто
-          h1.title-block__content-title Законодательство <span>Арабских Эмиратов</span>
+        // Главный контейнер слайдера
+        .title-block__slider
+          // Контейнер самих слайдов
+          .title-block__slider-wrapper
+            each slide in main_slides
+              .title-block__content
+                span.title-block__content-subtitle= slide.subtitle
+                h1.title-block__content-title !{slide.title}
+                if slide.button
+                  +more-btn-arrow(slide.button, "title-block__content-more")
         .title-block__navigation
           // Кнопки переключения слайдера
           .title-block__navigation-buttons
-            p.title-block__navigation-prev prev
+            button.title-block__navigation-button.title-block__navigation-prev prev
             .title-block__navigation-line
-            p.title-block__navigation-next next
+            button.title-block__navigation-button.title-block__navigation-next next
           // Номера слайдов
           .title-block__pages
             .title-block__pages-loading

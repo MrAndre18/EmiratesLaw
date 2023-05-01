@@ -4,6 +4,7 @@
     height: 100vh;
     max-height: 900px;
     width: 100%;
+    padding-top: 110px;
     background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
                       linear-gradient(to top, $black, $black),
                       url('@img/main/title-block.jpg');
@@ -14,16 +15,53 @@
     &__body {
       width: 100%;
       height: 100%;
-      padding: 110px $page-padding 0 20%;
+      padding: 150px $page-padding 0 20%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
+    &__slider {
+      height: 350px;
+      width: 100%;
+
+      &-wrapper {
+        height: inherit;
+      }
+    }
+
     &__navigation {
       align-self: flex-end;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
+
+      &-buttons {
+        display: flex;
+        align-items: center;
+        margin: 0 140px 40px 0;
+      }
+
+      &-button {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 500;
+        @include transition();
+
+        &:hover {
+          color: $gold;
+        }
+      }
+
+      &-line {
+        height: 20px;
+        width: 2px;
+        margin: 0 20px;
+        background: $white;
+      }
+
+      &-prev {
+        opacity: 70%;
+      }
     }
 
     &__pages {
@@ -62,6 +100,49 @@
 
       &-text {
         text-transform: uppercase;
+      }
+    }
+
+    &__content {
+      position: relative;
+      height: 350px;
+      width: 100%;
+      padding: 38px 0 0 38px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 130px;
+        border: 4px solid $gold;
+        border-right: none;
+      }
+
+      &-title {
+        font-size: 74px;
+        font-weight: 700;
+        line-height: 85px;
+        text-transform: capitalize;
+
+        span {
+          font-size: inherit;
+          line-height: inherit;
+          display: inline;
+          color: $gold;
+        }
+      }
+
+      &-subtitle {
+        font-size: 20px;
+        line-height: 150%;
+        text-transform: capitalize;
+        margin-bottom: 6px;
+      }
+
+      &-more {
+        margin-top: 50px;
       }
     }
   }
