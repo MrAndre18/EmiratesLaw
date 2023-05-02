@@ -14,20 +14,28 @@
 
     &__body {
       width: 100%;
+      min-width: 0;
       height: 100%;
       padding: 150px $page-padding 0 20%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 150px;
+        left: 20%;
+        height: 350px;
+        width: 130px;
+        border: 4px solid $gold;
+        border-right: none;
+      }
     }
 
     &__slider {
       height: 350px;
-      width: 100%;
-
-      &-wrapper {
-        height: inherit;
-      }
+      box-sizing: content-box;
     }
 
     &__navigation {
@@ -49,6 +57,7 @@
 
         &:hover {
           color: $gold;
+          opacity: 1;
         }
       }
 
@@ -68,18 +77,22 @@
       position: relative;
       width: 600px;
       height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       padding: 0 30px;
       background: rgba(39, 39, 39, 0.7);
+
+      &-pagination {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
       &-loading {
         position: absolute;
         left: 0;
         bottom: 0;
         height: 4px;
-        width: 60%;
+        width: 0;
         background: $gold;
       }
 
@@ -104,20 +117,11 @@
     }
 
     &__content {
-      position: relative;
-      height: 350px;
-      width: 100%;
       padding: 38px 0 0 38px;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 130px;
-        border: 4px solid $gold;
-        border-right: none;
+      &.swiper-slide-active {
+        z-index: 999;
+        opacity: 1;
       }
 
       &-title {

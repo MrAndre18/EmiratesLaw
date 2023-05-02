@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "latest",
+    "css-loader": "^6.7.3",
     "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -35,6 +36,8 @@
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
     "sass": "latest",
+    "sass-loader": "latest",
+    "style-loader": "^3.3.2",
     "swiper": "latest",
     "webp-converter": "2.2.3",
     "webpack": "latest",
