@@ -18,5 +18,9 @@
       left: calc((100% - $width) / 2);
       width: $width;
     }
+
+    &.active &-link {
+      color: $gold;
+    }
   }
 }

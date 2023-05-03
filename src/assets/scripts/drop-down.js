@@ -1,7 +1,7 @@
 $(() => {
   const dropDown = $('.drop-down')
 
-  if (dropDown) {
+  if ($(dropDown).width()) {
     $(dropDown).click(e => {
       const dropDownCurrent = e.currentTarget,
             elementsBlock = $(dropDownCurrent).siblings('.drop-down__list'),

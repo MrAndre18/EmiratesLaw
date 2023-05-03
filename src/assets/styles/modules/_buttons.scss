@@ -11,7 +11,7 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -4px;
+      bottom: -2px;
       z-index: -1;
       width: 0;
       height: 4px;
@@ -24,7 +24,6 @@
     width: 10px;
     height: 20px;
     margin-left: 10px;
-    margin-top: 4px;
     @include transition();
   }
 
@@ -35,4 +34,11 @@
   &:hover &__text::before {
     width: 40%;
   }
+}
+
+// Кнопка "Подробнее" с обводкой
+.more-btn-border {
+  padding: 12px 24px;
+  border: 1px solid $white;
+  width: fit-content;
 }

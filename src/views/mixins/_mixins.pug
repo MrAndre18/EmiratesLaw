@@ -1,3 +1,4 @@
+// Выпадающий список
 mixin drop-down(text, className, elementsList)
   button.drop-down(class= className ? className : "")
     p.drop-down__text= text
@@ -12,7 +13,26 @@ mixin drop-down(text, className, elementsList)
         li.drop-down__list-item
           button= element.text
 
-mixin more-btn-arrow(text, className)
-  a(href="#").more-btn-arrow(class= className ? className : "")
+// Кнопка "Подробнее" со стрелкой
+mixin more-btn-arrow(text, url, className)
+  a(href= url).more-btn-arrow(class= className ? className : "")
     p.more-btn-arrow__text= text
     img.more-btn-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+
+// Кнопка "Подробнее" с обводкой
+mixin more-btn-border(text, url, className)
+  a(href= url).more-btn-border(class= className ? className : "")= text
+
+// Поиск
+mixin search(text, className)
+  form.search(role="search", class= className ? className : "")
+    input.search-input(type="search", data-type="search", placeholder= text)
+    button.search-btn
+      img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
+
+// Навигация
+mixin navigation(list)
+  ul.navigation
+    each element in list
+      li.navigation__item
+        a.navigation__item-link(href= element.url)= element.text

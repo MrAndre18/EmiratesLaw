@@ -9,17 +9,26 @@ block header
       {
         title: 'Законодательство </br><span>Арабских Эмиратов</span>',
         subtitle: 'Просто',
-        button: ''
+        button: {
+          text: '',
+          url: ''
+        }
       },
       {
         title: 'Вся <span>информация</span> </br>на одном сайте',
         subtitle: 'быстро',
-        button: 'Справочная информация'
+        button: {
+          text: 'Справочная информация',
+          url: '/info'
+        }
       },
       {
         title: 'Только актуальные </br><span>законы</span> ОАЭ',
         subtitle: 'Эффективно',
-        button: 'Законодательство ОАЭ'
+        button: {
+          text: 'Законодательство ОАЭ',
+          url: '/laws'
+        }
       },
     ]
 
@@ -35,8 +44,8 @@ block content
             .title-block__content.swiper-slide
               span.title-block__content-subtitle= slide.subtitle
               h1.title-block__content-title !{slide.title}
-              if slide.button
-                +more-btn-arrow(slide.button, "title-block__content-more")
+              if slide.button.text
+                +more-btn-arrow(slide.button.text, slide.button.url, "title-block__content-more")
         .title-block__navigation
           // Кнопки переключения слайдера
           .title-block__navigation-buttons
@@ -56,6 +65,31 @@ block content
                 p.title-block__pages-number 03
                 p.title-block__pages-text Эффективно
             .title-block__pages-loading
+
+    // Справочная информация
+    .index-info
+      // Блок со слайдером
+      .index-info__content
+        // Слайдер
+        .index-info__content-slider
+          // Слайды
+          .index-info__content-slide.content-slide
+            .content-slide__img
+              .content-slide__img-square
+              img.content-slide__img-image(src="@img/main/docs.jpg", alt="")
+            p.content-slide__title
+            p.content-slide__subtitle
+              +more-btn-border("Подробнее", "#", "content-slide__btn")
+        // Кнопки навигации
+        .index-info__content-navigation.content-navigation
+          button.content-navigation__btn.content-navigation__btn-prev
+            img.content-navigation__btn-img.svg(src="@img/svg/arrow-right-thin.svg", alt="Prev")
+          button.content-navigation__btn.content-navigation__btn-next
+            img.content-navigation__btn-img.svg(src="@img/svg/arrow-right-thin.svg", alt="Next")
+        // Пагинация
+        .index-info__content-pagination
+      // Блок "Полная справка"
+      .index-info__all
 
 block footer
   .index-page

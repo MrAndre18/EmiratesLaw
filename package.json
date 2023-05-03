@@ -37,7 +37,7 @@
     "gulp-zip": "latest",
     "sass": "latest",
     "sass-loader": "latest",
-    "style-loader": "^3.3.2",
+    "style-loader": "latest",
     "swiper": "latest",
     "webp-converter": "2.2.3",
     "webpack": "latest",

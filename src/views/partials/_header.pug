@@ -11,12 +11,32 @@
     }
   ]
 
+-
+  const navigation = [
+    {
+      text: 'О портале',
+      url: '/about'
+    },
+    {
+      text: 'Справка',
+      url: '/info'
+    },
+    {
+      text: 'Законы',
+      url: '/laws'
+    },
+    {
+      text: 'События',
+      url: '/events'
+    }
+  ]
+
 header.header
   .header-content
     .header-logo|<!-- лого -->
       include ../components/_logo.pug
     .header-menu|<!-- Меню с ссылками на страницы -->
-      include ../components/_navigation.pug
+      +navigation(navigation)
     .header-settings|<!-- Выбор языка и поиск -->
       button.header-search|<!-- Поиск -->
         img.header-search__img.svg(src="@img/svg/search.svg", alt="Поиск")

@@ -1,3 +1,73 @@
+-
+  const map = [
+    {
+      text: 'О портале',
+      url: '/about'
+    },
+    {
+      text: 'Справка',
+      url: '/info'
+    },
+    {
+      text: 'Законы',
+      url: '/laws'
+    },
+    {
+      text: 'События',
+      url: '/events'
+    }
+  ]
+
+-
+  const usefull_links = [
+    {
+      text: 'Виды лицензий',
+      url: '#'
+    },
+    {
+      text: 'Виды компаний',
+      url: '#'
+    },
+    {
+      text: 'Государственное и политическое устройство',
+      url: '#'
+    },
+    {
+      text: 'Оншорные компании',
+      url: '#'
+    },
+    {
+      text: 'Оффшорные компании',
+      url: '#'
+    },
+    {
+      text: 'Свободные экономические зоны',
+      url: '#'
+    }
+  ]
+
 footer.footer
   .footer-content
-    p Футер
+    .footer-content__body
+      // Блоки
+      .footer-content__body-blocks
+        // блок с логотипом
+        .footer-content__body-block.footer-content__body-logo
+          include ../components/_logo.pug
+        // Блок "карта сайта"
+        .footer-content__body-block.footer-content__body-map
+          .body-block__title
+            p.body-block__title-text Карта сайта
+          .body-block__content
+            +navigation(map)
+        // блок "Полезные ссылки"
+        .footer-content__body-block.footer-content__body-links
+          .body-block__title
+            p.body-block__title-text Полезные ссылки
+          .body-block__content
+            .body-block__content-search
+              +search("Поиск по сайту", "")
+            .body-block__content-links
+              +navigation(usefull_links)
+    .footer-content__bottom
+      p.footer-content__bottom-copyrights &#169; 2023 EmiratesLaw

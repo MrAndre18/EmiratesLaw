@@ -1,10 +1,8 @@
 import Swiper from 'swiper/bundle'
 
 $(() => {
-  const easing = 'cubic-bezier(0.45, 0, 0.55, 1)'
-
   // Верхний слайдер главной
-  if ($('.title-block__body').length) {
+  if ($('.title-block__body').width()) {
     const delay = 10000,
           slider = $('.title-block__body'),
           loading = $(slider).find('.title-block__pages-loading')
@@ -50,8 +48,7 @@ $(() => {
           return `<div class="${className}">
                     <p class="title-block__pages-number">0${(index + 1)}</p>
                     <p class="title-block__pages-text">
-                      
-                      ${console.log(Swiper)}
+                      ${$($('.title-block__content')[index]).find('.title-block__content-subtitle').text()}
                     </p>
                   </div>`
         }

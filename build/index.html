@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+
+<!-- Выпадающий список-->
+<!-- Кнопка "Подробнее" со стрелкой-->
+<!-- Кнопка "Подробнее" с обводкой-->
+<!-- Поиск-->
+<!-- Навигация--><!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
@@ -16,10 +21,10 @@
             <div class="header-logo"><!-- лого --><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
             <div class="header-menu"><!-- Меню с ссылками на страницы -->
               <ul class="navigation">
-                <li class="navigation__item"><a class="navigation__item-link" href="#">О портале</a></li>
-                <li class="navigation__item"><a class="navigation__item-link" href="#">Справка</a></li>
-                <li class="navigation__item"><a class="navigation__item-link" href="#">Законы</a></li>
-                <li class="navigation__item"><a class="navigation__item-link" href="#">События</a></li>
+                <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
+                <li class="navigation__item"><a class="navigation__item-link" href="/info">Справка</a></li>
+                <li class="navigation__item"><a class="navigation__item-link" href="/laws">Законы</a></li>
+                <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
               </ul>
             </div>
             <div class="header-settings"><!-- Выбор языка и поиск -->
@@ -57,11 +62,11 @@
                 <h1 class="title-block__content-title">Законодательство </br><span>Арабских Эмиратов</span></h1>
               </div>
               <div class="title-block__content swiper-slide"><span class="title-block__content-subtitle">быстро</span>
-                <h1 class="title-block__content-title">Вся <span>информация</span> </br>на одном сайте</h1><a class="more-btn-arrow title-block__content-more" href="#">
+                <h1 class="title-block__content-title">Вся <span>информация</span> </br>на одном сайте</h1><a class="more-btn-arrow title-block__content-more" href="/info">
                   <p class="more-btn-arrow__text">Справочная информация</p><img class="more-btn-arrow__img svg" src="assets/images/svg/arrow-right-thin.svg" alt=""/></a>
               </div>
               <div class="title-block__content swiper-slide"><span class="title-block__content-subtitle">Эффективно</span>
-                <h1 class="title-block__content-title">Только актуальные </br><span>законы</span> ОАЭ</h1><a class="more-btn-arrow title-block__content-more" href="#">
+                <h1 class="title-block__content-title">Только актуальные </br><span>законы</span> ОАЭ</h1><a class="more-btn-arrow title-block__content-more" href="/laws">
                   <p class="more-btn-arrow__text">Законодательство ОАЭ</p><img class="more-btn-arrow__img svg" src="assets/images/svg/arrow-right-thin.svg" alt=""/></a>
               </div>
             </div>
@@ -93,11 +98,85 @@
             </div>
           </div>
         </div>
+        <!-- Справочная информация-->
+        <div class="index-info">
+          <!-- Блок со слайдером-->
+          <div class="index-info__content">
+            <!-- Слайдер-->
+            <div class="index-info__content-slider">
+              <!-- Слайды-->
+              <div class="index-info__content-slide content-slide">
+                <div class="content-slide__img">
+                  <div class="content-slide__img-square"></div><img class="content-slide__img-image" src="assets/images/main/docs.jpg" alt="">
+                </div>
+                <p class="content-slide__title"></p>
+                <p class="content-slide__subtitle"><a class="more-btn-border content-slide__btn" href="#">Подробнее</a>
+                </p>
+              </div>
+            </div>
+            <!-- Кнопки навигации-->
+            <div class="index-info__content-navigation content-navigation">
+              <button class="content-navigation__btn content-navigation__btn-prev"><img class="content-navigation__btn-img svg" src="assets/images/svg/arrow-right-thin.svg" alt="Prev"></button>
+              <button class="content-navigation__btn content-navigation__btn-next"><img class="content-navigation__btn-img svg" src="assets/images/svg/arrow-right-thin.svg" alt="Next"></button>
+            </div>
+            <!-- Пагинация-->
+            <div class="index-info__content-pagination"></div>
+          </div>
+          <!-- Блок "Полная справка"-->
+          <div class="index-info__all"></div>
+        </div>
       </main>
       <div class="index-page">
         <footer class="footer">
           <div class="footer-content">
-            <p>Футер</p>
+            <div class="footer-content__body">
+              <!-- Блоки-->
+              <div class="footer-content__body-blocks">
+                <!-- блок с логотипом-->
+                <div class="footer-content__body-block footer-content__body-logo"><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
+                <!-- Блок "карта сайта"-->
+                <div class="footer-content__body-block footer-content__body-map">
+                  <div class="body-block__title">
+                    <p class="body-block__title-text">Карта сайта</p>
+                  </div>
+                  <div class="body-block__content">
+                    <ul class="navigation">
+                      <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="/info">Справка</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="/laws">Законы</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- блок "Полезные ссылки"-->
+                <div class="footer-content__body-block footer-content__body-links">
+                  <div class="body-block__title">
+                    <p class="body-block__title-text">Полезные ссылки</p>
+                  </div>
+                  <div class="body-block__content">
+                    <div class="body-block__content-search">
+                      <form class="search" role="search">
+                        <input class="search-input" type="search" data-type="search" placeholder="Поиск по сайту"/>
+                        <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
+                      </form>
+                    </div>
+                    <div class="body-block__content-links">
+                      <ul class="navigation">
+                        <li class="navigation__item"><a class="navigation__item-link" href="#">Виды лицензий</a></li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#">Виды компаний</a></li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#">Государственное и политическое устройство</a></li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#">Оншорные компании</a></li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#">Оффшорные компании</a></li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#">Свободные экономические зоны</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-content__bottom">
+              <p class="footer-content__bottom-copyrights">&#169; 2023 EmiratesLaw</p>
+            </div>
           </div>
         </footer>
       </div>
