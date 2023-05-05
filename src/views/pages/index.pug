@@ -32,6 +32,116 @@ block header
       },
     ]
 
+  -
+    const info_slider = [
+      {
+        title: 'Виды лицензий',
+        subtitle: 'Подробно о видах лицензий для всех сфер бизнеса',
+        url: '#'
+      },
+      {
+        title: 'Виды компаний',
+        subtitle: 'Подробно о видах компаний, которые можно открыть в ОАЭ',
+        url: '#'
+      },
+      {
+        title: 'Государственное и политическое устройство',
+        subtitle: 'Подробно о государственном и политическом устройстве ОАЭ, контакты госучреждений и многое другое',
+        url: '#'
+      },
+      {
+        title: 'Оншорные компании',
+        subtitle: 'Подробно об оншорных компаниях',
+        url: '#'
+      },
+      {
+        title: 'Оффшорные компании',
+        subtitle: 'Подробно об оффшорных компаниях',
+        url: '#'
+      },
+      {
+        title: 'Свободные экономические зоны',
+        subtitle: 'Подробно о свободных экономических зонах',
+        url: '#'
+      }
+    ]
+
+  -
+    const events_slides = [
+      {
+        img: '@img/main/news-1.webp',
+        title: 'Гражданин ОАЭ впервые выйдет в открытый космос',
+        date: '12.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-2.webp',
+        title: 'В ОАЭ приобретут новые самолеты для засева облаков',
+        date: '11.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-3.webp',
+        title: 'В ОАЭ поступили в обращение новые банкноты',
+        date: '10.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-4.webp',
+        title: 'В ОАЭ ввели новые сборы для претендентов на «золотые» визы',
+        date: '10.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-2.webp',
+        title: 'В ОАЭ приобретут новые самолеты для засева облаков',
+        date: '11.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-4.webp',
+        title: 'В ОАЭ ввели новые сборы для претендентов на «золотые» визы',
+        date: '10.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-1.webp',
+        title: 'Гражданин ОАЭ впервые выйдет в открытый космос',
+        date: '12.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-3.webp',
+        title: 'В ОАЭ поступили в обращение новые банкноты',
+        date: '10.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-4.webp',
+        title: 'В ОАЭ ввели новые сборы для претендентов на «золотые» визы',
+        date: '10.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-3.webp',
+        title: 'В ОАЭ поступили в обращение новые банкноты',
+        date: '10.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-1.webp',
+        title: 'Гражданин ОАЭ впервые выйдет в открытый космос',
+        date: '12.04.2023',
+        url: '#'
+      },
+      {
+        img: '@img/main/news-2.webp',
+        title: 'В ОАЭ приобретут новые самолеты для засева облаков',
+        date: '11.04.2023',
+        url: '#'
+      }
+    ]
+
 block content
   main.index
     // Первый блок с картинкой
@@ -68,18 +178,23 @@ block content
 
     // Справочная информация
     .index-info
+      // Заголовок блока
+      .index-info__title
+        h2.index-info__title-text Справочная информация
+        +more-btn-border("Полная справка", "/info", "index-info__title-btn")
       // Блок со слайдером
-      .index-info__content
+      .index-info__content.swiper
         // Слайдер
-        .index-info__content-slider
+        .index-info__content-slider.swiper-wrapper
           // Слайды
-          .index-info__content-slide.content-slide
-            .content-slide__img
-              .content-slide__img-square
-              img.content-slide__img-image(src="@img/main/docs.jpg", alt="")
-            p.content-slide__title
-            p.content-slide__subtitle
-              +more-btn-border("Подробнее", "#", "content-slide__btn")
+          each element in info_slider
+            .index-info__content-slide.content-slide.swiper-slide
+              .content-slide__img
+                .content-slide__img-square
+                .content-slide__img-image
+              h3.content-slide__title= element.title
+              p.content-slide__subtitle= element.subtitle
+              +more-btn-border("Подробнее", element.url, "content-slide__btn")
         // Кнопки навигации
         .index-info__content-navigation.content-navigation
           button.content-navigation__btn.content-navigation__btn-prev
@@ -87,9 +202,91 @@ block content
           button.content-navigation__btn.content-navigation__btn-next
             img.content-navigation__btn-img.svg(src="@img/svg/arrow-right-thin.svg", alt="Next")
         // Пагинация
-        .index-info__content-pagination
-      // Блок "Полная справка"
-      .index-info__all
+        .index-info__content-pagination.content-pagination.pagination
+          button.content-pagination__item.pagination-item
+            .content-pagination__item-line.pagination-item__line
+          button.content-pagination__item.pagination-item.pagination-item__active
+            .content-pagination__item-line.pagination-item__line
+          button.content-pagination__item.pagination-item
+            .content-pagination__item-line.pagination-item__line
+
+    // Блок с инфо о портале
+    .index-about
+      .index-about__body
+        .index-about__body-block
+          p.index-about__body-text Самая актуальная информация поможет вам разобраться в законодательстве ОАЭ <br/>просто, быстро и эффективно
+          +more-btn-arrow("Подробнее о портале", "/about", "index-about__body-more")
+
+    // Блок с законами
+    .index-laws
+      .index-laws__body
+        .index-laws__element.index-laws__element-title-block
+          .index-laws__element-content
+            .title-block__circle
+              img.title-block__circle-img.svg(src="@img/svg/scales.svg", alt="")
+            h2.index-laws__element-title Актуальные законы ОАЭ
+            p.index-laws__element-subtitle — в удобном формате и на одной странице
+            +more-btn-border("Все законы", "/laws", "index-laws__element-btn")
+            .index-laws__element-arrow.element-arrow
+              img.element-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        a(href="#").index-laws__element.index-laws__element-1
+          h3.index-laws__element-title Вопросы свободных зон и зон особого развития
+          p.index-laws__element-subtitle — Законы и нормы, действующие в Свободных Экономических Зонах
+          .index-laws__element-arrow.element-arrow
+            img.element-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        a(href="#").index-laws__element.index-laws__element-2
+          h3.index-laws__element-title Дорога и транспорт
+          p.index-laws__element-subtitle — в удобном формате и на одной странице
+          .index-laws__element-arrow.element-arrow
+            img.element-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        a(href="#").index-laws__element.index-laws__element-3
+          h3.index-laws__element-title Здравоохранение, медицинские вопросы и общественная безопасность
+          .index-laws__element-arrow.element-arrow
+            img.element-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        a(href="#").index-laws__element.index-laws__element-4
+          h3.index-laws__element-title Кадровые ресурсы для гос структур
+          .index-laws__element-arrow.element-arrow
+            img.element-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        a(href="#").index-laws__element.index-laws__element-5
+          h3.index-laws__element-title Недвижимость
+          .index-laws__element-arrow.element-arrow
+            img.element-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+
+    // Блок событий
+    .index-events
+      // Заголовок блока
+      .index-events__title
+        h2.index-events__title-text События
+        +more-btn-border("Все события", "/events", "index-events__title-btn")
+      // Блок со слайдером
+      .index-events__body.swiper
+        // Слайдер
+        .index-events__body-slider.swiper-wrapper
+          // Слайды
+          each element in events_slides
+            .index-events__body-slide.events-slide.swiper-slide
+              // Фото слайда
+              .events-slide__image
+                img(src= element.img, alt= element.title).events-slide__image-img
+              // Контент слайда
+              .events-slide__content
+                p.events-slide__content-date= element.date
+                h3.events-slide__content-title= element.title
+                +more-btn-arrow("Читать далее", element.url, "events-slide__content-more")
+        // Кнопки навигации
+        .index-events__body-navigation.events-navigation
+          button.events-navigation__item.events-navigation__item-prev
+            img(src="@img/svg/arrow-right-thin.svg", alt="Prev")
+          button.events-navigation__item.events-navigation__item-next
+            img(src="@img/svg/arrow-right-thin.svg", alt="Next")
+        // Пагинация
+        .index-events__body-pagination.events-pagination.pagination
+          button.events-pagination__item.pagination-item
+            .events-pagination__item-line.pagination-item__line
+          button.events-pagination__item.pagination-item.pagination-item__active
+            .events-pagination__item-line.pagination-item__line
+          button.content-pagination__item.pagination-item
+            .events-pagination__item-line.pagination-item__line
 
 block footer
   .index-page

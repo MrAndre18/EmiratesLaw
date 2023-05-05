@@ -12,13 +12,13 @@ const changeHeaderBg = () => {
     header.addClass("scrolled");
   } else header.removeClass("scrolled");
 
-  // if (
-  //   $(window).scrollTop() > $(window).height() / 3 &&
-  //   $(window).scrollTop() > scrollPrev &&
-  //   !header.hasClass("active")
-  // )
-  //   header.addClass("out");
-  // else header.removeClass("out");
+  if (
+    $(window).scrollTop() > $(window).height() / 3 &&
+    $(window).scrollTop() > scrollPrev &&
+    !header.hasClass("active")
+  )
+    header.addClass("out");
+  else header.removeClass("out");
 
-  // scrollPrev = $(window).scrollTop();
+  scrollPrev = $(window).scrollTop();
 };

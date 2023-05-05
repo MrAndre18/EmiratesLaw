@@ -14,8 +14,8 @@ export const scss_to_css = () => {
     // вывод сообщений об ошибках
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
-        title: "SCSS",
-        message: "Еблуша, тут ошибочка: <%= error.message %>"
+        title: "Еблуша, тут ошибочка",
+        message: "SCSS: <%= error.message %>"
       })
     ))
 
@@ -33,13 +33,11 @@ export const scss_to_css = () => {
 
     // Вывод WEBP
     .pipe(
-      app.plugins.if(
-        app.isBuild,
         webpCss({
           webpClass: '.webp',
           noWebpClass: '.no-webp'
         })
-      ))
+      )
 
     // Добавление вендорных префиксов
     .pipe(

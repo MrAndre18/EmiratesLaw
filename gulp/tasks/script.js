@@ -6,8 +6,8 @@ export const script = () => {
     // вывод сообщений об ошибках
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
-        title: "JS",
-        message: "Еблуша, тут ошибочка: <%= error.message %>"
+        title: "Еблуша, тут ошибочка",
+        message: "JS: <%= error.message %>"
       })
     ))
 

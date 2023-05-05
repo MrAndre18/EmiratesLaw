@@ -8,8 +8,8 @@ export const pug_to_html = () => {
     // вывод сообщений об ошибках
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
-        title: "PUG",
-        message: "Еблуша, тут ошибочка: <%= error.message %>"
+        title: "Еблуша, тут ошибочка",
+        message: "PUG: <%= error.message %>"
       })
     ))
 
@@ -25,11 +25,7 @@ export const pug_to_html = () => {
     .pipe(app.plugins.replace(/@js\//g, 'assets/'))
 
     // Замена картинок на Webp
-    .pipe(
-      app.plugins.if(
-        app.isBuild,
-        webpHtmlNoSvg()
-      ))
+    .pipe(webpHtmlNoSvg())
 
     // Убирается кэширование css и js
     // .pipe(

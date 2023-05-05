@@ -8,8 +8,8 @@ export const zip = () => {
     // вывод сообщений об ошибках
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
-        title: "ZIP",
-        message: "Error: <%= error.message %>"
+        title: "Еблуша, тут ошибочка",
+        message: "ZIP: <%= error.message %>"
       })
     ))
 

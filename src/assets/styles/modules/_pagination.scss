@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &-item {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__line {
+      width: 100%;
+      height: 3px;
+      background: $grey;
+      @include transition();
+    }
+
+    &__active &__line {
+      background: $gold;
+    }
+
+    &:hover &__line {
+      background: $gold;
+    }
+  }
+}

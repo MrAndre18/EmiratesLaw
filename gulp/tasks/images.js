@@ -7,8 +7,8 @@ export const images = () => {
     // вывод сообщений об ошибках
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
-        title: "IMAGES",
-        message: "Error: <%= error.message %>"
+        title: "Еблуша, тут ошибочка",
+        message: "IMAGES: <%= error.message %>"
       })
     ))
 
@@ -16,30 +16,14 @@ export const images = () => {
     .pipe(app.plugins.newer(app.path.build.images))
 
     // Создание WEBP
-    .pipe(
-      app.plugins.if(
-        app.isBuild,
-        webp()
-      ))
+    .pipe(webp())
 
     // Загрузка файлов в build
-    .pipe(
-      app.plugins.if(
-        app.isBuild,
-        app.gulp.dest(app.path.build.images)
-      ))
+    .pipe(app.gulp.dest(app.path.build.images))
 
     // Повторно получаем доступ к исходникам и проверяем на обновления
-    .pipe(
-      app.plugins.if(
-        app.isBuild,
-        app.gulp.src(app.path.src.images)
-      ))
-    .pipe(
-      app.plugins.if(
-        app.isBuild,
-        app.plugins.newer(app.path.build.images)
-      ))
+    .pipe(app.gulp.src(app.path.src.images))
+    .pipe(app.plugins.newer(app.path.build.images))
 
     // Сжатие картинок
     .pipe(

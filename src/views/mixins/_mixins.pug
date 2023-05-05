@@ -15,13 +15,13 @@ mixin drop-down(text, className, elementsList)
 
 // Кнопка "Подробнее" со стрелкой
 mixin more-btn-arrow(text, url, className)
-  a(href= url).more-btn-arrow(class= className ? className : "")
+  a(href= url, class= className ? className : "").more-btn-arrow
     p.more-btn-arrow__text= text
     img.more-btn-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
 
 // Кнопка "Подробнее" с обводкой
 mixin more-btn-border(text, url, className)
-  a(href= url).more-btn-border(class= className ? className : "")= text
+  a(href= url, class= className ? className : "").more-btn-border= text
 
 // Поиск
 mixin search(text, className)

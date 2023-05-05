@@ -41,6 +41,7 @@ $footer-bottom-hight: 105px;
       }
 
       &-block {
+        position: relative;
         background: $dark-grey;
         border-radius: 20px 20px 0 0;
         box-shadow: -6px 24px 20px 4px rgba(0, 0, 0, 0.25);
@@ -52,9 +53,26 @@ $footer-bottom-hight: 105px;
           margin-right: -50px;
         }
 
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 3;
+          width: 100%;
+          height: 50px;
+          background: linear-gradient(180deg, rgba(64, 64, 64, 0) 0%, $dark-grey 100%);
+          @include transition();
+        }
+
         &:hover {
           transform: translateY(0);
           transform: translateX(-10px);
+
+          &::before {
+            transform: translateY(0);
+            height: 0;
+          }
         }
 
         .body-block {
@@ -99,17 +117,22 @@ $footer-bottom-hight: 105px;
                 }
             
                 &:hover {
-                  padding-left: 10px;
-
                   &::before {
                     width: 30%;
                   }
                 }
+                &:hover .navigation__item-link {
+                  padding-left: 10px;
+                }
     
                 &-link {
+                  display: inline-block;
                   position: relative;
-                  z-index: 10;
+                  z-index: 2;
                   font-weight: 300;
+                  background: $dark-grey;
+                  padding-right: 20px;
+                  @include transition();
                 }
               }
     
@@ -132,16 +155,28 @@ $footer-bottom-hight: 105px;
         display: flex;
         justify-content: center;
         transform: translateY(20px);
+
+        &::before {
+          transform: translateY(-20px);
+        }
       }
 
       &-map {
         width: 500px;
         transform: translateY(80px);
+
+        &::before {
+          transform: translateY(-80px);
+        }
       }
 
       &-links {
         width: 600px;
         transform: translateY(140px);
+
+        &::before {
+          transform: translateY(-140px);
+        }
       }
     }
 

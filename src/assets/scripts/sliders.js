@@ -37,6 +37,7 @@ $(() => {
       autoplay: {
         delay: delay,
       },
+      updateOnWindowResize: false,
     
       // If we need pagination
       pagination: {
@@ -68,6 +69,46 @@ $(() => {
           stopAnimation()
           startLoading()
         },
+      },
+    })
+  }
+
+  // Слайдер справочной информации на главной
+  if ($('.index-info__content').width()) {
+    const mainInfoSlider = new Swiper('.index-info__content', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      speed: 400,
+      effect: "slide",
+      coverflowEffect: {
+        rotate: 0,
+        slideShadows: false,
+      },
+      centeredSlides: true,
+      simulateTouch: false,
+      slidesPerView: 3,
+      updateOnWindowResize: false,
+    
+      // If we need pagination
+      pagination: {
+        el: '.index-info__content-pagination',
+        clickable: true,
+        bulletClass: 'content-pagination__item pagination-item',
+        bulletActiveClass: 'pagination-item__active',
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
+        renderBullet: (index, className) => {
+          return `<button class="${className}">
+                    <div class="content-pagination__item-line pagination-item__line"></div>
+                  </button>`
+        }
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.content-navigation__btn-next',
+        prevEl: '.content-navigation__btn-prev',
       },
     })
   }

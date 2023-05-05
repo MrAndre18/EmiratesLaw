@@ -7,8 +7,8 @@ export const otf2Ttf = () => {
   return app.gulp.src(`${ app.path.srcFolder }/assets/fonts/*.otf`, {})
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
-        title: 'FONTS',
-        message: 'Error: <%= error.message %>'
+        title: 'Еблуша, тут ошибочка',
+        message: 'FONTS: <%= error.message %>'
       })
     ))
 
