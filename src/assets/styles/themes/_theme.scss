@@ -17,3 +17,20 @@ body {
   opacity: 0;
   z-index: -1000;
 }
+
+.svg {
+  path,
+  polygon {
+    fill: $white;
+    stroke: $white;
+  }
+}
+
+.parallax__inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  transition: transform 0.3s linear;
+}

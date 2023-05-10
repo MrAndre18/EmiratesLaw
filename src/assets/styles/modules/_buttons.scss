@@ -25,6 +25,10 @@
     height: 20px;
     margin-left: 10px;
     @include transition();
+
+    path {
+      stroke: none;
+    }
   }
 
   &:hover &__img {
@@ -44,15 +48,16 @@
   border: 1px solid $white;
   width: fit-content;
   height: fit-content;
+  overflow: hidden;
   @include transition();
 
   &::before {
     content: "";
     position: absolute;
     left: 50%;
-    top: 0;
+    top: -1px;
     z-index: -1;
-    height: 100%;
+    height: 105%;
     width: 0;
     background: $white;
     @include transition();
@@ -62,9 +67,9 @@
     color: $dark-grey;
 
     &::before {
-      left: 0;
-      right: 0;
-      width: 100%;
+      left: -1px;
+      right: -1px;
+      width: 105%;
     }
   }
 }

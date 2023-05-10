@@ -185,30 +185,52 @@
     }
 
     &__content {
-      margin-bottom: 55px;
+      $slide-height: 500px;
+
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        width: 30%;
+        height: $slide-height;
+        background: linear-gradient(270deg, rgba(39, 39, 39, 0) 0%, $black 75%);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        width: 30%;
+        height: $slide-height;
+        background: linear-gradient(90deg, rgba(39, 39, 39, 0) 0%, $black 75%);
+      }
 
       &-slider {
-        margin-bottom: 55px;
+        margin-bottom: 80px;
         width: 100%;
         height: fit-content;
 
         .content-slide {
-          min-width: 445px;
-          max-width: 445px;
-          //height: 580px;
+          height: $slide-height;
           border-radius: 35px;
           background: $dark-grey;
           overflow: hidden;
-          padding: 24px 40px 50px;
+          padding: 24px 40px 30px;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
+          scale: 0.8;
+          @include transition();
 
-          &.swiper-slide-active {
-            min-width: 500px;
-            max-width: 500px;
-            margin: 0 175px;
+          &.swiper-slide-next {
+            scale: 1;
           }
 
           &__img {
@@ -245,22 +267,64 @@
           }
 
           &__title {
-            //width: 90%;
             margin: 36px 0 20px;
             font-weight: 700;
-            font-size: 28px;
+            font-size: 24px;
           }
 
           &__subtitle {
-            //width: 85%;
             font-size: 14px;
             letter-spacing: 1px;
-            margin-bottom: 50px;
           }
 
           &__btn {
             margin: auto 0 0;
+            transition: transform 0.3s linear, color 0.4s cubic-bezier(0.45, 0, 0.55, 1);
           }
+        }
+      }
+
+      .content-navigation__btn {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        height: $slide-height;
+        width: 50px;
+
+        &-prev {
+          left: 30%;
+          transform: rotate(180deg);
+        }
+
+        &-next {
+          right: 30%;
+        }
+
+        &:hover .content-navigation__btn-img * {
+          fill: $gold;
+        }
+
+        &-img {
+          & * {
+            fill: $white;
+            @include transition();
+          }
+        }
+      }
+
+      &-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20%;
+        height: 4px;
+        background: $grey;
+        border-radius: 4px;
+        overflow: hidden;
+
+        & .swiper-pagination-progressbar-fill {
+          background: $gold;
         }
       }
     }
@@ -367,8 +431,6 @@
         @include transition();
 
         &:hover {
-          //border-color: $gold;
-
           .title-block__circle-img .center {
             animation: rotate_scales 1.6s cubic-bezier(0.45, 0, 0.55, 1);
           }
@@ -407,6 +469,11 @@
           &-img {
             width: 50px;
             height: 50px;
+
+            & * {
+              fill: none;
+              stroke: $dark-grey;
+            }
 
             & .center {
               transform-box: fill-box;
@@ -490,7 +557,7 @@
       }
 
       &-title {
-        font-size: 20px;
+        font-size: 16px;
       }
 
       &-subtitle {
@@ -537,11 +604,19 @@
       &-1 {
         grid-area: element-1;
         padding: 60px 60px 50px 50px;
+
+        & .index-laws__element-title {
+          font-size: 20px;
+        }
       }
 
       &-2 {
         grid-area: element-2;
         padding: 60px 30px 50px 50px;
+
+        & .index-laws__element-title {
+          font-size: 20px;
+        }
       }
 
       &-3 {
@@ -565,6 +640,9 @@
     margin-bottom: $block-margin;
     padding: 0 $page-padding;
 
+    $img-height: 280px;
+    $slide-height: 480px;
+
     &__title {
       display: flex;
       justify-content: space-between;
@@ -576,19 +654,65 @@
       }
     }
 
+    &__content {
+      display: flex;
+
+      & .events-navigation {
+        &__item {
+          height: $slide-height;
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include transition();
+
+          &-img {
+            width: 60%;
+            height: 50px;
+
+            & * {
+              @include transition();
+            }
+          }
+
+          &:hover .events-navigation__item-img * {
+            fill: $gold;
+          }
+
+          &-prev {
+            transform: rotate(180deg);
+          }
+
+          &-disabled {
+            opacity: 0;
+            cursor: auto;
+          }
+        }
+      }
+    }
+
     &__body {
+      max-width: 1680px;
+      width: 100%;
+
       &-slider {
-        padding: 0 80px;
+        height: $slide-height;
 
         .events-slide {
-          max-width: 390px;
+          height: 100%;
           border-radius: 20px;
           overflow: hidden;
           border: 1px solid $light-grey-1;
+          @include transition();
+
+          &:hover {
+            scale: 0.96;
+            border-color: $gold;
+          }
 
           &__image {
             position: relative;
-            height: 280px;
+            height: $img-height;
 
             &::before {
               content: "";
@@ -604,13 +728,15 @@
 
             &-img {
               width: initial;
-              height: 280px;
               transform: translateX(-12%);
             }
           }
 
           &__content {
+            display: flex;
+            flex-direction: column;
             padding: 20px 30px 30px;
+            height: $slide-height - $img-height;
 
             &-date {
               font-size: 14px;
@@ -621,10 +747,18 @@
 
             &-title {
               font-weight: 400;
-              margin: 10px 0 32px;
+              margin-top: 10px;
+            }
+
+            &-more {
+              margin: auto auto 0 0;
             }
           }
         }
+      }
+
+      & .events-pagination {
+        margin-top: 60px;
       }
     }
   }

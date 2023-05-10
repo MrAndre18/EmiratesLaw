@@ -20,8 +20,8 @@ mixin more-btn-arrow(text, url, className)
     img.more-btn-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
 
 // Кнопка "Подробнее" с обводкой
-mixin more-btn-border(text, url, className)
-  a(href= url, class= className ? className : "").more-btn-border= text
+mixin more-btn-border(text, url, className, speed)
+  a(href= url, class= className ? className : "", data-speed= speed ? speed : "").more-btn-border= text
 
 // Поиск
 mixin search(text, className)

@@ -73,6 +73,7 @@
 
     &__img {
       path {
+        fill: none;
         @include transition();
       }
     }
