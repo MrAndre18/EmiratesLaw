@@ -38,7 +38,7 @@ header.header
     .header-menu|<!-- Меню с ссылками на страницы -->
       +navigation(navigation)
     .header-settings|<!-- Выбор языка и поиск -->
-      button.header-search|<!-- Поиск -->
+      button.header-search(data-type="js-open-btn", data-modal="js-search-btn")|<!-- Поиск -->
         img.header-search__img.svg(src="@img/svg/search.svg", alt="Поиск")
       .header-language|<!-- Выбор языка -->
         +drop-down("RU", "", languages)

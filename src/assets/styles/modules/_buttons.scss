@@ -5,7 +5,7 @@
 
   &__text {
     position: relative;
-    letter-spacing: 10%;
+    letter-spacing: 0.1em;
 
     &::before {
       content: "";
@@ -32,7 +32,7 @@
   }
 
   &:hover &__img {
-    margin-left: 14px;
+    transform: translateX(4px);
   }
 
   &:hover &__text::before {

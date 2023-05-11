@@ -190,11 +190,11 @@ block content
           each element in info_slider
             .index-info__content-slide.content-slide.swiper-slide.parallax__inner
               .content-slide__img
-                .content-slide__img-square.parallax__layer(data-speed="0.03")
-                .content-slide__img-image.parallax__layer(data-speed="0.08")
-              h3.content-slide__title.parallax__layer(data-speed="0.05")= element.title
-              p.content-slide__subtitle.parallax__layer(data-speed="0.04")= element.subtitle
-              +more-btn-border("Подробнее", element.url, "content-slide__btn parallax__layer", "0.03")
+                .content-slide__img-square.parallax__layer(data-speed="0.02")
+                .content-slide__img-image.parallax__layer(data-speed="0.05")
+              h3.content-slide__title.parallax__layer(data-speed="0.03")= element.title
+              p.content-slide__subtitle.parallax__layer(data-speed="0.02")= element.subtitle
+              +more-btn-border("Подробнее", element.url, "content-slide__btn parallax__layer", "0.015")
         // Кнопки навигации
         button.content-navigation__btn.content-navigation__btn-prev
           img.content-navigation__btn-img.svg(src="@img/svg/arrow_slider.svg", alt="Prev")

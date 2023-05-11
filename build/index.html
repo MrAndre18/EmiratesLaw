@@ -14,6 +14,26 @@
     <title>EmiratesLaw</title>
   </head>
   <body>
+    <!-- Модальное окно поиска-->
+    <div class="search-modal" data-type="js-modal" data-modal="js-search">
+      <div class="search-modal__body">
+        <div class="search-modal__content">
+          <div class="search-modal__content-search">
+            <form class="search" role="search">
+              <input class="search-input" type="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
+              <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
+            </form>
+          </div>
+          <div class="search-modal__content-history serch-history">
+            <p class="serch-history__title">История запросов</p>
+            <div class="serch-history__items"><a class="serch-history__item" href="/search?=Трудовое право">Трудовое право</a><a class="serch-history__item" href="/search?=Документы для открытия ИП">Документы для открытия ИП</a><a class="serch-history__item" href="/search?=Как арендовать недвижимость">Как арендовать недвижимость</a><a class="serch-history__item" href="/search?=Документы для официального трудоустройства">Документы для официального трудоустройства</a><a class="serch-history__item" href="/search?=Административное право">Административное право</a><a class="serch-history__item" href="/search?=Семейное право">Семейное право</a>
+            </div>
+          </div><a class="search-modal__content-more more-btn-arrow" href="/search">
+            <p class="more-btn-arrow__text">Расширенный поиск</p><img class="more-btn-arrow__img svg" src="assets/images/svg/arrow-right-thin.svg" alt=""/></a>
+        </div>
+        <button class="search-modal__close" data-type="js-close-btn"><span class="search-modal__close-img"></span></button>
+      </div>
+    </div>
     <div class="content">
       <div class="index-page">
         <header class="header">
@@ -28,7 +48,7 @@
               </ul>
             </div>
             <div class="header-settings"><!-- Выбор языка и поиск -->
-              <button class="header-search"><!-- Поиск --><img class="header-search__img svg" src="assets/images/svg/search.svg" alt="Поиск"></button>
+              <button class="header-search" data-type="js-open-btn" data-modal="js-search-btn"><!-- Поиск --><img class="header-search__img svg" src="assets/images/svg/search.svg" alt="Поиск"></button>
               <div class="header-language"><!-- Выбор языка -->
                 <button class="drop-down">
                   <p class="drop-down__text">RU</p>
@@ -111,51 +131,51 @@
               <!-- Слайды-->
               <div class="index-info__content-slide content-slide swiper-slide parallax__inner">
                 <div class="content-slide__img">
-                  <div class="content-slide__img-square parallax__layer" data-speed="0.03"></div>
-                  <div class="content-slide__img-image parallax__layer" data-speed="0.08"></div>
+                  <div class="content-slide__img-square parallax__layer" data-speed="0.02"></div>
+                  <div class="content-slide__img-image parallax__layer" data-speed="0.05"></div>
                 </div>
-                <h3 class="content-slide__title parallax__layer" data-speed="0.05">Виды лицензий</h3>
-                <p class="content-slide__subtitle parallax__layer" data-speed="0.04">Подробно о видах лицензий для всех сфер бизнеса</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.03">Подробнее</a>
+                <h3 class="content-slide__title parallax__layer" data-speed="0.03">Виды лицензий</h3>
+                <p class="content-slide__subtitle parallax__layer" data-speed="0.02">Подробно о видах лицензий для всех сфер бизнеса</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.015">Подробнее</a>
               </div>
               <div class="index-info__content-slide content-slide swiper-slide parallax__inner">
                 <div class="content-slide__img">
-                  <div class="content-slide__img-square parallax__layer" data-speed="0.03"></div>
-                  <div class="content-slide__img-image parallax__layer" data-speed="0.08"></div>
+                  <div class="content-slide__img-square parallax__layer" data-speed="0.02"></div>
+                  <div class="content-slide__img-image parallax__layer" data-speed="0.05"></div>
                 </div>
-                <h3 class="content-slide__title parallax__layer" data-speed="0.05">Виды компаний</h3>
-                <p class="content-slide__subtitle parallax__layer" data-speed="0.04">Подробно о видах компаний, которые можно открыть в ОАЭ</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.03">Подробнее</a>
+                <h3 class="content-slide__title parallax__layer" data-speed="0.03">Виды компаний</h3>
+                <p class="content-slide__subtitle parallax__layer" data-speed="0.02">Подробно о видах компаний, которые можно открыть в ОАЭ</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.015">Подробнее</a>
               </div>
               <div class="index-info__content-slide content-slide swiper-slide parallax__inner">
                 <div class="content-slide__img">
-                  <div class="content-slide__img-square parallax__layer" data-speed="0.03"></div>
-                  <div class="content-slide__img-image parallax__layer" data-speed="0.08"></div>
+                  <div class="content-slide__img-square parallax__layer" data-speed="0.02"></div>
+                  <div class="content-slide__img-image parallax__layer" data-speed="0.05"></div>
                 </div>
-                <h3 class="content-slide__title parallax__layer" data-speed="0.05">Государственное и политическое устройство</h3>
-                <p class="content-slide__subtitle parallax__layer" data-speed="0.04">Подробно о государственном и политическом устройстве ОАЭ, контакты госучреждений и многое другое</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.03">Подробнее</a>
+                <h3 class="content-slide__title parallax__layer" data-speed="0.03">Государственное и политическое устройство</h3>
+                <p class="content-slide__subtitle parallax__layer" data-speed="0.02">Подробно о государственном и политическом устройстве ОАЭ, контакты госучреждений и многое другое</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.015">Подробнее</a>
               </div>
               <div class="index-info__content-slide content-slide swiper-slide parallax__inner">
                 <div class="content-slide__img">
-                  <div class="content-slide__img-square parallax__layer" data-speed="0.03"></div>
-                  <div class="content-slide__img-image parallax__layer" data-speed="0.08"></div>
+                  <div class="content-slide__img-square parallax__layer" data-speed="0.02"></div>
+                  <div class="content-slide__img-image parallax__layer" data-speed="0.05"></div>
                 </div>
-                <h3 class="content-slide__title parallax__layer" data-speed="0.05">Оншорные компании</h3>
-                <p class="content-slide__subtitle parallax__layer" data-speed="0.04">Подробно об оншорных компаниях</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.03">Подробнее</a>
+                <h3 class="content-slide__title parallax__layer" data-speed="0.03">Оншорные компании</h3>
+                <p class="content-slide__subtitle parallax__layer" data-speed="0.02">Подробно об оншорных компаниях</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.015">Подробнее</a>
               </div>
               <div class="index-info__content-slide content-slide swiper-slide parallax__inner">
                 <div class="content-slide__img">
-                  <div class="content-slide__img-square parallax__layer" data-speed="0.03"></div>
-                  <div class="content-slide__img-image parallax__layer" data-speed="0.08"></div>
+                  <div class="content-slide__img-square parallax__layer" data-speed="0.02"></div>
+                  <div class="content-slide__img-image parallax__layer" data-speed="0.05"></div>
                 </div>
-                <h3 class="content-slide__title parallax__layer" data-speed="0.05">Оффшорные компании</h3>
-                <p class="content-slide__subtitle parallax__layer" data-speed="0.04">Подробно об оффшорных компаниях</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.03">Подробнее</a>
+                <h3 class="content-slide__title parallax__layer" data-speed="0.03">Оффшорные компании</h3>
+                <p class="content-slide__subtitle parallax__layer" data-speed="0.02">Подробно об оффшорных компаниях</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.015">Подробнее</a>
               </div>
               <div class="index-info__content-slide content-slide swiper-slide parallax__inner">
                 <div class="content-slide__img">
-                  <div class="content-slide__img-square parallax__layer" data-speed="0.03"></div>
-                  <div class="content-slide__img-image parallax__layer" data-speed="0.08"></div>
+                  <div class="content-slide__img-square parallax__layer" data-speed="0.02"></div>
+                  <div class="content-slide__img-image parallax__layer" data-speed="0.05"></div>
                 </div>
-                <h3 class="content-slide__title parallax__layer" data-speed="0.05">Свободные экономические зоны</h3>
-                <p class="content-slide__subtitle parallax__layer" data-speed="0.04">Подробно о свободных экономических зонах</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.03">Подробнее</a>
+                <h3 class="content-slide__title parallax__layer" data-speed="0.03">Свободные экономические зоны</h3>
+                <p class="content-slide__subtitle parallax__layer" data-speed="0.02">Подробно о свободных экономических зонах</p><a class="content-slide__btn parallax__layer more-btn-border" href="#" data-speed="0.015">Подробнее</a>
               </div>
             </div>
             <!-- Кнопки навигации-->
@@ -382,7 +402,7 @@
                   <div class="body-block__content">
                     <div class="body-block__content-search">
                       <form class="search" role="search">
-                        <input class="search-input" type="search" data-type="search" placeholder="Поиск по сайту"/>
+                        <input class="search-input" type="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
                         <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
                       </form>
                     </div>

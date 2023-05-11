@@ -26,7 +26,7 @@ mixin more-btn-border(text, url, className, speed)
 // Поиск
 mixin search(text, className)
   form.search(role="search", class= className ? className : "")
-    input.search-input(type="search", data-type="search", placeholder= text)
+    input.search-input(type="search", placeholder= text, required, minlength="4")
     button.search-btn
       img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
 

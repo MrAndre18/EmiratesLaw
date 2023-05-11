@@ -1,0 +1,151 @@
+.search-modal {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(38, 71, 100, 0.9);
+  transform: translateY(-100%);
+  @include transition();
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  &__body {
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+
+    &-search {
+      height: 60px;
+      margin-bottom: 30px;
+
+      & .search-input {
+        padding: 0 0 0 40px;
+      }
+    }
+
+    & .serch-history {
+      &__title {
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: 10px;
+      }
+
+      &__items {
+        margin-bottom: 55px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        position: relative;
+        font-weight: 300;
+        font-size: 14px;
+        padding: 2px 15px;
+        border: 1px solid $white;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        overflow: hidden;
+        @include transition();
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          z-index: -1;
+          width: 0;
+          height: 100%;
+          background: $white;
+          @include transition();
+        }
+
+        &:hover {
+          color: $dark-grey;
+
+          &::before {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &-more {
+      align-self: center;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 10%;
+    top: 75px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: $gold;
+      border-radius: 100%;
+      @include transition();
+    }
+
+    &-img {
+      position: relative;
+      width: 40px;
+      height: 3px;
+      border-radius: 10px;
+      background: $white;
+      transform: rotate(45deg);
+      @include transition();
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background: $white;
+        transform: rotate(90deg);
+        @include transition();
+      }
+    }
+
+    &:hover::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover &-img {
+      background: $dark-grey;
+      scale: 0.8;
+
+      &::before {
+        background: $dark-grey;
+      }
+    }
+  }
+}

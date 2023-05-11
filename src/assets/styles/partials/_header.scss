@@ -78,7 +78,8 @@
       }
     }
 
-    &:hover &__img {
+    &:hover &__img,
+    &.active &__img {
       path {
         stroke: $gold;
       }

@@ -1,0 +1,42 @@
+// Модальное окно поиска
+-
+  const searchHistory = [
+    {
+      name: 'Трудовое право',
+      url: '#'
+    },
+    {
+      name: 'Документы для открытия ИП',
+      url: '#'
+    },
+    {
+      name: 'Как арендовать недвижимость',
+      url: '#'
+    },
+    {
+      name: 'Документы для официального трудоустройства',
+      url: '#'
+    },
+    {
+      name: 'Административное право',
+      url: '#'
+    },
+    {
+      name: 'Семейное право',
+      url: '#'
+    },
+  ]
+
+.search-modal(data-type="js-modal", data-modal="js-search")
+  .search-modal__body
+    .search-modal__content
+      .search-modal__content-search
+        +search("Поиск по сайту", "")
+      .search-modal__content-history.serch-history
+        p.serch-history__title История запросов
+        .serch-history__items
+          each item in searchHistory
+            a.serch-history__item(href= "/search?="+item.name)= item.name
+      +more-btn-arrow("Расширенный поиск", "/search", "search-modal__content-more")
+    button.search-modal__close(data-type="js-close-btn")
+      span.search-modal__close-img
