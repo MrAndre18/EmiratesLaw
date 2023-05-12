@@ -1,0 +1,48 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 300;
+      margin-right: 8px;
+      @include transition();
+    }
+
+    &-arrow {
+      width: 6px;
+    }
+
+    &-current {
+      color: $yellow;
+    }
+
+    &-prev &-text {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: $gold;
+        transform: translateX(-50%);
+        @include transition();
+      }
+
+      &:hover::before {
+        width: 40%;
+      }
+    }
+  }
+}

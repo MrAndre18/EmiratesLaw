@@ -1,0 +1,22 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.laws
+    .laws__title.title-block
+      ul.laws__title-breadcrumbs.breadcrumbs
+        li.breadcrumbs__item.breadcrumbs__item-prev
+          a.breadcrumbs__item-text(href="/") Главная
+          img.breadcrumbs__item-arrow.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        li.breadcrumbs__item.breadcrumbs__item-current
+          span.breadcrumbs__item-text Законы
+      .laws__title-ticker.ticker
+        h1.ticker__text.ticker__text-title Актуальные законы ОАЭ
+        p.ticker__text Актуальные законы ОАЭ
+      .laws__title-masonry.masonry
+        .masonry-bloks
+
+//- block footer
+//-   include ../partials/_footer.pug

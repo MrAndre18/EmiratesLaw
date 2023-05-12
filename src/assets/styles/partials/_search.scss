@@ -42,7 +42,6 @@
       }
 
       &__items {
-        margin-bottom: 55px;
         display: flex;
         flex-wrap: wrap;
       }
@@ -83,6 +82,7 @@
     }
 
     &-more {
+      margin-top: 45px;
       align-self: center;
     }
   }

@@ -20,14 +20,13 @@
         <div class="search-modal__content">
           <div class="search-modal__content-search">
             <form class="search" role="search">
-              <input class="search-input" type="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
+              <input class="search-input" type="search" name="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
               <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
             </form>
           </div>
           <div class="search-modal__content-history serch-history">
             <p class="serch-history__title">История запросов</p>
-            <div class="serch-history__items"><a class="serch-history__item" href="/search?=Трудовое право">Трудовое право</a><a class="serch-history__item" href="/search?=Документы для открытия ИП">Документы для открытия ИП</a><a class="serch-history__item" href="/search?=Как арендовать недвижимость">Как арендовать недвижимость</a><a class="serch-history__item" href="/search?=Документы для официального трудоустройства">Документы для официального трудоустройства</a><a class="serch-history__item" href="/search?=Административное право">Административное право</a><a class="serch-history__item" href="/search?=Семейное право">Семейное право</a>
-            </div>
+            <div class="serch-history__items"></div>
           </div><a class="search-modal__content-more more-btn-arrow" href="/search">
             <p class="more-btn-arrow__text">Расширенный поиск</p><img class="more-btn-arrow__img svg" src="assets/images/svg/arrow-right-thin.svg" alt=""/></a>
         </div>
@@ -35,42 +34,40 @@
       </div>
     </div>
     <div class="content">
-      <div class="index-page">
-        <header class="header">
-          <div class="header-content">
-            <div class="header-logo"><!-- лого --><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
-            <div class="header-menu"><!-- Меню с ссылками на страницы -->
-              <ul class="navigation">
-                <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
-                <li class="navigation__item"><a class="navigation__item-link" href="/info">Справка</a></li>
-                <li class="navigation__item"><a class="navigation__item-link" href="/laws">Законы</a></li>
-                <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
+      <header class="header">
+        <div class="header-content">
+          <div class="header-logo"><!-- лого --><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
+          <div class="header-menu"><!-- Меню с ссылками на страницы -->
+            <ul class="navigation">
+              <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
+              <li class="navigation__item"><a class="navigation__item-link" href="/info">Справка</a></li>
+              <li class="navigation__item"><a class="navigation__item-link" href="/laws">Законы</a></li>
+              <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
+            </ul>
+          </div>
+          <div class="header-settings"><!-- Выбор языка и поиск -->
+            <button class="header-search" data-type="js-open-btn" data-modal="js-search-btn"><!-- Поиск --><img class="header-search__img svg" src="assets/images/svg/search.svg" alt="Поиск"></button>
+            <div class="header-language"><!-- Выбор языка -->
+              <button class="drop-down">
+                <p class="drop-down__text">RU</p>
+                <div class="drop-down__img"><img class="svg" src="assets/images/svg/drop-down.svg" alt=""/>
+                </div>
+              </button>
+              <ul class="drop-down__list">
+                <li class="drop-down__list-item">
+                  <button>RU</button>
+                </li>
+                <li class="drop-down__list-item">
+                  <button>EN</button>
+                </li>
+                <li class="drop-down__list-item">
+                  <button>عربي</button>
+                </li>
               </ul>
             </div>
-            <div class="header-settings"><!-- Выбор языка и поиск -->
-              <button class="header-search" data-type="js-open-btn" data-modal="js-search-btn"><!-- Поиск --><img class="header-search__img svg" src="assets/images/svg/search.svg" alt="Поиск"></button>
-              <div class="header-language"><!-- Выбор языка -->
-                <button class="drop-down">
-                  <p class="drop-down__text">RU</p>
-                  <div class="drop-down__img"><img class="svg" src="assets/images/svg/drop-down.svg" alt=""/>
-                  </div>
-                </button>
-                <ul class="drop-down__list">
-                  <li class="drop-down__list-item">
-                    <button>RU</button>
-                  </li>
-                  <li class="drop-down__list-item">
-                    <button>EN</button>
-                  </li>
-                  <li class="drop-down__list-item">
-                    <button>عربي</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
       <main class="index">
         <!-- Первый блок с картинкой-->
         <div class="index__title-block title-block">
@@ -372,60 +369,58 @@
           </div>
         </div>
       </main>
-      <div class="index-page">
-        <footer class="footer">
-          <div class="footer-content">
-            <div class="footer-content__body">
-              <!-- Блоки-->
-              <div class="footer-content__body-blocks">
-                <!-- блок с логотипом-->
-                <div class="footer-content__body-block footer-content__body-logo"><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
-                <!-- Блок "карта сайта"-->
-                <div class="footer-content__body-block footer-content__body-map">
-                  <div class="body-block__title">
-                    <p class="body-block__title-text">Карта сайта</p>
-                  </div>
-                  <div class="body-block__content">
-                    <ul class="navigation">
-                      <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
-                      <li class="navigation__item"><a class="navigation__item-link" href="/info">Справка</a></li>
-                      <li class="navigation__item"><a class="navigation__item-link" href="/laws">Законы</a></li>
-                      <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
-                    </ul>
-                  </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-content__body">
+            <!-- Блоки-->
+            <div class="footer-content__body-blocks">
+              <!-- блок с логотипом-->
+              <div class="footer-content__body-block footer-content__body-logo"><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
+              <!-- Блок "карта сайта"-->
+              <div class="footer-content__body-block footer-content__body-map">
+                <div class="body-block__title">
+                  <p class="body-block__title-text">Карта сайта</p>
                 </div>
-                <!-- блок "Полезные ссылки"-->
-                <div class="footer-content__body-block footer-content__body-links">
-                  <div class="body-block__title">
-                    <p class="body-block__title-text">Полезные ссылки</p>
+                <div class="body-block__content">
+                  <ul class="navigation">
+                    <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
+                    <li class="navigation__item"><a class="navigation__item-link" href="/info">Справка</a></li>
+                    <li class="navigation__item"><a class="navigation__item-link" href="/laws">Законы</a></li>
+                    <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- блок "Полезные ссылки"-->
+              <div class="footer-content__body-block footer-content__body-links">
+                <div class="body-block__title">
+                  <p class="body-block__title-text">Полезные ссылки</p>
+                </div>
+                <div class="body-block__content">
+                  <div class="body-block__content-search">
+                    <form class="search" role="search">
+                      <input class="search-input" type="search" name="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
+                      <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
+                    </form>
                   </div>
-                  <div class="body-block__content">
-                    <div class="body-block__content-search">
-                      <form class="search" role="search">
-                        <input class="search-input" type="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
-                        <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
-                      </form>
-                    </div>
-                    <div class="body-block__content-links">
-                      <ul class="navigation">
-                        <li class="navigation__item"><a class="navigation__item-link" href="#">Виды лицензий</a></li>
-                        <li class="navigation__item"><a class="navigation__item-link" href="#">Виды компаний</a></li>
-                        <li class="navigation__item"><a class="navigation__item-link" href="#">Государственное и политическое устройство</a></li>
-                        <li class="navigation__item"><a class="navigation__item-link" href="#">Оншорные компании</a></li>
-                        <li class="navigation__item"><a class="navigation__item-link" href="#">Оффшорные компании</a></li>
-                        <li class="navigation__item"><a class="navigation__item-link" href="#">Свободные экономические зоны</a></li>
-                      </ul>
-                    </div>
+                  <div class="body-block__content-links">
+                    <ul class="navigation">
+                      <li class="navigation__item"><a class="navigation__item-link" href="#">Виды лицензий</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="#">Виды компаний</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="#">Государственное и политическое устройство</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="#">Оншорные компании</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="#">Оффшорные компании</a></li>
+                      <li class="navigation__item"><a class="navigation__item-link" href="#">Свободные экономические зоны</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="footer-content__bottom">
-              <p class="footer-content__bottom-copyrights">&#169; 2023 EmiratesLaw</p>
-            </div>
           </div>
-        </footer>
-      </div>
+          <div class="footer-content__bottom">
+            <p class="footer-content__bottom-copyrights">&#169; 2023 EmiratesLaw</p>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
     <script src="assets/app.min.js"> </script>

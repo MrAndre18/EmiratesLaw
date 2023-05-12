@@ -1,0 +1,16 @@
+.masonry {
+  position: relative;
+  max-width: 1220px;
+
+
+  &-bloks {
+    width: 100%;
+    height: 600px;
+    -webkit-mask-image: url(@img/svg/masonry.svg);
+    mask-image: url(@img/svg/masonry.svg);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}

@@ -1,8 +1,7 @@
 extends ../layouts/master.pug
 
 block header
-  .index-page
-    include ../partials/_header.pug
+  include ../partials/_header.pug
 
   -
     const main_slides = [
@@ -283,5 +282,4 @@ block content
           img.events-navigation__item-img.svg(src="@img/svg/arrow_slider.svg", alt="Next")
 
 block footer
-  .index-page
-    include ../partials/_footer.pug
+  include ../partials/_footer.pug
