@@ -1,6 +1,6 @@
 // Выпадающий список
 mixin drop-down(text, className, elementsList)
-  button.drop-down(class= className ? className : "")
+  button.drop-down(class= className ? className : "", type="button")
     p.drop-down__text= text
     .drop-down__img
       if className
@@ -36,3 +36,10 @@ mixin navigation(list)
     each element in list
       li.navigation__item
         a.navigation__item-link(href= element.url)= element.text
+
+// Плавающий блок навигации
+mixin nav-bar(list, className)
+  ul.nav-bar(class= className ? className : "")
+    each element in list
+      li.nav-bar__item(class= element.active ? "nav-bar__item-active" : "")
+        a.nav-bar__item-link(href= element.url)= element.text

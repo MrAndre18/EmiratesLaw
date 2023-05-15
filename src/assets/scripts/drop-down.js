@@ -34,6 +34,8 @@ $(() => {
 
             // Выбор элемента
             $(currentItem).text($(event.currentTarget).text())
+
+            $(dropDownCurrent).addClass("changed")
           })
         } else {
           $(elementsBlock).removeClass('active')

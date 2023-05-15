@@ -3,8 +3,69 @@ extends ../layouts/master.pug
 block header
   include ../partials/_header.pug
 
+  -
+    const laws_nav_list = [
+      {
+        text: 'Вопросы свободных зон и зон особого развития',
+        url: '#',
+        active: true,
+      },
+      {
+        text: 'Дорога и транспорт',
+        url: '#',
+        active: false,
+      },
+      {
+        text: 'Здравоохранение, медицинские вопросы и общественная безопасность',
+        url: '#',
+        active: false,
+      },
+      {
+        text: 'Кадровые ресурсы для гос структур',
+        url: '#',
+        active: false,
+      },
+      {
+        text: 'Недвижимость',
+        url: '#',
+        active: false,
+      },
+    ]
+
+  -
+    const laws_filter_years = [
+      {
+        text: "2015"
+      },
+      {
+        text: "2016"
+      },
+      {
+        text: "2017"
+      },
+      {
+        text: "2018"
+      },
+      {
+        text: "2019"
+      },
+      {
+        text: "2020"
+      },
+      {
+        text: "2021"
+      },
+      {
+        text: "2022"
+      },
+      {
+        text: "2023"
+      },
+    ]
+  
 block content
   main.laws
+    // Блок с заголовком
     .laws__title.title-block
       ul.laws__title-breadcrumbs.breadcrumbs
         li.breadcrumbs__item.breadcrumbs__item-prev
@@ -12,11 +73,35 @@ block content
           img.breadcrumbs__item-arrow.svg(src="@img/svg/arrow-right-thin.svg", alt="")
         li.breadcrumbs__item.breadcrumbs__item-current
           span.breadcrumbs__item-text Законы
-      .laws__title-ticker.ticker
-        h1.ticker__text.ticker__text-title Актуальные законы ОАЭ
-        p.ticker__text Актуальные законы ОАЭ
+      .laws__title-marquee.marquee
+        h1.marquee__text Актуальные законы ОАЭ
       .laws__title-masonry.masonry
         .masonry-bloks
 
-//- block footer
-//-   include ../partials/_footer.pug
+    // Тело страницы
+    .laws__body
+      .laws-content
+        +nav-bar(laws_nav_list, "laws-content__navigation")
+        .laws-content__block.laws-block
+          .laws-filters
+            form.laws-filters__form(role="search")
+              .search.transparent
+                input.search-input(type="search", name="search" placeholder="Поиск по законам", minlength="4")
+                button.search-btn
+                  img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
+              .laws-filters__filter
+                +drop-down("Отрасль", "filter", laws_nav_list)
+              .laws-filters__filter
+                +drop-down("Год", "filter", laws_filter_years)
+              button.laws-filters__submit(type="submit") Поиск
+          p.laws-result_count Найдено записей: #[span 3]
+          .laws-result.result
+            .result-title
+              span.result-title__description Описание
+              span.result-title__category Отрасль
+              button.result-title__year
+                span.result-title__year-text Год
+                img.result-title__year-img.svg(src="@img/svg/drop-down.svg", alt="")
+
+block footer
+  include ../partials/_footer.pug

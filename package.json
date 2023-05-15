@@ -35,6 +35,7 @@
     "gulp-webp-html-nosvg": "latest",
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
+    "jquery.marquee": "^1.6.0",
     "sass": "latest",
     "sass-loader": "latest",
     "style-loader": "latest",

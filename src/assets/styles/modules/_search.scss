@@ -23,6 +23,10 @@
     }
   }
 
+  &.disable &-input {
+    width: 100%;
+  }
+
   &-btn {
     width: 15%;
     height: 100%;
@@ -37,6 +41,7 @@
 
       path {
         stroke: $grey;
+        fill: none;
         @include transition();
       }
     }
@@ -57,6 +62,7 @@
   &.transparent &-input {
     color: $white;
     background: transparent;
+    padding: 0 0 0 40px;
 
     &::placeholder {
       color: $light-grey-1;
@@ -65,6 +71,7 @@
 
   &.transparent &-btn {
     background: transparent;
+    padding-right: 20px;
 
     &__img path {
       stroke: $light-grey-1;
