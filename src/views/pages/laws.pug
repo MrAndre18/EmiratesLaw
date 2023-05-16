@@ -63,6 +63,47 @@ block header
       },
     ]
   
+  -
+    const laws_result = {
+      title: {
+        description: 'Описание',
+        category: 'Отрасль',
+        year: 'Год',
+      },
+      items: [
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2021',
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2010',
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2018',
+        },
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2021',
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2010',
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2018',
+        }
+      ]
+    }
+  
 block content
   main.laws
     // Блок с заголовком
@@ -73,8 +114,7 @@ block content
           img.breadcrumbs__item-arrow.svg(src="@img/svg/arrow-right-thin.svg", alt="")
         li.breadcrumbs__item.breadcrumbs__item-current
           span.breadcrumbs__item-text Законы
-      .laws__title-marquee.marquee
-        h1.marquee__text Актуальные законы ОАЭ
+      +marquee("Актуальные законы ОАЭ", "laws__title-marquee")
       .laws__title-masonry.masonry
         .masonry-bloks
 
@@ -95,13 +135,21 @@ block content
                 +drop-down("Год", "filter", laws_filter_years)
               button.laws-filters__submit(type="submit") Поиск
           p.laws-result_count Найдено записей: #[span 3]
-          .laws-result.result
-            .result-title
-              span.result-title__description Описание
-              span.result-title__category Отрасль
-              button.result-title__year
-                span.result-title__year-text Год
-                img.result-title__year-img.svg(src="@img/svg/drop-down.svg", alt="")
+          +result(laws_result, "laws-result")
+          .laws-pagination.pages-pagination
+            button.pages-pagination__button.pages-pagination__button-prev
+              img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Prev")
+            .pages-pagination__items
+              .pages-pagination__items-bg
+              button.pages-pagination__item.pages-pagination__item-current 1
+              button.pages-pagination__item 2
+              button.pages-pagination__item 3
+              button.pages-pagination__item 4
+              button.pages-pagination__item 5
+              span.pages-pagination__dots ...
+              button.pages-pagination__item.pages-pagination__item-all 8
+            button.pages-pagination__button.pages-pagination__button-next
+              img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")
 
 block footer
   include ../partials/_footer.pug

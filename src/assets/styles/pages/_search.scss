@@ -1,0 +1,45 @@
+.search-page {
+  &__title {
+    &-breadcrumbs {
+      margin-top: 20px;
+    }
+
+    &-masonry {
+      margin-top: 80px;
+
+      .masonry-bloks {
+        background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
+                          linear-gradient(to top, $black, $black),
+                          url('@img/search/warren-wong-fNUNt9w3m-Q-unsplash.jpg');
+        background-size: 70%;
+        background-position: bottom 65% left 30%;
+        background-blend-mode: multiply, color, normal;
+        background-attachment: fixed;
+      }
+    }
+  }
+
+  &__body {
+    margin: $block-margin 0;
+    padding: 40px $page-padding 0;
+    border-top: 1px solid $red;
+  }
+
+  &__settings {
+    display: flex;
+  }
+
+  &__search {
+    width: 800px;
+    height: 100px;
+    background: $dark-grey;
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  &__filters {
+    width: 200px;
+    height: 100px;
+    background: $gold;
+  }
+}

@@ -1486,6 +1486,53 @@ body .content .title-block {
   width: 105%;
 }
 
+.button-back {
+  position: relative;
+  height: 55px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 75px;
+}
+.button-back:hover .button-back__circle {
+  width: 100%;
+  border-radius: 55px;
+}
+.button-back:hover .button-back__text {
+  color: #404040;
+  transform: translateX(-20px);
+}
+.button-back__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 100%;
+  width: 55px;
+  border-radius: 55px;
+  background: #FFD700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.button-back__circle-img {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg) translateY(45%);
+}
+.button-back__circle-img path {
+  fill: #404040;
+}
+.button-back__text {
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+
 .search {
   display: flex;
   align-items: center;
@@ -1617,8 +1664,12 @@ body .content .title-block {
 .breadcrumbs__item-arrow {
   width: 6px;
 }
-.breadcrumbs__item-current {
+.breadcrumbs__item-current .breadcrumbs__item-text {
   color: #FCDE77;
+  width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .breadcrumbs__item-prev .breadcrumbs__item-text {
   position: relative;
@@ -1743,33 +1794,139 @@ body .content .title-block {
   border-bottom: 1px solid #737e84;
 }
 .result-title__description {
-  width: 60%;
+  width: 100%;
   font-weight: 700;
   font-size: 20px;
+  letter-spacing: 0.05em;
 }
 .result-title__category {
-  width: 20%;
+  width: 300px;
   font-weight: 700;
   font-size: 20px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  margin-left: 40px;
 }
 .result-title__year {
-  width: 20%;
-  justify-self: start;
+  width: 300px;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  margin-left: 40px;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.result-title__year:hover .result-title__year-img {
+  scale: 1.15;
+}
+.result-title__year:hover .result-title__year-img path {
+  opacity: 100%;
 }
 .result-title__year-text {
   font-weight: 700;
   font-size: 20px;
   margin-right: 10px;
+  letter-spacing: 0.05em;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
 }
 .result-title__year-img {
-  width: 12px;
-  height: 8px;
+  width: 14px;
+  height: 10px;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
 }
-.result-title__year-img .svg {
+.result-title__year-img path {
+  fill: #737e84;
+  opacity: 50%;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.result-list {
+  display: flex;
+  flex-direction: column;
+}
+.result-item {
+  display: flex;
+  padding: 25px 0;
+  border-bottom: 1px solid #737e84;
+}
+.result-item__description {
   width: 100%;
+}
+.result-item__description-text {
+  margin-bottom: 20px;
+}
+.result-item__description-more .more-btn-arrow__text {
+  color: #FCDE77;
+}
+.result-item__description-more .more-btn-arrow__text::before {
+  background: #EDF8FF;
+}
+.result-item__description-more .more-btn-arrow__img path {
+  fill: #FCDE77;
+}
+.result-item__category {
+  width: 300px;
+  flex-shrink: 0;
+  margin-left: 40px;
+  letter-spacing: 0.05em;
+}
+.result-item__year {
+  width: 300px;
+  flex-shrink: 0;
+  margin-left: 40px;
+  letter-spacing: 0.05em;
+}
+
+.pages-pagination {
+  display: flex;
+  align-items: center;
+}
+.pages-pagination__button {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pages-pagination__button:hover .pages-pagination__button-img {
+  scale: 1.3;
+}
+.pages-pagination__button-img {
+  width: 8px;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.pages-pagination__button-img path {
+  fill: #FF4951;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.pages-pagination__button-prev {
+  transform: rotate(180deg);
+  margin-right: 8px;
+}
+.pages-pagination__items {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.pages-pagination__items-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 22px;
   height: 100%;
+  background: #FF4951;
+  border-radius: 2px;
+  transition: all 300ms cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.pages-pagination__item {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+.pages-pagination__dots {
+  height: 22px;
+  margin-right: 8px;
+  letter-spacing: 0.1em;
 }
 
 .search-modal {
@@ -2775,9 +2932,10 @@ body .content .title-block {
 .no-webp .laws__title-masonry .masonry-bloks {
   background-image: linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727), url("images/laws/darcey-beau-vtK31JoeAFk-unsplash.jpg"); }
 .laws__title-masonry .masonry-bloks {
-  background-size: 135%;
-  background-position: top 5% left 40%;
+  background-size: 70%;
+  background-position: bottom 90% left 30%;
   background-blend-mode: multiply, color, normal;
+  background-attachment: fixed;
 }
 .laws__body {
   margin: 160px 0;
@@ -2791,7 +2949,7 @@ body .content .title-block {
   display: flex;
 }
 .laws-content .nav-bar {
-  top: 150px;
+  top: 130px;
 }
 .laws-block {
   margin-left: 40px;
@@ -2808,12 +2966,12 @@ body .content .title-block {
   justify-content: space-between;
 }
 .laws-filters__form .search {
-  width: 40%;
   border-radius: 20px;
 }
 .laws-filters__filter {
   position: relative;
-  width: 220px;
+  min-width: 220px;
+  margin-left: 30px;
 }
 .laws-filters__filter .drop-down__list {
   right: 0;
@@ -2825,7 +2983,7 @@ body .content .title-block {
 .laws-filters__submit {
   position: relative;
   z-index: 1;
-  width: 150px;
+  min-width: 150px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -2833,6 +2991,7 @@ body .content .title-block {
   border: 1px solid #FCDE77;
   border-radius: 20px;
   overflow: hidden;
+  margin-left: 30px;
   transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
 }
 .laws-filters__submit::before {
@@ -2863,10 +3022,186 @@ body .content .title-block {
   margin-left: 6px;
 }
 .laws-result {
-  margin: 100px 0 50px;
+  margin: 60px 0 50px;
+}
+
+.laws-detail__body {
+  margin: 160px 0;
+  padding: 0 40px;
+}
+.laws-detail__title {
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #FF4951;
+  display: flex;
+  justify-content: space-between;
+}
+.laws-detail__title-name {
+  width: 70%;
+  font-weight: 700;
+  font-size: 24px;
+}
+.laws-detail__title-year {
+  font-weight: 700;
+  font-size: 24px;
+}
+.laws-detail__block {
+  display: flex;
+  padding-right: 100px;
+}
+.laws-detail__navigation {
+  position: sticky;
+  top: 130px;
+  width: 340px;
+  height: fit-content;
+  flex-shrink: 0;
+}
+.laws-detail__navigation .navigation-download {
+  position: relative;
+  width: 100%;
+  padding: 20px 45px;
+  background: #404040;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.laws-detail__navigation .navigation-download::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  width: 0;
+  background: #EDF8FF;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.laws-detail__navigation .navigation-download:hover::before {
+  width: 100%;
+}
+.laws-detail__navigation .navigation-download:hover .navigation-download__text {
+  color: #404040;
+}
+.laws-detail__navigation .navigation-download:hover .navigation-download__img path {
+  fill: #404040;
+}
+.laws-detail__navigation .navigation-download__text {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.laws-detail__navigation .navigation-download__img {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+}
+.laws-detail__navigation .navigation-download__img path {
+  fill: #EDF8FF;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.laws-detail__content {
+  width: 100%;
+  margin-left: 80px;
+  background: #404040;
+  border-radius: 20px;
+  padding: 80px 60px 60px;
+}
+.laws-detail__content .law-title {
+  font-weight: 700;
+  line-height: 1.75;
+}
+.laws-detail__content .law-title:not(:first-child) {
+  margin: 12px 0;
+}
+.laws-detail__content .law-text {
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.laws-detail__content .law-line {
+  width: 300px;
+  height: 1px;
+  background: #EDF8FF;
+}
+.laws-detail__content .law-line-center {
+  margin: 30px auto 50px;
+}
+.laws-detail__content .law-line-left {
+  margin: 30px 0 8px;
+}
+.laws-detail__content .law-list {
+  margin: 12px 0;
+}
+.laws-detail__content .law-list li:not(:last-child) {
+  margin-bottom: 12px;
+}
+.laws-detail__content .wide {
+  line-height: 1.75;
+}
+.laws-detail__content .bold {
+  font-weight: 700;
+  display: inline-block;
+}
+.laws-detail__content .center {
+  text-align: center;
+}
+.laws-detail__content .main {
+  line-height: 2;
+}
+.laws-detail__content .italic {
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+}
+.laws-detail__content .super {
+  display: inline;
+  vertical-align: super;
+  font-size: 10px;
+}
+.laws-detail__content .right {
+  text-align: right;
+}
+
+.search-page__title-breadcrumbs {
+  margin-top: 20px;
+}
+.search-page__title-masonry {
+  margin-top: 80px;
+}
+.no-webp .search-page__title-masonry .masonry-bloks {
+  background-image: linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727), url("images/search/warren-wong-fNUNt9w3m-Q-unsplash.jpg"); }
+.search-page__title-masonry .masonry-bloks {
+  background-size: 70%;
+  background-position: bottom 65% left 30%;
+  background-blend-mode: multiply, color, normal;
+  background-attachment: fixed;
+}
+.search-page__body {
+  margin: 160px 0;
+  padding: 40px 40px 0;
+  border-top: 1px solid #FF4951;
+}
+.search-page__settings {
+  display: flex;
+}
+.search-page__search {
+  width: 800px;
+  height: 100px;
+  background: #404040;
+  justify-self: center;
+  margin: 0 auto;
+}
+.search-page__filters {
+  width: 200px;
+  height: 100px;
+  background: #FFD700;
 }
 .webp .footer-content__body { background-image: linear-gradient(to top, #A4A6A7, #A4A6A7), linear-gradient(to top, #B3D0E9, #B3D0E9), url(images/fredrik-ohlander-fCW1hWq2nq0-unsplash.webp); }
 .webp .index .title-block { background-image: linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727), url(images/main/title-block.webp); }
 .webp .index-info__content-slider .content-slide__img-image { background-image: linear-gradient(to top, #E2F2FF, #E2F2FF), linear-gradient(to top, #272727, #272727), url(images/main/docs.webp); }
 .webp .index-about { background-image: linear-gradient(to top, rgba(115, 126, 132, 0.5), rgba(115, 126, 132, 0.5)), url(images/main/about-bg.webp); }
 .webp .laws__title-masonry .masonry-bloks { background-image: linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727), url(images/laws/darcey-beau-vtK31JoeAFk-unsplash.webp); }
+.webp .search-page__title-masonry .masonry-bloks { background-image: linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727), url(images/search/warren-wong-fNUNt9w3m-Q-unsplash.webp); }

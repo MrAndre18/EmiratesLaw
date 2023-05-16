@@ -7,8 +7,6 @@ if (!JSON.parse(localStorage.getItem("search-history")))
 else
   searchHistory = JSON.parse(localStorage.getItem("search-history"))
 
-console.log("🚀 ~ file: search-history.js:7 ~ searchHistory:", searchHistory)
-
 const ShowHistory = () => {
   $(searchHistoryBlocks).each(function (index, element) {
     let historyList = $(element).find('.serch-history__items')
@@ -67,6 +65,6 @@ if ($("form[role=search]").width()) {
       }
     }
 
-    //window.location.assign(window.location.protocol + "//" + window.location.host + path)
+    window.location.assign(window.location.protocol + "//" + window.location.host + path)
   })
 }

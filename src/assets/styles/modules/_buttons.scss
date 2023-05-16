@@ -73,3 +73,59 @@
     }
   }
 }
+
+// Кнопка "Вернуться назад"
+.button-back {
+  $btn-back-width: 55px;
+
+  position: relative;
+  height: $btn-back-width;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 $btn-back-width + 20px;
+
+  &:hover &__circle {
+    width: 100%;
+    border-radius: $btn-back-width;
+  }
+
+  &:hover &__text {
+    color: $dark-grey;
+    transform: translateX(-20px);
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: $btn-back-width;
+    border-radius: $btn-back-width;
+    background: $gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition();
+
+    &-img {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      transform: rotate(180deg) translateY(45%);
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    @include transition();
+  }
+}

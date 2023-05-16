@@ -21,8 +21,12 @@
       width: 6px;
     }
 
-    &-current {
+    &-current &-text {
       color: $yellow;
+      width: 400px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &-prev &-text {

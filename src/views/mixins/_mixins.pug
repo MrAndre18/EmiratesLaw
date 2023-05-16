@@ -43,3 +43,33 @@ mixin nav-bar(list, className)
     each element in list
       li.nav-bar__item(class= element.active ? "nav-bar__item-active" : "")
         a.nav-bar__item-link(href= element.url)= element.text
+
+// Результаты поиска
+mixin result(list, className)
+  .result(class= className ? className : "")
+    .result-title
+      span.result-title__description= list.title.description
+      span.result-title__category= list.title.category
+      button.result-title__year
+        span.result-title__year-text= list.title.year
+        img.result-title__year-img.svg(src="@img/svg/drop-down.svg", alt="")
+    ul.result-list
+      each element in list.items
+        li.result-item
+          .result-item__description
+            p.result-item__description-text= element.description
+            +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+          p.result-item__category= element.category
+          p.result-item__year= element.year
+
+// Бегущая строка
+mixin marquee(text, className)
+  .marquee(class= className ? className : "")
+        h1.marquee__text= text
+
+// Кнопка "Вернуться назад"
+mixin button-back(text, url, className)
+  a.button-back(href= url, class= className ? className : "")
+    .button-back__circle
+      img.button-back__circle-img.svg(src="@img/svg/pagination-arrow.svg", alt="Back")
+    span.button-back__text= text
