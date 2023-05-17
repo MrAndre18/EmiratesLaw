@@ -3,6 +3,87 @@ extends ../layouts/master.pug
 block header
   include ../partials/_header.pug
 
+  -
+    const search_page_result = {
+      title: {
+        description: 'Описание',
+        category: 'Категория',
+        year: 'Дата',
+      },
+      items: [
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Закон',
+          year: '14.09.2021',
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Закон',
+          year: '04.02.2010',
+        },
+        {
+          description: 'Виды компаний',
+          category: 'Справка',
+          year: '',
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Закон',
+          year: '19.09.2018',
+        },
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Закон',
+          year: '14.09.2021',
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Закон',
+          year: '04.02.2010',
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Закон',
+          year: '19.09.2018',
+        },
+        {
+          description: 'Государственное и политическое устройство',
+          category: 'Справка',
+          year: '',
+        },
+        {
+          description: 'Преимущества свободных зон',
+          category: 'Справка',
+          year: '',
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Закон',
+          year: '19.09.2018',
+        },
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Закон',
+          year: '14.09.2021',
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Закон',
+          year: '04.02.2010',
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Закон',
+          year: '19.09.2018',
+        },
+        {
+          description: 'Оншорные компании',
+          category: 'Справка',
+          year: '',
+        }
+      ]
+    }
+
 block content
   main.search-page
     // Блок с заголовком
@@ -17,9 +98,23 @@ block content
       .search-page__title-masonry.masonry
         .masonry-bloks
     .search-page__body
-      .search-page__settings
-        .search-page__search
-        .search-page__filters
+      .search-page__body-wrapper
+        .search-page__settings
+          .search-page__search-block
+            +search("Поиск по сайту", "search-page__search")
+            .search-page__search-history.serch-history.swiper
+              .serch-history__items.swiper-wrapper
+            p.search-page__search-count Найдено записей: #[span 10]
+          .search-page__filters
+            .search-page__filters-date.filters-date
+              input.filters-date__input(type="text", name="daterange", placeholder="Дата")
+              img.filters-date__img.svg(src="@img/svg/calendar.svg", alt="")
+            .search-page__filters-items
+              button.search-page__filters-item Законы
+              button.search-page__filters-item Справка
+        .search-page__content
+          +result(search_page_result, "search-page__content-result")
+          +pagination("search-page__content-pagination")
 
 block footer
   include ../partials/_footer.pug

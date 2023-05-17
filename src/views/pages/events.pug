@@ -3,5 +3,36 @@ extends ../layouts/master.pug
 block header
   include ../partials/_header.pug
 
+block content
+  main.events
+    // Блок с заголовком
+    .events__title.title-block
+      ul.events__title-breadcrumbs.breadcrumbs
+        li.breadcrumbs__item.breadcrumbs__item-prev
+          a.breadcrumbs__item-text(href="/") Главная
+          img.breadcrumbs__item-arrow.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        li.breadcrumbs__item.breadcrumbs__item-current
+          span.breadcrumbs__item-text События
+      +marquee("Последние события ОАЭ", "events__title-marquee")
+      .events__title-masonry.masonry
+        .masonry-bloks
+    .events__body
+      .events__wrapper
+        .events__content
+          .events__items
+            .events__content-filters
+            .events__content-title
+              h2.events__item-title Последние новости и события ОАЭ
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+            a.events__item(href="/events-detail")
+          +pagination("events-pagination")
+
 block footer
   include ../partials/_footer.pug

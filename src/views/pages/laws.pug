@@ -136,20 +136,7 @@ block content
               button.laws-filters__submit(type="submit") Поиск
           p.laws-result_count Найдено записей: #[span 3]
           +result(laws_result, "laws-result")
-          .laws-pagination.pages-pagination
-            button.pages-pagination__button.pages-pagination__button-prev
-              img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Prev")
-            .pages-pagination__items
-              .pages-pagination__items-bg
-              button.pages-pagination__item.pages-pagination__item-current 1
-              button.pages-pagination__item 2
-              button.pages-pagination__item 3
-              button.pages-pagination__item 4
-              button.pages-pagination__item 5
-              span.pages-pagination__dots ...
-              button.pages-pagination__item.pages-pagination__item-all 8
-            button.pages-pagination__button.pages-pagination__button-next
-              img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")
+          +pagination("laws-pagination")
 
 block footer
   include ../partials/_footer.pug

@@ -14,7 +14,12 @@ const ShowHistory = () => {
     historyList.empty()
 
     $(searchHistory).each(function (queryIndex, queryElement) {
-      let newItem = `<a class='serch-history__item' href='/search?=${queryElement}'>${queryElement}</a>`
+      let newItem
+
+      if ($(element).hasClass('swiper'))
+        newItem = `<a class='serch-history__item swiper-slide' href='/search?=${queryElement}'>${queryElement}</a>`
+      else
+        newItem = `<a class='serch-history__item' href='/search?=${queryElement}'>${queryElement}</a>`
 
       $(historyList).append(newItem)
     })

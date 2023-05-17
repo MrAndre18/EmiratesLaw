@@ -23,7 +23,7 @@ const changeHeaderBg = () => {
 
   if (
     $(window).scrollTop() > $(window).height() / 3 &&
-    $(window).scrollTop() >= outPosition + 400 &&
+    $(window).scrollTop() >= outPosition + 300 &&
     isScrolled &&
     !isHoverHeader
   ) {

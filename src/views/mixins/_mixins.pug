@@ -55,17 +55,25 @@ mixin result(list, className)
         img.result-title__year-img.svg(src="@img/svg/drop-down.svg", alt="")
     ul.result-list
       each element in list.items
-        li.result-item
-          .result-item__description
-            p.result-item__description-text= element.description
-            +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
-          p.result-item__category= element.category
-          p.result-item__year= element.year
+        if element.category == "Закон"
+          li.result-item.result-item__law
+            .result-item__description
+              p.result-item__description-text= element.description
+              +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+            p.result-item__category= element.category
+            p.result-item__year= element.year
+        else
+          li.result-item.result-item__info
+            .result-item__description
+              p.result-item__description-text= element.description
+              +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+            p.result-item__category= element.category
+            p.result-item__year= element.year
 
 // Бегущая строка
 mixin marquee(text, className)
   .marquee(class= className ? className : "")
-        h1.marquee__text= text
+    h1.marquee__text= text
 
 // Кнопка "Вернуться назад"
 mixin button-back(text, url, className)
@@ -73,3 +81,20 @@ mixin button-back(text, url, className)
     .button-back__circle
       img.button-back__circle-img.svg(src="@img/svg/pagination-arrow.svg", alt="Back")
     span.button-back__text= text
+
+// Пагинация по страницам
+mixin pagination(className)
+  .pages-pagination(class= className ? className : "")
+    button.pages-pagination__button.pages-pagination__button-prev
+      img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Prev")
+    .pages-pagination__items
+      .pages-pagination__items-bg
+      button.pages-pagination__item.pages-pagination__item-current 1
+      button.pages-pagination__item 2
+      button.pages-pagination__item 3
+      button.pages-pagination__item 4
+      button.pages-pagination__item 5
+      span.pages-pagination__dots ...
+      button.pages-pagination__item.pages-pagination__item-all 8
+    button.pages-pagination__button.pages-pagination__button-next
+      img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")

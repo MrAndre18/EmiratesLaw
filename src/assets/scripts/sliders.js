@@ -136,4 +136,44 @@ $(() => {
       },
     })
   }
+
+  // Слайдер истории запросов на странице поиска
+  if ($('.search-page__search-history').width()) {
+    const searchHistorySlider = new Swiper('.search-page__search-history', {
+      // Optional parameters
+      direction: 'horizontal',
+      speed: 400,
+      effect: "slide",
+      centeredSlides: false,
+      simulateTouch: true,
+      slidesPerView: "auto",
+      updateOnWindowResize: false,
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      },
+      mousewheel: {
+        sensitivity: 0.1,
+      },
+      on: {
+        init: () => {
+          $('.search-page__search-history').addClass('start')
+          $('.search-page__search-history').removeClass('end')
+        },
+        fromEdge: () => {
+          $('.search-page__search-history').removeClass('start')
+          $('.search-page__search-history').removeClass('end')
+        },
+        reachBeginning: () => {
+          $('.search-page__search-history').addClass('start')
+          $('.search-page__search-history').removeClass('end')
+        },
+        reachEnd: () => {
+          $('.search-page__search-history').removeClass('start')
+          $('.search-page__search-history').addClass('end')
+        },
+      },
+      //momentum: false,
+    })
+  }
 })
