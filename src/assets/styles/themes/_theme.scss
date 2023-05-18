@@ -12,8 +12,12 @@ body {
       position: relative;
       height: 100vh;
       width: 100%;
-      padding: 110px 195px 0;
+      padding: $header-height ($title-left-padding + $page-padding) 0;
       overflow: hidden;
+
+      &.about__title {
+        height: auto;
+      }
     }
   }
 }

@@ -3,5 +3,26 @@ extends ../layouts/master.pug
 block header
   include ../partials/_header.pug
 
+block content
+  main.about
+    .about__title.title-block.parallax__inner
+      ul.about__title-breadcrumbs.breadcrumbs
+        li.breadcrumbs__item.breadcrumbs__item-prev
+          a.breadcrumbs__item-text(href="/") Главная
+          img.breadcrumbs__item-arrow.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        li.breadcrumbs__item.breadcrumbs__item-current
+          span.breadcrumbs__item-text О портале
+      .about__title-content
+        .about__title-block
+          .about__title-block-box.parallax__layer(data-speed="0.01")
+          h1.about__title-title.parallax__layer(data-speed="0.03") Подробнее #[span о портале]
+          span.about__title-subtitle.parallax__layer(data-speed="0.015", data-type="js-typeit", data-typeit="loop")
+            | Всё о законодательстве ОАЭ#[br]
+            | Всё о жизни в ОАЭ#[br]
+            | Всё о работе в ОАЭ#[br]
+        .about__title-links
+          a.about-link.about-link-info(href="/info") Справочная информация
+          a.about-link.about-link-laws(href="/laws") Законодательство ОАЭ
+
 block footer
   include ../partials/_footer.pug

@@ -62,8 +62,15 @@ mixin result(list, className)
               +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
             p.result-item__category= element.category
             p.result-item__year= element.year
-        else
+        else if element.category == "Справка"
           li.result-item.result-item__info
+            .result-item__description
+              p.result-item__description-text= element.description
+              +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+            p.result-item__category= element.category
+            p.result-item__year= element.year
+        else
+          li.result-item
             .result-item__description
               p.result-item__description-text= element.description
               +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
@@ -98,3 +105,9 @@ mixin pagination(className)
       button.pages-pagination__item.pages-pagination__item-all 8
     button.pages-pagination__button.pages-pagination__button-next
       img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")
+
+// Селектор даты
+mixin datepicker(placeholder, className)
+  .filters-date(class= className ? className : "")
+    input.filters-date__input(type="text", name="daterange", placeholder= placeholder)
+    img.filters-date__img.svg(src="@img/svg/calendar.svg", alt="")

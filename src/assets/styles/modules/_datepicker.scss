@@ -1,0 +1,47 @@
+.filters-date {
+  width: 100%;
+  height: 45px;
+  border: 1px solid $light-grey-1;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  @include transition();
+
+  &:hover {
+    border: 1px solid $white;
+  }
+
+  &:has(.filters-date__input:focus) {
+    border: 1px solid $gold;
+  }
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    padding-left: 30px;
+
+    &::placeholder {
+      color: $light-grey-1;
+    }
+  }
+
+  &__img {
+    width: 60px;
+    padding: 0 20px 0 10px;
+
+    &:hover {
+      cursor: pointer;
+
+      & .dot {
+        stroke: $gold;
+        fill: $gold;
+      }
+    }
+
+    & .st0 {
+      fill: $light-grey-1;
+      stroke: $light-grey-1;
+      @include transition();
+    }
+  }
+}

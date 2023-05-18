@@ -106,9 +106,7 @@ block content
               .serch-history__items.swiper-wrapper
             p.search-page__search-count Найдено записей: #[span 10]
           .search-page__filters
-            .search-page__filters-date.filters-date
-              input.filters-date__input(type="text", name="daterange", placeholder="Дата")
-              img.filters-date__img.svg(src="@img/svg/calendar.svg", alt="")
+            +datepicker("Дата", "search-page__filters-date")
             .search-page__filters-items
               button.search-page__filters-item Законы
               button.search-page__filters-item Справка

@@ -1,0 +1,79 @@
+.about {
+  &-link {
+    position: relative;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 18px;
+    overflow: hidden;
+
+    &-info {
+      background: $dark-grey;
+    }
+
+    &-laws {
+      background: $yellow;
+      color: $dark-grey;
+    }
+  }
+
+  &__title {
+    &-breadcrumbs {
+      margin-top: 20px;
+    }
+
+    &-content {
+      padding: 100px 0 150px;
+      border-bottom: 1px solid $red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-block {
+      position: relative;
+      padding: 40px 0 45px 40px;
+      margin-bottom: 80px;
+      overflow: visible;
+
+      &-box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 120px;
+        border: 4px solid $gold;
+        border-right: none;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 74px;
+      line-height: 115%;
+      text-transform: capitalize;
+      margin-bottom: 16px;
+
+      & span {
+        display: inline;
+        font-size: inherit;
+        font-weight: inherit;
+        color: $gold;
+      }
+    }
+
+    &-subtitle {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    &-links {
+      display: flex;
+
+      & .about-link-info {
+        margin-right: 20px;
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import "./assets/scripts/modals.js"
 import "./assets/scripts/marquee.js"
 import "./assets/scripts/pages-pagination.js"
 import "./assets/scripts/datepicker.js"
+import "./assets/scripts/typeit.js"
 
 
 import "./assets/scripts/sliders.js"
