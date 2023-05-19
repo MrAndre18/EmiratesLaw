@@ -4,19 +4,30 @@ $(() => {
   const TypeItElems = $('[data-type="js-typeit"]')
   
   $(TypeItElems).each(function (index, element) {
+    const animDuration = 2000;
     const myTypeItInstance = new TypeIt(element, {
       speed: 100,
-      deleteSpeed: null,
-      cursor: false,
-      breakLines: false,
+      cursor: true,
       waitUntilVisible: false,
       loop: true,
-      nextStringDelay: [3000, 0],
-      //startDelay: 100,
       deleteSpeed: 60,
       lifeLike: false,
+      startDelay: 0,
     });
     
-    myTypeItInstance.go();
+    myTypeItInstance
+    .type("Всё о законодательстве ОАЭ").pause(animDuration)
+    .delete()
+    .type("Всё о жизни в ОАЭ").pause(animDuration)
+    .delete()
+    .type("Всё о работе в ОАЭ").pause(animDuration)
+    .delete()
+    .type("Всё о бизнесе в ОАЭ").pause(animDuration)
+    .delete()
+    .type("Всё о государственном устройстве ОАЭ").pause(animDuration)
+    .delete()
+    .type("Всё о свободных экономических зонах ОАЭ").pause(animDuration)
+    .delete()
+    .go();
   });
 })

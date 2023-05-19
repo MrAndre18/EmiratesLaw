@@ -13,14 +13,11 @@
       @include transition();
     }
 
+    &.active::before,
     &:hover::before {
       $width: 60%;
       left: calc((100% - $width) / 2);
       width: $width;
-    }
-
-    &.active &-link {
-      color: $gold;
     }
   }
 }

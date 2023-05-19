@@ -18,6 +18,7 @@ $footer-bottom-hight: 105px;
       background-blend-mode: multiply, color, normal;
       background-size: 100%;
       background-position: left 0 bottom 35%;
+      background-attachment: fixed;
       padding-right: 100px;
       display: flex;
       align-items: flex-end;
@@ -116,11 +117,12 @@ $footer-bottom-hight: 105px;
                   @include transition();
                 }
             
-                &:hover {
-                  &::before {
-                    width: 30%;
-                  }
+                &.active::before,
+                &:hover::before {
+                  width: 30%; 
                 }
+
+                &.active .navigation__item-link,
                 &:hover .navigation__item-link {
                   padding-left: 10px;
                 }

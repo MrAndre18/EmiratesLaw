@@ -16,13 +16,67 @@ block content
         .about__title-block
           .about__title-block-box.parallax__layer(data-speed="0.01")
           h1.about__title-title.parallax__layer(data-speed="0.03") Подробнее #[span о портале]
-          span.about__title-subtitle.parallax__layer(data-speed="0.015", data-type="js-typeit", data-typeit="loop")
-            | Всё о законодательстве ОАЭ#[br]
-            | Всё о жизни в ОАЭ#[br]
-            | Всё о работе в ОАЭ#[br]
+          span.about__title-subtitle.parallax__layer(data-speed="0.015", data-type="js-typeit")
         .about__title-links
           a.about-link.about-link-info(href="/info") Справочная информация
           a.about-link.about-link-laws(href="/laws") Законодательство ОАЭ
+    .marquee.about-marquee
+      .marquee__text
+        span Просто
+        span Быстро
+        span Эффективно
+    .about__body
+      // блок с законами и справкой
+      .about-laws
+        .about-laws__picture
+          .about-laws__picture-mask
+          img.about-laws__picture-bg(src="@img/about/view-of-famous-abu-dhabi-sheikh-zayed-mosque-by-night-uae.jpg", alt="")
+          .about-laws__picture-item
+          .about-laws__picture-item
+          .about-laws__picture-item
+        .about-laws__content
+          .about-laws__content-left
+            h2.about-laws__title Самая актуальная информация поможет вам разобраться в законодательстве ОАЭ просто, быстро и эффективно
+            .about-laws__links
+              a.about-link.about-link-info(href="/info") Справка
+              a.about-link.about-link-laws(href="/laws") Законы
+          p.about-laws__text На этом портале собраны только самые актуальные законы Объединённых Арабских Эмиратов с подробным описанием и в удобном формате, что позволит вам легко ориентироваться в законодательстве для любых сфер жизни. Детальная справочная информация поможет вам найти ответы на любые вопросы о государственном устройстве страны, Эмиратах, свободных экономических зонах, открытии бизнеса и на многие другие.
+      // блок с преимуществами
+      .about-advantages
+        .about-advantages__title
+          h2.about-advantages__title-text Преимущества
+          .about-advantages__title-line
+        .about-advantages__content
+          .about-advantages__item
+            span.about-advantages__item-title Просто
+            p.about-advantages__item-description Простой язык, понятный не только профессиональным юристам, но и тем, кто сталкивается с законодательством впервые
+          .about-advantages__item
+            span.about-advantages__item-title Удобно
+            p.about-advantages__item-description Не нужно искать информацию в множестве разных источников: ответы на любые вопросы уже на этом сайте
+          .about-advantages__item
+            span.about-advantages__item-title Актуально
+            p.about-advantages__item-description Только актуальные законы, справочная информация и события
+          .about-advantages__item
+            span.about-advantages__item-title Многофункционально
+            p.about-advantages__item-description Список всех законов ОАЭ, справочная информация о жизни, работе и бизнесе, последние новости, курсы валют, полезные советы и многое другое - на одном портале
+          .about-advantages__item
+            span.about-advantages__item-title Внимание к деталям
+            p.about-advantages__item-description Информация оформлена максимально полно и с учётом всх возможных нюансов и тонкостей, чтобы ответить на любые ваши вопросы
+          .about-advantages__item
+            span.about-advantages__item-title Экспертиза
+            p.about-advantages__item-description Законы и справочная информация подготовлены и проверены опытными юристами
+      // блок с событиями
+      .about-events
+        .about-events__picture
+          .about-events__picture-mask
+          img.about-events__picture-bg(src="@img/about/hand-showing-flag-of-united-arab-emirates.jpg", alt="")
+          .about-events__picture-item
+          .about-events__picture-item
+          .about-events__picture-item
+        .about-events__content
+          h2.about-events__content-title Будьте всегда в курсе всех последних событий и новостей Объединённых Арабских Эмиратов
+          p.about-events__content-description На этом портале собраны только самые актуальные законы Объединённых Арабских Эмиратов с подробным описанием и в удобном формате, что позволит вам легко ориентироваться в законодательстве для любых сфер жизни. Детальная справочная информация поможет вам найти ответы на любые вопросы о государственном устройстве страны, Эмиратах, свободных экономических зонах, открытии бизнеса и на многие другие.
+          a.about-link.about-link-events(href="/info") События
 
 block footer
   include ../partials/_footer.pug
