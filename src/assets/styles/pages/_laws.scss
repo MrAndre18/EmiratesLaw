@@ -6,16 +6,11 @@
 
     &-masonry {
       margin-top: 80px;
-
-      .masonry-bloks {
-        background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
-                          linear-gradient(to top, $black, $black),
-                          url('@img/laws/darcey-beau-vtK31JoeAFk-unsplash.jpg');
-        background-size: 70%;
-        background-position: bottom 90% left 30%;
-        background-blend-mode: multiply, color, normal;
-        background-attachment: fixed;
-      }
+      max-width: 1220px;
+      height: 700px;
+      background-size: 80%;
+      background-position: top 0 left 30%;
+      background-blend-mode: multiply, color, normal;
     }
   }
 

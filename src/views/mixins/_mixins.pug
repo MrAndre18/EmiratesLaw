@@ -107,7 +107,16 @@ mixin pagination(className)
       img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")
 
 // Селектор даты
-mixin datepicker(placeholder, className)
+mixin datepicker(placeholder, className, id)
   .filters-date(class= className ? className : "")
-    input.filters-date__input(type="text", name="daterange", placeholder= placeholder)
-    img.filters-date__img.svg(src="@img/svg/calendar.svg", alt="")
+    input.filters-date__input(
+      id= id,
+      type="text",
+      name="daterange",
+      placeholder= placeholder,
+      autocorrect="off",
+      autocomplete="off",
+      data-type="js-datepicker"
+    )
+    label(for= id) 
+      img.filters-date__img.svg(src="@img/svg/calendar.svg", alt="")

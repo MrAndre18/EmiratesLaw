@@ -11,27 +11,64 @@
     border: 1px solid $white;
   }
 
+  &:hover &__img {
+    & .st0 {
+      fill: $white;
+      stroke: $white;
+    }
+  }
+
   &:has(.filters-date__input:focus) {
     border: 1px solid $gold;
+  }
+
+  &:has(.filters-date__input:focus) &__img {
+    & .st0 {
+      fill: $white;
+      stroke: $white;
+    }
+    
+    & .dot {
+      stroke: $gold;
+      fill: $gold;
+    }
   }
 
   &__input {
     height: 100%;
     width: 100%;
     padding-left: 30px;
+    font-size: 12px;
 
     &::placeholder {
       color: $light-grey-1;
+      font-size: 16px;
+    }
+  }
+
+  & label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 15px 0 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 0;
+      height: 100%;
+      width: 10px;
+      background: linear-gradient(270deg, $black 35.94%, rgba(39, 39, 39, 0) 100%);
     }
   }
 
   &__img {
-    width: 60px;
-    padding: 0 20px 0 10px;
+    width: 30px;
 
     &:hover {
-      cursor: pointer;
-
       & .dot {
         stroke: $gold;
         fill: $gold;

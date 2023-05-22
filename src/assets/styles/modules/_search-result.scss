@@ -89,10 +89,20 @@
 
     &__law {
       background: linear-gradient(90deg, rgba(255, 215, 0, 0) 78.79%, rgba(255, 215, 0, 0.2) 100%, rgba(255, 215, 0, 0) 100%);
+      @include transition();
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(255, 215, 0, 0) 20%, rgba(255, 215, 0, 0.2) 100%, rgba(255, 215, 0, 0) 100%);
+      }
     }
 
     &__info {
       background: linear-gradient(90deg, rgba(64, 64, 64, 0) 78.86%, #404040 100%, rgba(64, 64, 64, 0) 100%);
+      @include transition();
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(64, 64, 64, 0) 20%, #404040 100%, rgba(64, 64, 64, 0) 100%);
+      }
     }
 
     &__description {

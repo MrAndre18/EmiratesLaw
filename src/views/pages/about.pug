@@ -28,9 +28,8 @@ block content
     .about__body
       // блок с законами и справкой
       .about-laws
-        .about-laws__picture
-          .about-laws__picture-mask
-          img.about-laws__picture-bg(src="@img/about/view-of-famous-abu-dhabi-sheikh-zayed-mosque-by-night-uae.jpg", alt="")
+        .about-laws__picture.masonry(data-type="img-bg", data-mask="linear-gradient(to top, rgba(64, 64, 64, 0.3), rgba(64, 64, 64, 0.3))")
+          img.masonry-bg(src="@img/about/view-of-famous-abu-dhabi-sheikh-zayed-mosque-by-night-uae.jpg", alt="")
           .about-laws__picture-item
           .about-laws__picture-item
           .about-laws__picture-item
@@ -67,9 +66,9 @@ block content
             p.about-advantages__item-description Законы и справочная информация подготовлены и проверены опытными юристами
       // блок с событиями
       .about-events
-        .about-events__picture
-          .about-events__picture-mask
-          img.about-events__picture-bg(src="@img/about/hand-showing-flag-of-united-arab-emirates.jpg", alt="")
+        .about-events__picture.masonry(data-type="img-bg", data-mask="linear-gradient(to top, rgba(64, 64, 64, 0.3), rgba(64, 64, 64, 0.3))")
+          //.masonry-mask
+          img.masonry-bg(src="@img/about/hand-showing-flag-of-united-arab-emirates.jpg", alt="")
           .about-events__picture-item
           .about-events__picture-item
           .about-events__picture-item

@@ -6,17 +6,13 @@
 
     &-masonry {
       margin-top: 80px;
-
-      .masonry-bloks {
-        background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
-                          linear-gradient(to top, $black, $black),
-                          url('@img/events/good-good-good-rqIfy1UyIzE-unsplash.jpg');
-        background-size: 60%;
-        background-position: bottom 75% left 20%;
-        background-blend-mode: multiply, color, normal;
-        background-attachment: fixed;
-      }
+      max-width: 1220px;
+      height: 700px;
+      background-size: 70%;
+      background-position: bottom 75% left 20%;
+      background-blend-mode: multiply, color, normal;
     }
+
   }
 
   &__body {
@@ -80,6 +76,7 @@
         }
 
         &-form {
+          width: 100%;
           margin-bottom: 30px;
         }
       }
@@ -92,6 +89,18 @@
           height: 40px;
           margin-right: 5px;
           border: 1px solid $white;
+
+          & label {
+            padding: 0 15px 0 5px;
+
+            & .filters-date__img {
+              width: 25px;
+            }
+
+            &::before {
+              background: linear-gradient(270deg, #406594 35.94%, rgba(64, 100, 148, 0) 100%);
+            }
+          }
         }
       }
 

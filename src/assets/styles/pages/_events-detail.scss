@@ -6,15 +6,16 @@
 
     &-masonry {
       margin-top: 80px;
+      max-width: 1010px;
+      height: 520px;
+      background-size: cover;
+      background-position: top 0 left 20%;
+      background-blend-mode: multiply, color, normal;
+      background-attachment: local;
 
       .masonry-bloks {
-        background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
-                          linear-gradient(to top, $black, $black),
-                          url('@img/events/news-1.webp');
-        background-size: 100%;
-        //background-position: top 0% left 0;
-        background-blend-mode: multiply, color, normal;
-        //background-attachment: fixed;
+        grid-template-columns: 450px 220px 300px;
+        grid-template-rows: 150px 80px 250px;
       }
     }
   }

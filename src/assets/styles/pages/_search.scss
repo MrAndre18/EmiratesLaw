@@ -6,16 +6,11 @@
 
     &-masonry {
       margin-top: 80px;
-
-      .masonry-bloks {
-        background-image: linear-gradient(to top, #D2E2F0, #D2E2F0),
-                          linear-gradient(to top, $black, $black),
-                          url('@img/search/warren-wong-fNUNt9w3m-Q-unsplash.jpg');
-        background-size: 70%;
-        background-position: bottom 65% left 30%;
-        background-blend-mode: multiply, color, normal;
-        background-attachment: fixed;
-      }
+      max-width: 1220px;
+      height: 700px;
+      background-size: 70%;
+      background-position: bottom 75% left 30%;
+      background-blend-mode: multiply, color, normal;
     }
   }
 
@@ -157,6 +152,14 @@
       letter-spacing: 0.1em;
       color: $white;
       padding-bottom: 2px;
+      cursor: pointer;
+      @include transition();
+
+      & input[type=checkbox] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
 
       &::before {
         content: "";
@@ -172,6 +175,14 @@
 
       &:hover::before {
         width: 100%;
+      }
+
+      &:has(input[type=checkbox]:checked) {
+        color: $yellow;
+
+        &::before {
+          background: $yellow;
+        }
       }
 
       &:not(:first-child) {

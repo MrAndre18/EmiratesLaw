@@ -95,8 +95,25 @@ block content
         li.breadcrumbs__item.breadcrumbs__item-current
           span.breadcrumbs__item-text Поиск по сайту
       +marquee("Поиск по сайту", "search-page__title-marquee")
-      .search-page__title-masonry.masonry
+      .search-page__title-masonry.masonry(data-type="img-bg", data-mask="linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727)")
+        img.masonry-bg(src="@img/search/warren-wong-fNUNt9w3m-Q-unsplash.jpg", alt="")
         .masonry-bloks
+          .masonry-bloks__item.masonry-bloks__item-1
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-2
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-3
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-4
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-5
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-6
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-7
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-8
+            .masonry-bloks__item-content
     .search-page__body
       .search-page__body-wrapper
         .search-page__settings
@@ -106,10 +123,12 @@ block content
               .serch-history__items.swiper-wrapper
             p.search-page__search-count Найдено записей: #[span 10]
           .search-page__filters
-            +datepicker("Дата", "search-page__filters-date")
+            +datepicker("Дата", "search-page__filters-date", "search-page-datepicker")
             .search-page__filters-items
-              button.search-page__filters-item Законы
-              button.search-page__filters-item Справка
+              label.search-page__filters-item Законы
+                input(type="checkbox", name="laws")
+              label.search-page__filters-item Справка
+                input(type="checkbox", name="info")
         .search-page__content
           +result(search_page_result, "search-page__content-result")
           +pagination("search-page__content-pagination")
