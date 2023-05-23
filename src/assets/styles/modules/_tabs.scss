@@ -1,0 +1,33 @@
+.tabs {
+  position: relative;
+  display: flex;
+
+  &-bg {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    background: $gold;
+    border-radius: 10px 10px 0px 0px;
+    @include transition();
+  }
+
+  & .tab {
+    &.current {
+      & .tab-btn {
+        color: $black;
+      }
+    }
+
+    &.focus {
+      & .tab-btn {
+        color: $black;
+      }
+    }
+  }
+  
+  & .tab-btn {
+    padding: 20px 30px;
+    @include transition();
+  }
+}

@@ -10,8 +10,7 @@ mixin drop-down(text, className, elementsList)
   if elementsList
     ul.drop-down__list
       each element in elementsList
-        li.drop-down__list-item
-          button= element.text
+        li.drop-down__list-item= element.text
 
 // Кнопка "Подробнее" со стрелкой
 mixin more-btn-arrow(text, url, className)
@@ -107,7 +106,7 @@ mixin pagination(className)
       img.pages-pagination__button-img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")
 
 // Селектор даты
-mixin datepicker(placeholder, className, id)
+mixin datepicker(placeholder, className, id, datepicker_type, date_format)
   .filters-date(class= className ? className : "")
     input.filters-date__input(
       id= id,
@@ -116,7 +115,9 @@ mixin datepicker(placeholder, className, id)
       placeholder= placeholder,
       autocorrect="off",
       autocomplete="off",
-      data-type="js-datepicker"
+      data-type="js-datepicker",
+      data-datepicker-type= datepicker_type ? datepicker_type : "",
+      data-date-format= date_format ? date_format : ""
     )
     label(for= id) 
       img.filters-date__img.svg(src="@img/svg/calendar.svg", alt="")

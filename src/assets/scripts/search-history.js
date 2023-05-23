@@ -40,7 +40,11 @@ if ($("form[role=search]").width()) {
     
     const input = $(e.currentTarget).find('input[type=search]'),
           query = input.val()
-    let path = '/search?=' + query
+    let path = window.location.pathname == '/laws' ? '/laws?=' + query : '/search?=' + query
+    console.log("🚀 ~ file: search-history.js:44 ~ window.location:", window.location.search)
+
+    if (query == "")
+      return
 
     // Запись в LocalStorage
     try {

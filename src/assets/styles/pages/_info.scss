@@ -1,0 +1,38 @@
+.info {
+  &__title {
+    &-breadcrumbs {
+      margin-top: 20px;
+    }
+
+    &-masonry {
+      margin-top: 80px;
+      max-width: 1220px;
+      height: 700px;
+      background-size: 70%;
+      background-position: top 10% left 30%;
+      background-blend-mode: multiply, color, normal;
+    }
+  }
+
+  &__subtitle {
+    max-width: 600px;
+    font-size: 20px;
+    margin-top: $block-margin;
+    margin-bottom: 100px;
+  }
+
+  &__body {
+    padding: 0 $page-padding;
+    margin-bottom: $block-margin;
+    width: 100%;
+  }
+  
+  &__header {
+    border-bottom: 1px solid $gold;
+    padding-right: 80px;
+  }
+
+  &__tabs {
+    justify-content: flex-end;
+  }
+}

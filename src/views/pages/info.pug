@@ -3,5 +3,51 @@ extends ../layouts/master.pug
 block header
   include ../partials/_header.pug
 
+block content
+  main.info
+    // Блок с заголовком
+    .info__title.title-block
+      ul.info__title-breadcrumbs.breadcrumbs
+        li.breadcrumbs__item.breadcrumbs__item-prev
+          a.breadcrumbs__item-text(href="/") Главная
+          img.breadcrumbs__item-arrow.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        li.breadcrumbs__item.breadcrumbs__item-current
+          span.breadcrumbs__item-text FAQ / INFO о бизнесе
+      +marquee("FAQ / INFO о бизнесе", "info__title-marquee")
+      .info__title-masonry.masonry(data-type="img-bg", data-mask="linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727)")
+        img.masonry-bg(src="@img/info/closeup-shot-of-a-male-hand-holding-a-crystal-ball-with-the-reflection-of-the-city.jpg", alt="")
+        .masonry-bloks
+          .masonry-bloks__item.masonry-bloks__item-1
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-2
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-3
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-4
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-5
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-6
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-7
+            .masonry-bloks__item-content
+          .masonry-bloks__item.masonry-bloks__item-8
+            .masonry-bloks__item-content
+      p.info__subtitle Актуальная справочная информация о жизни и работе в Арабских Эмиратах, о законодательстве и общественных нормах. Ответы на любые вопросы — на одной странице и простым языком
+
+    // Тело страницы
+    .info__body
+      .info__header
+        ul.tabs.info__tabs(data-type="js-tabs")
+          .tabs-bg.info__tabs-bg
+          li.tab.info__tab.current
+            button.tab-btn.info__tab-btn Законы
+          li.tab.info__tab
+            button.tab-btn.info__tab-btn Формы документов
+          li.tab.info__tab
+            button.tab-btn.info__tab-btn Государство
+          li.tab.info__tab
+            button.tab-btn.info__tab-btn FAQ
+
 block footer
   include ../partials/_footer.pug

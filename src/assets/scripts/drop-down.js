@@ -14,11 +14,11 @@ $(() => {
 
       if (elementsBlock) {
         if (!$(elementsBlock).hasClass('active')) {
-          const elementsItems = $(elementsBlock).find('.drop-down__list-item button')
+          const elementsItems = $(elementsBlock).find('.drop-down__list-item')
 
           $(elementsItems).each((index, element) => {
             if ($(element).text() === $(currentItem).text())
-              $(element).closest('.drop-down__list-item').addClass('active')
+              $(element).addClass('active')
           })
 
           $(elementsBlock).addClass("active")
@@ -26,10 +26,10 @@ $(() => {
           $(elementsItems).click(event => {
             if ($(event.currentTarget).text() !== $(currentItem).text()) {
               $(elementsItems).each((index, element) => {
-                $(element).closest('.drop-down__list-item').removeClass('active')
+                $(element).removeClass('active')
               })
 
-              $(event.currentTarget).closest('.drop-down__list-item').addClass('active')
+              $(event.currentTarget).addClass('active')
             }
 
             // Выбор элемента

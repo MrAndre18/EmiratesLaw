@@ -146,10 +146,10 @@ block content
                 input.search-input(type="search", name="search" placeholder="Поиск по законам", minlength="4")
                 button.search-btn
                   img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
+              //- .laws-filters__filter
+              //-   +drop-down("Отрасль", "filter", laws_nav_list)
               .laws-filters__filter
-                +drop-down("Отрасль", "filter", laws_nav_list)
-              .laws-filters__filter
-                +drop-down("Год", "filter", laws_filter_years)
+                +datepicker("Год", "laws-filters__filter-date", "laws-filters-datepicker", "years", "yyyy")
               button.laws-filters__submit(type="submit") Поиск
           p.laws-result_count Найдено записей: #[span 3]
           +result(laws_result, "laws-result")

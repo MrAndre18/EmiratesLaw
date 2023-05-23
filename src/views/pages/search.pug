@@ -123,7 +123,7 @@ block content
               .serch-history__items.swiper-wrapper
             p.search-page__search-count Найдено записей: #[span 10]
           .search-page__filters
-            +datepicker("Дата", "search-page__filters-date", "search-page-datepicker")
+            +datepicker("Дата", "search-page__filters-date", "search-page-datepicker", "all", "dd.MM.yy")
             .search-page__filters-items
               label.search-page__filters-item Законы
                 input(type="checkbox", name="laws")

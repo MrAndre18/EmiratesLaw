@@ -4,12 +4,24 @@ $(() => {
   const datePickers = $('[data-type=js-datepicker]')
   
   $(datePickers).each(function (index, element) {
-    console.log("🚀 ~ file: datepicker.js:9 ~ $(element):", $(element)[0])
-    new AirDatepicker($(element)[0], {
-      range: true,
-      multipleDatesSeparator: ' - ',
-      dateFormat: 'dd.MM.yy',
-      buttons: ['clear']
-    })
+    if ($(element).data('datepicker-type') == "all") {
+      new AirDatepicker($(element)[0], {
+        range: true,
+        multipleDatesSeparator: ' - ',
+        dateFormat: $(element).data('date-format'),
+        buttons: ['today', 'clear'],
+        maxDate: new Date(),
+      })
+    } else {
+      new AirDatepicker($(element)[0], {
+        range: true,
+        multipleDatesSeparator: ' - ',
+        dateFormat: $(element).data('date-format'),
+        buttons: ['today', 'clear'],
+        maxDate: new Date(),
+        minView: $(element).data('datepicker-type'),
+        view: $(element).data('datepicker-type'),
+      })
+    }
   });
 })

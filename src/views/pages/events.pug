@@ -111,7 +111,7 @@ block content
                   button.search-btn
                     img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
                 .events-filters__buttons
-                  +datepicker("Дата", "events-filters__buttons-filters-date", "events-filters-datepicker")
+                  +datepicker("Дата", "events-filters__buttons-filters-date", "events-filters-datepicker", "all", "dd.MM.yy")
                   button.events-filters__submit(type="submit") Поиск
               p.events-filters__count Найдено записей: #[span 3]
             .events__content-title

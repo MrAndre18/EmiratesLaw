@@ -11,6 +11,12 @@
     border: 1px solid $white;
   }
 
+  &:hover &__input {
+    &::placeholder {
+      color: $white;
+    }
+  }
+
   &:hover &__img {
     & .st0 {
       fill: $white;
@@ -20,6 +26,12 @@
 
   &:has(.filters-date__input:focus) {
     border: 1px solid $gold;
+  }
+
+  &:has(.filters-date__input:focus) &__input {
+    &::placeholder {
+      color: $white;
+    }
   }
 
   &:has(.filters-date__input:focus) &__img {
@@ -43,6 +55,7 @@
     &::placeholder {
       color: $light-grey-1;
       font-size: 16px;
+      @include transition();
     }
   }
 
@@ -79,6 +92,253 @@
       fill: $light-grey-1;
       stroke: $light-grey-1;
       @include transition();
+    }
+  }
+}
+
+.air-datepicker{
+  background: rgba(64, 64, 64, 0.5);
+  border: none;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  box-shadow: -2px 2px 10px 2px rgba(0, 0, 0, 0.15);
+
+  &--pointer {
+    display: none;
+  }
+
+  &-nav {
+    border-bottom: 1px solid $light-grey-1;
+
+    &--action {
+      & svg path {
+        stroke: $white;
+      }
+
+      &:hover svg path {
+        stroke: $dark-grey;
+      }
+    }
+
+    &--title {
+      color: $light-grey-1;
+
+      & i {
+        color: $white;
+      }
+
+      &:not(.-disabled-):hover {
+        color: $grey;
+
+        & i {
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+
+  &-body {
+    &--day-name {
+      color: $yellow;
+    }
+  }
+
+  &-cell {
+    color: $white;
+
+    &.-day- {
+      &.-current- {
+        color: $gold;
+  
+        &.-focus- {
+          color: $blue;
+        }
+      }
+
+      &.-other-month- {
+        color: $grey;
+  
+        &.-in-range- {
+          color: $grey;
+        }
+  
+        &.-focus- {
+          color: $grey;
+        }
+  
+        &.-selected- {
+          background: $gold;
+          color: $dark-grey;
+    
+          &.-range-to- {
+            color: $dark-grey;
+          }
+  
+          &.-focus-.-range-to-,
+          &.-focus-.-range-from- {
+            color: $dark-grey;
+            background: $gold;
+          }
+        }
+      }
+
+      &.-focus- {
+        color: $dark-grey;
+  
+        &.-in-range- {
+          color: $white;
+        }
+      }
+
+      &.-focus-.-range-to-,
+      &.-focus-.-range-from- {
+        color: $white;
+        border-color: $yellow;
+      }
+
+      &.-selected- {
+        background: $gold;
+        color: $dark-grey;
+  
+        &.-range-to-,
+        &.-range-from- {
+          color: $dark-grey;
+        }
+      }
+
+      &.-disabled- {
+        color: $grey;
+        opacity: 50%;
+
+        &.-focus- {
+          background: $light-grey-1;
+        }
+      }
+    }
+
+    &.-month- {
+      &.-current- {
+        color: $gold;
+  
+        &.-focus- {
+          color: $blue;
+        }
+      }
+
+      &.-focus- {
+        color: $dark-grey;
+  
+        &.-in-range- {
+          color: $white;
+        }
+      }
+
+      &.-focus-.-range-to-,
+      &.-focus-.-range-from- {
+        color: $white;
+        border-color: $yellow;
+      }
+
+      &.-selected- {
+        background: $gold;
+        color: $dark-grey;
+  
+        &.-range-to-,
+        &.-range-from- {
+          color: $dark-grey;
+        }
+      }
+
+      &.-disabled- {
+        color: $grey;
+        opacity: 50%;
+
+        &.-focus- {
+          background: $light-grey-1;
+        }
+      }
+    }
+
+    &.-year- {
+      &.-current- {
+        color: $gold;
+  
+        &.-focus- {
+          color: $blue;
+        }
+      }
+
+      &.-other-decade- {
+        color: $grey;
+  
+        &.-in-range- {
+          color: $grey;
+        }
+  
+        &.-focus- {
+          color: $grey;
+        }
+  
+        &.-selected- {
+          background: $gold;
+          color: $dark-grey;
+    
+          &.-range-to- {
+            color: $dark-grey;
+          }
+  
+          &.-focus-.-range-to-,
+          &.-focus-.-range-from- {
+            color: $dark-grey;
+            background: $gold;
+          }
+        }
+      }
+
+      &.-focus- {
+        color: $dark-grey;
+  
+        &.-in-range- {
+          color: $white;
+        }
+      }
+
+      &.-focus-.-range-to-,
+      &.-focus-.-range-from- {
+        color: $white;
+        border-color: $yellow;
+      }
+
+      &.-selected- {
+        background: $gold;
+        color: $dark-grey;
+  
+        &.-range-to-,
+        &.-range-from- {
+          color: $dark-grey;
+        }
+      }
+
+      &.-disabled- {
+        color: $grey;
+        opacity: 50%;
+
+        &.-focus- {
+          background: $light-grey-1;
+        }
+      }
+    }
+  }
+
+  &--buttons {
+    border-top: 1px solid $grey;
+  }
+
+  &-button {
+    color: $white;
+
+    &:hover {
+      color: $black;
     }
   }
 }
