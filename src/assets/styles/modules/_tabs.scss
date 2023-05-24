@@ -1,6 +1,7 @@
 .tabs {
   position: relative;
   display: flex;
+  width: fit-content;
 
   &-bg {
     position: absolute;
@@ -17,6 +18,18 @@
       & .tab-btn {
         color: $black;
       }
+
+      &.focus-out {
+        & .tab-btn {
+          color: $gold;
+        }
+      }
+
+      // &:not(.focus) {
+      //   & .tab-btn {
+      //     color: $gold;
+      //   }
+      // }
     }
 
     &.focus {

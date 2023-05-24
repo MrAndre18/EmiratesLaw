@@ -2531,7 +2531,7 @@ body .content .title-block.about__title {
 
 .marquee {
   position: absolute;
-  top: 35%;
+  top: 350px;
   left: 0;
   z-index: 10;
   height: 160px;
@@ -3030,6 +3030,7 @@ body .content .title-block.about__title {
 .tabs {
   position: relative;
   display: flex;
+  width: fit-content;
 }
 .tabs-bg {
   position: absolute;
@@ -3042,6 +3043,9 @@ body .content .title-block.about__title {
 }
 .tabs .tab.current .tab-btn {
   color: #272727;
+}
+.tabs .tab.current.focus-out .tab-btn {
+  color: #FFD700;
 }
 .tabs .tab.focus .tab-btn {
   color: #272727;
@@ -5042,9 +5046,41 @@ body .content .title-block.about__title {
 .info__header {
   border-bottom: 1px solid #FFD700;
   padding-right: 80px;
+  display: flex;
+  justify-content: flex-end;
 }
 .info__tabs {
   justify-content: flex-end;
+}
+.info__content {
+  width: 100%;
+  padding-top: 60px;
+}
+.info__page {
+  width: 100%;
+  border-radius: 20px;
+  padding: 80px;
+  height: 600px;
+  background: #404040;
+  display: none;
+}
+.info__page.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info__page-title {
+  font-size: 48px;
+  text-align: center;
+}
+.info__page#document-forms {
+  background: #AEBAC3;
+}
+.info__page#state {
+  background: #737e84;
+}
+.info__page#FAQ {
+  background: #FF4951;
 }
 .webp .footer-content__body { background-image: linear-gradient(to top, #A4A6A7, #A4A6A7), linear-gradient(to top, #B3D0E9, #B3D0E9), url(images/fredrik-ohlander-fCW1hWq2nq0-unsplash.webp); }
 .webp .index .title-block { background-image: linear-gradient(to top, #D2E2F0, #D2E2F0), linear-gradient(to top, #272727, #272727), url(images/main/title-block.webp); }

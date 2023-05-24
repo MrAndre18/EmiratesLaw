@@ -30,9 +30,48 @@
   &__header {
     border-bottom: 1px solid $gold;
     padding-right: 80px;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__tabs {
     justify-content: flex-end;
+  }
+
+  &__content {
+    width: 100%;
+    padding-top: 60px;
+  }
+
+  &__page {
+    width: 100%;
+    border-radius: 20px;
+    padding: 80px;
+    height: 600px;
+    background: $dark-grey;
+    display: none;
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-title {
+      font-size: 48px;
+      text-align: center;
+    }
+    
+    &#document-forms {
+      background: $light-grey-1;
+    }
+
+    &#state {
+      background: $grey;
+    }
+
+    &#FAQ {
+      background: $red;
+    }
   }
 }

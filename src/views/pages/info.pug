@@ -41,13 +41,28 @@ block content
         ul.tabs.info__tabs(data-type="js-tabs")
           .tabs-bg.info__tabs-bg
           li.tab.info__tab.current
-            button.tab-btn.info__tab-btn Законы
+            a(href="info?page=laws").tab-btn.info__tab-btn Законы
           li.tab.info__tab
-            button.tab-btn.info__tab-btn Формы документов
+            a(href="info?page=document-forms").tab-btn.info__tab-btn Формы документов
           li.tab.info__tab
-            button.tab-btn.info__tab-btn Государство
+            a(href="info?page=state").tab-btn.info__tab-btn Государство
           li.tab.info__tab
-            button.tab-btn.info__tab-btn FAQ
+            a(href="info?page=FAQ").tab-btn.info__tab-btn FAQ
+      .info__content
+        #laws.info__page
+          h2.info__page-title Законы
+          a.info__page-link(href="info?page=laws&detail=laws-detail-1") Закон 1
+          a.info__page-link(href="info?page=laws&detail=laws-detail-2") Закон 2
+        #document-forms.info__page
+          h2.info__page-title Формы документов
+        #state.info__page
+          h2.info__page-title Государство
+        #FAQ.info__page
+          h2.info__page-title FAQ
+        #laws-detail-1.info__page
+          h3.info__page-title Закон 1
+        #laws-detail-2.info__page
+          h3.info__page-title Закон 2
 
 block footer
   include ../partials/_footer.pug
