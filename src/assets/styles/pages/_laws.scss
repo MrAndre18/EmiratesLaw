@@ -1,29 +1,6 @@
 .laws {
-  &__title {
-    &-breadcrumbs {
-      margin-top: 20px;
-    }
-
-    &-masonry {
-      margin-top: 80px;
-      max-width: 1220px;
-      height: 700px;
-      background-size: 80%;
-      background-position: top 0 left 30%;
-      background-blend-mode: multiply, color, normal;
-    }
-  }
-
-  &__body {
-    margin: $block-margin 0;
-    padding: 0 $page-padding;
-    width: 100%;
-  }
-
   &-content {
     width: 100%;
-    border-top: 1px solid $red;
-    padding-top: 60px;
     display: flex;
 
     & .nav-bar {

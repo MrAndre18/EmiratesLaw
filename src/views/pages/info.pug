@@ -3,6 +3,82 @@ extends ../layouts/master.pug
 block header
   include ../partials/_header.pug
 
+  -
+    const laws_nav_list = [
+      {
+        text: 'Вопросы свободных зон и зон особого развития',
+        url: '#',
+        active: true,
+      },
+      {
+        text: 'Дорога и транспорт',
+        url: '#',
+        active: false,
+      },
+      {
+        text: 'Здравоохранение, медицинские вопросы и общественная безопасность',
+        url: '#',
+        active: false,
+      },
+      {
+        text: 'Кадровые ресурсы для гос структур',
+        url: '#',
+        active: false,
+      },
+      {
+        text: 'Недвижимость',
+        url: '#',
+        active: false,
+      },
+    ]
+
+  -
+    const laws_result = {
+      title: {
+        description: 'Описание',
+        category: 'Отрасль',
+        year: 'Год',
+      },
+      items: [
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2021',
+          url: 'info?page=laws&detail=laws-detail-1'
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2010',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2018',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2021',
+          url: 'info?page=laws&detail=laws-detail-1'
+        },
+        {
+          description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2010',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
+          category: 'Вопросы свободных зон и зон особого развития',
+          year: '2018',
+          url: 'info?page=laws&detail=laws-detail-2'
+        }
+      ]
+    }
+
 block content
   main.info
     // Блок с заголовком
@@ -41,28 +117,167 @@ block content
         ul.tabs.info__tabs(data-type="js-tabs")
           .tabs-bg.info__tabs-bg
           li.tab.info__tab.current
-            a(href="info?page=laws").tab-btn.info__tab-btn Законы
+            a(href="/info?page=laws").tab-btn.info__tab-btn Законы
           li.tab.info__tab
-            a(href="info?page=document-forms").tab-btn.info__tab-btn Формы документов
+            a(href="/info?page=document-forms").tab-btn.info__tab-btn Формы документов
           li.tab.info__tab
-            a(href="info?page=state").tab-btn.info__tab-btn Государство
+            a(href="/info?page=state").tab-btn.info__tab-btn Государство
           li.tab.info__tab
-            a(href="info?page=FAQ").tab-btn.info__tab-btn FAQ
+            a(href="/info?page=FAQ").tab-btn.info__tab-btn FAQ
       .info__content
+        // Законы
         #laws.info__page
-          h2.info__page-title Законы
-          a.info__page-link(href="info?page=laws&detail=laws-detail-1") Закон 1
-          a.info__page-link(href="info?page=laws&detail=laws-detail-2") Закон 2
+          .laws-content
+            +nav-bar(laws_nav_list, "laws-content__navigation")
+            .laws-content__block.laws-block
+              .laws-filters
+                form.laws-filters__form(role="search")
+                  .search.transparent
+                    input.search-input(type="search", name="search" placeholder="Поиск по законам", minlength="4")
+                    button.search-btn
+                      img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
+                  .laws-filters__filter
+                    +datepicker("Год", "laws-filters__filter-date", "laws-filters-datepicker", "years", "yyyy")
+                  button.laws-filters__submit(type="submit") Поиск
+              p.laws-result_count Найдено записей: #[span 3]
+              +result(laws_result, "laws-result", "info__page-link")
+              +pagination("laws-pagination")
+
+        // Формы документов
         #document-forms.info__page
           h2.info__page-title Формы документов
+          a.info__page-link(href="/info?page=document-forms&detail=document-forms-detail-1") Документ 1
+          a.info__page-link(href="/info?page=document-forms&detail=document-forms-detail-2") Документ 2
+
+        // Государство
         #state.info__page
           h2.info__page-title Государство
+          a.info__page-link(href="/info?page=state&detail=state-detail-1") Государство 1
+          a.info__page-link(href="/info?page=state&detail=state-detail-2") Государство 2
+
+        // FAQ
         #FAQ.info__page
           h2.info__page-title FAQ
+          a.info__page-link(href="/info?page=FAQ&detail=FAQ-detail-1") FAQ 1
+          a.info__page-link(href="/info?page=FAQ&detail=FAQ-detail-2") FAQ 2
+
         #laws-detail-1.info__page
-          h3.info__page-title Закон 1
+          .laws-detail__title
+            h2.laws-detail__title-name Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али
+            span.laws-detail__title-year 2021
+          .laws-detail__block
+            .laws-detail__navigation
+              button.laws-detail__navigation-download.navigation-download
+                .navigation-download__text Скачать документ
+                img.navigation-download__img.svg(src="@img/svg/download.svg", alt="")
+              +button-back("Все законы", "#", "laws-detail__navigation-back")
+            .laws-detail__content
+              h3.law-title.center.main Law No. (19) of 2021 #[br] Amending #[br] Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone#[span.super 1]
+              .law-line.law-line-center
+              p.law-text.wide
+                | #[span.bold We, Mohammed bin Rashid Al Maktoum, Ruler of Dubai,] #[br]
+                | After perusal of: #[br]
+                | Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone and its amendments (the “#[span.bold Original Law]”), #[br]
+                | #[span.bold Do hereby issue this Law.]
+              h4.law-title.center
+                | Superseded Article #[br]
+                | Article (1)
+              p.law-text.wide
+                | Article (8) of the Original Law is hereby superseded by the following: #[br]
+                | #[span.bold Article (8)]
+              p.law-text Without prejudice to the tax legislation in force in the United Arab Emirates, companies, establishments, individuals, and workers operating in the Free Zone will be subject to zero (0) tax rate for fifty (50) years from the effective date of this Law. The said period will be renewable for the same period pursuant to a resolution of the Ruler. The zero (0) tax rate will apply to:
+              ul.law-list
+                li 1. all taxes, including income tax, in relation to their operations within the Free Zone; and
+                li 2. taxes imposed on the transfer of assets, profits, salaries, or wages to any party outside of the Free Zone.
+              .law-line.law-line-left
+              p.law-text.italic
+                | ©2021 The Supreme Legislation Committee in the Emirate of Dubai #[br]
+                | #[span.super 1]Every effort has been made to produce an accurate and complete English version of this legislation. However, for the purpose of its interpretation and application, reference must be made to the original Arabic text. In case of conflict, the Arabic text will prevail.
+              p.law-text.italic Law No. (19) of 2021 Amending Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone
+              h4.law-title.center
+                | Repeals #[br]
+                | Article (2)
+              p.law-text Any provision in any other legislation is hereby repealed to the extent that it contradicts the provisions of this Law.
+              h4.law-title.center
+                | Publication and Commencement #[br]
+                | Article (3)
+              p.law-text This Law will be published in the Official Gazette and will come into force on the day on which it is published.
+              p.law-text.bold.wide
+                | Mohammed bin Rashid Al Maktoum #[br]
+                | Ruler of Dubai
+              p.law-text.right Issued in Dubai on 14 September 2021
+              p.law-text.right Corresponding to 7 Safar 1443 A.H.
+
         #laws-detail-2.info__page
-          h3.info__page-title Закон 2
+          .laws-detail__title
+            h2.laws-detail__title-name Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая
+            span.laws-detail__title-year 2010
+          .laws-detail__block
+            .laws-detail__navigation
+              button.laws-detail__navigation-download.navigation-download
+                .navigation-download__text Скачать документ
+                img.navigation-download__img.svg(src="@img/svg/download.svg", alt="")
+              +button-back("Все законы", "#", "laws-detail__navigation-back")
+            .laws-detail__content
+              h3.law-title.center.main Law No. (19) of 2021 #[br] Amending #[br] Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone#[span.super 1]
+              .law-line.law-line-center
+              p.law-text.wide
+                | #[span.bold We, Mohammed bin Rashid Al Maktoum, Ruler of Dubai,] #[br]
+                | After perusal of: #[br]
+                | Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone and its amendments (the “#[span.bold Original Law]”), #[br]
+                | #[span.bold Do hereby issue this Law.]
+              h4.law-title.center
+                | Superseded Article #[br]
+                | Article (1)
+              p.law-text.wide
+                | Article (8) of the Original Law is hereby superseded by the following: #[br]
+                | #[span.bold Article (8)]
+              p.law-text Without prejudice to the tax legislation in force in the United Arab Emirates, companies, establishments, individuals, and workers operating in the Free Zone will be subject to zero (0) tax rate for fifty (50) years from the effective date of this Law. The said period will be renewable for the same period pursuant to a resolution of the Ruler. The zero (0) tax rate will apply to:
+              ul.law-list
+                li 1. all taxes, including income tax, in relation to their operations within the Free Zone; and
+                li 2. taxes imposed on the transfer of assets, profits, salaries, or wages to any party outside of the Free Zone.
+              .law-line.law-line-left
+              p.law-text.italic
+                | ©2021 The Supreme Legislation Committee in the Emirate of Dubai #[br]
+                | #[span.super 1]Every effort has been made to produce an accurate and complete English version of this legislation. However, for the purpose of its interpretation and application, reference must be made to the original Arabic text. In case of conflict, the Arabic text will prevail.
+              p.law-text.italic Law No. (19) of 2021 Amending Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone
+              h4.law-title.center
+                | Repeals #[br]
+                | Article (2)
+              p.law-text Any provision in any other legislation is hereby repealed to the extent that it contradicts the provisions of this Law.
+              h4.law-title.center
+                | Publication and Commencement #[br]
+                | Article (3)
+              p.law-text This Law will be published in the Official Gazette and will come into force on the day on which it is published.
+              p.law-text.bold.wide
+                | Mohammed bin Rashid Al Maktoum #[br]
+                | Ruler of Dubai
+              p.law-text.right Issued in Dubai on 14 September 2021
+              p.law-text.right Corresponding to 7 Safar 1443 A.H.
+
+        #document-forms-detail-1.info__page
+          h3.info__page-title Документ 1
+          +button-back("Все документы", "#", "laws-detail__navigation-back")
+
+        #document-forms-detail-2.info__page
+          h3.info__page-title Документ 2
+          +button-back("Все документы", "#", "laws-detail__navigation-back")
+
+        #state-detail-1.info__page
+          h3.info__page-title Государство 1
+          +button-back("Назад", "#", "laws-detail__navigation-back")
+
+        #state-detail-2.info__page
+          h3.info__page-title Государство 2
+          +button-back("Назад", "#", "laws-detail__navigation-back")
+
+        #FAQ-detail-1.info__page
+          h3.info__page-title FAQ 1
+          +button-back("Назад", "#", "laws-detail__navigation-back")
+
+        #FAQ-detail-2.info__page
+          h3.info__page-title FAQ 2
+          +button-back("Назад", "#", "laws-detail__navigation-back")
 
 block footer
   include ../partials/_footer.pug

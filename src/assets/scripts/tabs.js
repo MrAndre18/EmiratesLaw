@@ -1,10 +1,23 @@
 $(() => {
   const tabs = $('[data-type=js-tabs]'),
-        pages = $('.info__page')
+        pages = $('.info__page'),
+        detailLinks = $('.info__page-link'),
+        backBtns = $('[data-type=js-btn-back]')
 
   const showPage = (id) => {
-    const curPage = $(`#${id}`)
+    const curPage = $(`#${id}`),
+          backPageBtns = $(curPage).find('[data-type=js-btn-back]')
     
+    $(backPageBtns).each((index, backBtn) => {
+      const urlParams = new URLSearchParams(window.location.search),
+            pathname = window.location.href.split('?')[0],
+            hash = window.location.href.split('#')[1]
+
+      urlParams.delete('detail')
+
+      backBtn.href = `${pathname}` + `${urlParams.toString() ? '?' + urlParams.toString() : ''}` + `${hash ? '#' + hash : ''}`
+    })
+
     $(pages).removeClass('active')
     $(curPage).addClass('active')
   }
@@ -14,15 +27,37 @@ $(() => {
           urlParams = new URLSearchParams(window.location.search),
           curPage = urlParams.get('page'),
           newPage = linkUrlParams.get('page'),
+          curDetail = urlParams.get('detail'),
+          newDetail = linkUrlParams.get('detail'),
           pathname = window.location.href.split('?')[0],
           hash = window.location.href.split('#')[1]
-          
+    
+    let is_new = false,
+        id
+
     if (curPage != newPage) {
       urlParams.set('page', newPage)
+      urlParams.delete('detail')
+
+      is_new = true
+      id = newPage
+    } else if(!newDetail) {
+      urlParams.delete('detail')
+
+      is_new = true
+      id = newPage
+    } else if (curDetail != newDetail) {
+      urlParams.set('detail', newDetail)
+
+      is_new = true
+      id = newDetail
+    }
+
+    if (is_new) {
       const newUrl = `${pathname}` + `${urlParams.toString() ? '?' + urlParams.toString() : ''}` + `${hash ? '#' + hash : ''}`
 
       history.pushState({}, '', newUrl)
-      showPage(newPage)
+      showPage(id)
     }
   }
 
@@ -67,13 +102,10 @@ $(() => {
 
           if (curPage == newPage) {
             $(element).click()
-            showPage(newPage)
+            setPage(urlParams.toString())
           }
         })
       }
-
-      //setBgProperties(currentItemPosition, currentItemWidth)
-      //setPage()
 
       $(items).on("mouseover", e => {
         const newPosition = $(e.currentTarget).offset().left,
@@ -113,20 +145,21 @@ $(() => {
         $(curItem).removeClass('focus-out')
       })
 
-      // $(items).each((index, element) => {
-      //   const linkUrlParams = new URLSearchParams($(element).find('a')[0].search),
-      //         urlParams = new URLSearchParams(window.location.search),
-      //         curPage = urlParams.get('page'),
-      //         newPage = linkUrlParams.get('page')
-
-      //   if (curPage == newPage) {
-      //     $(element).click()
-      //     showPage(newPage)
-      //   }
-      // })
       initialization()
     })
   }
   
   $(tabs).length ? setTabs() : null
+
+  $(detailLinks).on('click', e => {
+    e.preventDefault()
+    
+    setPage($(e.currentTarget)[0].search)
+  })
+    
+  $(backBtns).on('click', e => {
+    e.preventDefault()
+    
+    setPage($(e.currentTarget)[0].search)
+  })
 })

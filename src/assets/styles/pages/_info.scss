@@ -32,6 +32,7 @@
     padding-right: 80px;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 80px;
   }
 
   &__tabs {
@@ -39,22 +40,27 @@
   }
 
   &__content {
+    position: relative;
     width: 100%;
-    padding-top: 60px;
+    overflow: clip;
   }
 
   &__page {
+    position: absolute;
+    top: 0;
+    z-index: -100;
     width: 100%;
-    border-radius: 20px;
-    padding: 80px;
-    height: 600px;
-    background: $dark-grey;
-    display: none;
+    transform: translateX(100%);
+    opacity: 0;
+    //display: none;
+    @include transition();
 
     &.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: relative;
+      z-index: auto;
+      transform: translateX(0);
+      opacity: 100%;
+      //display: block;
     }
 
     &-title {
@@ -64,14 +70,17 @@
     
     &#document-forms {
       background: $light-grey-1;
+      height: 600px;
     }
 
     &#state {
       background: $grey;
+      height: 600px;
     }
 
     &#FAQ {
       background: $red;
+      height: 600px;
     }
   }
 }

@@ -44,7 +44,7 @@ mixin nav-bar(list, className)
         a.nav-bar__item-link(href= element.url)= element.text
 
 // Результаты поиска
-mixin result(list, className)
+mixin result(list, className, linkClass)
   .result(class= className ? className : "")
     .result-title
       span.result-title__description= list.title.description
@@ -58,21 +58,21 @@ mixin result(list, className)
           li.result-item.result-item__law
             .result-item__description
               p.result-item__description-text= element.description
-              +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+              +more-btn-arrow("Читать подробнее", element.url, "result-item__description-more "+linkClass)
             p.result-item__category= element.category
             p.result-item__year= element.year
         else if element.category == "Справка"
           li.result-item.result-item__info
             .result-item__description
               p.result-item__description-text= element.description
-              +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+              +more-btn-arrow("Читать подробнее", element.url, "result-item__description-more "+linkClass)
             p.result-item__category= element.category
             p.result-item__year= element.year
         else
           li.result-item
             .result-item__description
               p.result-item__description-text= element.description
-              +more-btn-arrow("Читать подробнее", "/laws-detail", "result-item__description-more")
+              +more-btn-arrow("Читать подробнее", element.url, "result-item__description-more "+linkClass)
             p.result-item__category= element.category
             p.result-item__year= element.year
 
@@ -83,7 +83,7 @@ mixin marquee(text, className)
 
 // Кнопка "Вернуться назад"
 mixin button-back(text, url, className)
-  a.button-back(href= url, class= className ? className : "")
+  a.button-back(href= url, class= className ? className : "", data-type="js-btn-back")
     .button-back__circle
       img.button-back__circle-img.svg(src="@img/svg/pagination-arrow.svg", alt="Back")
     span.button-back__text= text
