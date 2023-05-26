@@ -17,34 +17,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/app.min.css">
     <link rel="shortcut icon" href="assets/images/svg/favicon.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>EmiratesLaw</title>
   </head>
-  <body>
+  <body style="overflow: hidden;">
     <div class="loader">
       <div class="loader__content">
-        <p>Загрузка</p>
-      </div>
-    </div>
-    <!-- Модальное окно поиска-->
-    <div class="search-modal" data-type="js-modal" data-modal="js-search">
-      <div class="search-modal__body">
-        <div class="search-modal__content">
-          <div class="search-modal__content-search">
-            <form class="search" role="search">
-              <input class="search-input" type="search" name="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
-              <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
-            </form>
-          </div>
-          <div class="search-modal__content-history serch-history">
-            <p class="serch-history__title">История запросов</p>
-            <div class="serch-history__items"></div>
-          </div><a class="search-modal__content-more more-btn-arrow" href="/search">
-            <p class="more-btn-arrow__text">Расширенный поиск</p><img class="more-btn-arrow__img svg" src="assets/images/svg/arrow-right-thin.svg" alt=""/></a>
+        <div class="logo"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></div>
+        <div class="loader__circle">
+          <svg class="progress-ring" viewBox="0 0 500 500">
+            <circle class="progress-ring__circle" fill="transparent" stroke="white" stroke-width="2" cx="250" cy="250" r="249" style="display: none;"></circle>
+          </svg>
         </div>
-        <button class="search-modal__close" data-type="js-close-btn"><span class="search-modal__close-img"></span></button>
       </div>
     </div>
     <div class="content">
+      <!-- Модальное окно поиска-->
+      <div class="search-modal" data-type="js-modal" data-modal="js-search">
+        <div class="search-modal__body">
+          <div class="search-modal__content">
+            <div class="search-modal__content-search">
+              <form class="search" role="search">
+                <input class="search-input" type="search" name="search" placeholder="Поиск по сайту" required="required" minlength="4"/>
+                <button class="search-btn"><img class="search-btn__img svg" src="assets/images/svg/search.svg" alt="Поиск"/></button>
+              </form>
+            </div>
+            <div class="search-modal__content-history serch-history">
+              <p class="serch-history__title">История запросов</p>
+              <div class="serch-history__items"></div>
+            </div><a class="search-modal__content-more more-btn-arrow" href="/search">
+              <p class="more-btn-arrow__text">Расширенный поиск</p><img class="more-btn-arrow__img svg" src="assets/images/svg/arrow-right-thin.svg" alt=""/></a>
+          </div>
+          <button class="search-modal__close" data-type="js-close-btn"><span class="search-modal__close-img"></span></button>
+        </div>
+      </div>
       <header class="header">
         <div class="header-content">
           <div class="header-logo"><!-- лого --><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
@@ -425,7 +431,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"> </script>
     <script src="assets/app.min.js"> </script>
   </body>
