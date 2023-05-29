@@ -25,13 +25,13 @@
 
   &__block {
     display: flex;
-    padding-right: 100px;
+    padding-right: 80px;
   }
 
   &__navigation {
     position: sticky;
-    top: 130px;
-    width: 340px;
+    top: 20px;
+    width: $nav-bar-width;
     height: fit-content;
     flex-shrink: 0;
 
@@ -45,7 +45,7 @@
       justify-content: space-between;
       align-items: center;
       overflow: hidden;
-      margin-bottom: 25px;
+      margin: 15px 0 25px;
 
       &::before {
         content: "";
@@ -93,7 +93,7 @@
 
   &__content {
     width: 100%;
-    margin-left: 80px;
+    margin-left: 40px;
     background: $dark-grey;
     border-radius: 20px;
     padding: 80px 60px 60px;

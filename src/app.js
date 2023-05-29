@@ -14,6 +14,7 @@ import "./assets/scripts/typeit.js"
 import "./assets/scripts/current-page.js"
 import "./assets/scripts/img2background.js"
 import "./assets/scripts/tabs.js"
+import "./assets/scripts/accordion.js"
 
 
 import "./assets/scripts/sliders.js"

@@ -3,20 +3,10 @@
     &-breadcrumbs {
       margin-top: 20px;
     }
-
-    &-masonry {
-      margin-top: 80px;
-      max-width: 1220px;
-      height: 700px;
-      background-size: 70%;
-      background-position: bottom 75% left 20%;
-      background-blend-mode: multiply, color, normal;
-    }
-
   }
 
   &__body {
-    margin: $block-margin 0;
+    margin: 0 0 $block-margin;
     padding: 0 $page-padding;
     width: 100%;
   }

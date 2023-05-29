@@ -14,8 +14,15 @@ body {
       padding: $header-height ($title-left-padding + $page-padding) 0;
       overflow: hidden;
 
-      &.about__title {
-        height: auto;
+      &__title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: $block-margin auto;
+        font-weight: 700;
+        font-size: 80px;
+        letter-spacing: 0.15em;
+        text-transform: capitalize;
       }
     }
   }

@@ -36,12 +36,21 @@ mixin navigation(list)
       li.navigation__item
         a.navigation__item-link(href= element.url)= element.text
 
-// Плавающий блок навигации
-mixin nav-bar(list, className)
-  ul.nav-bar(class= className ? className : "")
+// Аккордеон
+mixin accordion(list, className, navLinkClassName)
+  ul.accordion(class= className ? className : "")
     each element in list
-      li.nav-bar__item(class= element.active ? "nav-bar__item-active" : "")
-        a.nav-bar__item-link(href= element.url)= element.text
+      li.accordion-item(class= element.active ? "accordion-item__active" : "")
+        a.accordion-item__trigger(
+          href= element.url,
+          data-type= element.data_type ? element.data_type : "",
+          data-target= element.target ? element.target : ""
+          )= element.text
+        if element.items
+          ul.accordion-item__content
+            each item in element.items
+              li.accordion-item__content-item
+                a.accordion-item__content-link(href= item.url, class= navLinkClassName ? navLinkClassName : "")= item.title
 
 // Результаты поиска
 mixin result(list, className, linkClass)

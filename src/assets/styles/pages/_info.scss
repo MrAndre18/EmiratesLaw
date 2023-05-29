@@ -4,20 +4,19 @@
       margin-top: 20px;
     }
 
-    &-masonry {
-      margin-top: 80px;
-      max-width: 1220px;
-      height: 700px;
-      background-size: 70%;
-      background-position: top 10% left 30%;
-      background-blend-mode: multiply, color, normal;
-    }
+    // &-masonry {
+    //   margin-top: 80px;
+    //   max-width: 1220px;
+    //   height: 700px;
+    //   background-size: 70%;
+    //   background-position: top 10% left 30%;
+    //   background-blend-mode: multiply, color, normal;
+    // }
   }
 
   &__subtitle {
     max-width: 600px;
     font-size: 20px;
-    margin-top: $block-margin;
     margin-bottom: 100px;
   }
 
