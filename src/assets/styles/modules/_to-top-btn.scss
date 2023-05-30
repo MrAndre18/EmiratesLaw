@@ -1,0 +1,64 @@
+.btn_to_top {
+  $btn_to_top_size: 55px;
+
+  position: fixed;
+  right: 0;
+  bottom: 10vh;
+  z-index: 999;
+  width: fit-content;
+  height: $btn_to_top_size;
+  display: flex;
+  align-items: center;
+  border: 1px solid $gold;
+  border-radius: $btn_to_top_size 0 0 $btn_to_top_size;
+  padding: 0 20px 0 $btn_to_top_size;
+  opacity: 70%;
+  transform: translateX(100%);
+  visibility: hidden;
+  @include transition();
+
+  &.visible {
+    transform: translateX(calc(100% - $btn_to_top_size + 10px));
+    visibility: visible;
+
+    &:hover {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: $btn_to_top_size 0 0 $btn_to_top_size;
+    background: $gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition();
+
+    &-img {
+      position: absolute;
+      left: 18px;
+      width: 16px;
+      height: 16px;
+      transform-origin: center;
+      transform: rotate(-90deg);
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    color: $dark-grey;
+    @include transition();
+  }
+}

@@ -6,11 +6,12 @@ let scrollPrev = 0,
 const header = $(".header"),
       headerHeight = $(header).outerHeight(),
       stickyNavBars = $('[data-type=js-sticky-nav-bar]'),
-      stickyNavBarsTopPosition = Number($(stickyNavBars[0]).css('top').slice(0, -2))
-
-  $(stickyNavBars).each((index, element) => {
-    $(element).css('transition', $(header).css('transition'))
-  })
+      stickyNavBarsTopPosition = stickyNavBars.length ? Number($(stickyNavBars[0]).css('top').slice(0, -2)) : 0,
+      toTopBtn = $('.btn_to_top')
+      
+$(stickyNavBars).each((index, element) => {
+  $(element).css('transition', $(header).css('transition'))
+})
 
 const setStickyNavBarTopPosition = position => {
   if (!stickyNavBars.length) return
@@ -71,3 +72,48 @@ $(window).on("scroll", changeHeaderBg)
 $(window).on("mousemove", showHeader)
 $(header).on("mousemove", () => { isHoverHeader = true})
 $(header).on("mouseout", () => { isHoverHeader = false})
+
+$(window).on("scroll", e => {
+  if ($(e.currentTarget).scrollTop() > $(window).height())
+    $(toTopBtn).addClass('visible')
+  else $(toTopBtn).removeClass('visible')
+})
+
+$(toTopBtn).on('click', e => {
+  e.preventDefault()
+
+  $('html').animate({scrollTop: 0}, 1000)
+})
+
+export const scrollToAnchor = pageId => {
+  const page = $(`#${pageId}`),
+        buttons = $(page).find('[data-type=js-scroll-btn]'),
+        targets = $(page).find('[data-type=js-anchor-block]'),
+        buttonsItems = $(buttons).parent()
+
+  $(window).on("scroll", () => {
+    const scrollDistance = $(window).scrollTop()
+    
+    $(targets).each((index, target) => {
+      if ($(target).offset().top <= scrollDistance + 1) {
+        const targetBtn = $(page).find(`[data-type=js-scroll-btn][data-target=${$(target).data('ancor')}]`)
+
+        $(buttonsItems).removeClass('accordion-item__active')
+        $(targetBtn).parent().addClass('accordion-item__active')
+      }
+    })
+  })
+  
+  $(buttons).on('click', e => {
+    e.preventDefault()
+
+    const targetID = $(e.currentTarget).data('target'),
+          targetBlock = $(page).find(`[data-type=js-anchor-block][data-ancor=${targetID}]`)
+
+    if (!targetBlock.length) return
+    
+    $('html, body').animate({
+      scrollTop: $(targetBlock).offset().top
+    }, 1000)
+  })
+}

@@ -1,40 +1,10 @@
+import { searchText } from './search-text.js'
+import { scrollToAnchor } from './scroll.js'
+
 $(() => {
   const tabs = $('[data-type=js-tabs]'),
         pages = $('.info__page'),
         tabsLinks = $('.info__page-link')
-
-  const scrollToAnchor = pageId => {
-    const page = $(`#${pageId}`),
-          buttons = $(page).find('[data-type=js-scroll-btn]'),
-          targets = $(page).find('[data-type=js-anchor-block]'),
-          buttonsItems = $(buttons).parent()
-
-    $(window).on("scroll", () => {
-      const scrollDistance = $(window).scrollTop()
-      
-      $(targets).each((index, target) => {
-        if ($(target).offset().top <= scrollDistance + 1) {
-          const targetBtn = $(page).find(`[data-type=js-scroll-btn][data-target=${$(target).data('ancor')}]`)
-
-          $(buttonsItems).removeClass('accordion-item__active')
-          $(targetBtn).parent().addClass('accordion-item__active')
-        }
-      })
-    })
-    
-    $(buttons).on('click', e => {
-      e.preventDefault()
-
-      const targetID = $(e.currentTarget).data('target'),
-            targetBlock = $(page).find(`[data-type=js-anchor-block][data-ancor=${targetID}]`)
-
-      if (!targetBlock.length) return
-      
-      $('html, body').animate({
-        scrollTop: $(targetBlock).offset().top
-      }, 400)
-    })
-  }
 
   const showPage = (id) => {
     const curPage = $(`#${id}`),
@@ -91,6 +61,7 @@ $(() => {
       history.pushState({}, '', newUrl)
       showPage(id)
       scrollToAnchor(id)
+      searchText(id)
     }
   }
 

@@ -24,8 +24,208 @@
   }
 
   &__block {
+    position: relative;
     display: flex;
     padding-right: 80px;
+  }
+
+  &__search {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 20;
+    width: 60px;
+    height: 60px;
+    @include transition();
+
+    &.active {
+      width: 350px;
+    }
+
+    &-input {
+      width: 100%;
+      height: 100%;
+      background: $white;
+      border-radius: 50px;
+      padding: 0;
+      box-sizing: border-box;
+      color: $dark-grey;
+      @include transition();
+
+      &::placeholder {
+        opacity: 0;
+        @include transition();
+      }
+    }
+
+    &.active &-input {
+      padding: 0 90px 0 20px;
+
+      &::placeholder {
+        opacity: 100%;
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      z-index: 1;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: $white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include transition();
+
+      &-img {
+        scale: 120%;
+
+        & path {
+          stroke: $dark-grey;
+          @include transition();
+        }
+      }
+
+      &:hover {
+        background: $dark-grey;
+      }
+
+      &:hover &-img {
+        & path {
+          stroke: $white;
+        }
+      }
+    }
+
+    &.active &-btn {
+      background: $dark-grey;
+
+      &-img {
+        & path {
+          stroke: $white;
+        }
+      }
+
+      &:hover {
+        background: $gold;
+      }
+
+      &:hover .laws-detail__search-btn-img {
+        & path {
+          stroke: $dark-grey;
+        }
+      }
+    }
+
+    &-navigation {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30px;
+      height: 50px;
+      @include transition();
+
+      &-btn {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .svg {
+          scale: 140%;
+          @include transition();
+
+          & path {
+            fill: $grey;
+            @include transition();
+          }
+        }
+
+        &:hover .svg {
+          scale: 180%;
+
+          & path {
+            fill: $black;
+          }
+        }
+      }
+
+      &-prev {
+        & .svg {
+          transform: rotate(-90deg);
+        }
+      }
+
+      &-next {
+        & .svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &.active &-navigation {
+      right: 55px;
+      @include transition($delay: 200ms);
+    }
+
+    &-close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include transition();
+
+      & span {
+        position: relative;
+        width: 25px;
+        height: 3px;
+        border-radius: 4px;
+        background: $white;
+        transform: rotate(45deg);
+        @include transition();
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: inherit;
+          height: inherit;
+          border-radius: 4px;
+          background: $white;
+          transform: rotate(90deg);
+          @include transition();
+        }
+      }
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+
+      &:hover span{
+        background: $gold;
+
+        &::before {
+          background: $gold;
+        }
+      }
+    }
+
+    &.active &-close {
+      top: 100%;
+      @include transition($delay: 200ms);
+    }
   }
 
   &__navigation {
