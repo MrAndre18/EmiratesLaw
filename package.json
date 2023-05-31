@@ -37,6 +37,7 @@
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
     "jquery.marquee": "latest",
+    "mark.js": "^8.11.1",
     "moment": "latest",
     "sass": "latest",
     "sass-loader": "latest",

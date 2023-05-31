@@ -4308,6 +4308,18 @@ body .content .title-block__title {
   margin: 60px 0 50px;
 }
 
+.highlight {
+  display: inline;
+  background: #FCDE77;
+  color: #404040;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.highlight.selected {
+  background: #FFD700;
+  color: #272727;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+
 .laws-detail__body {
   margin: 160px 0;
   padding: 0 40px;
@@ -4334,13 +4346,19 @@ body .content .title-block__title {
   padding-right: 80px;
 }
 .laws-detail__search {
-  position: absolute;
-  top: 20px;
-  right: 0;
-  z-index: 20;
+  position: sticky;
+  top: 130px;
   width: 60px;
   height: 60px;
   transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.laws-detail__search-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  height: 100%;
+  padding: 20px 0;
 }
 .laws-detail__search.active {
   width: 350px;
@@ -4364,6 +4382,26 @@ body .content .title-block__title {
 }
 .laws-detail__search.active .laws-detail__search-input::placeholder {
   opacity: 100%;
+}
+.laws-detail__search-result {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  display: flex;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.laws-detail__search-result span {
+  color: #404040;
+  font-size: 13px;
+}
+.laws-detail__search-result .slash {
+  margin: 0 2px;
+}
+.laws-detail__search-result.active {
+  right: 85px;
+  opacity: 1;
 }
 .laws-detail__search-btn {
   position: absolute;
@@ -4417,6 +4455,9 @@ body .content .title-block__title {
   height: 50px;
   transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
 }
+.laws-detail__search-navigation.active {
+  right: 55px;
+}
 .laws-detail__search-navigation-btn {
   width: 100%;
   height: 100%;
@@ -4443,10 +4484,6 @@ body .content .title-block__title {
 }
 .laws-detail__search-navigation-next .svg {
   transform: rotate(90deg);
-}
-.laws-detail__search.active .laws-detail__search-navigation {
-  right: 55px;
-  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 200ms;
 }
 .laws-detail__search-close {
   position: absolute;
