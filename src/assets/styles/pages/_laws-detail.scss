@@ -5,8 +5,8 @@
   @include transition();
 
   &.selected {
-    background: $gold;
-    color: $black;
+    background: $red;
+    color: $white;
     @include transition();
   }
 }

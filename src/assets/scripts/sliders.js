@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle'
 
 $(() => {
   // Верхний слайдер главной
-  if ($('.title-block__body').width()) {
+  if ($('.title-block__body').length) {
     const delay = 10000,
           slider = $('.title-block__body'),
           loading = $(slider).find('.title-block__pages-loading')
@@ -74,7 +74,7 @@ $(() => {
   }
 
   // Слайдер справочной информации на главной
-  if ($('.index-info__content').width()) {
+  if ($('.index-info__content').length) {
     const mainInfoSlider = new Swiper('.index-info__content', {
       // Optional parameters
       direction: 'horizontal',
@@ -102,7 +102,7 @@ $(() => {
   }
 
   // Слайдер Новостей
-  if ($('.index-events__body').width()) {
+  if ($('.index-events__body').length) {
     const mainEventsSlider = new Swiper('.index-events__body', {
       // Optional parameters
       direction: 'horizontal',
@@ -138,7 +138,7 @@ $(() => {
   }
 
   // Слайдер истории запросов на странице поиска
-  if ($('.search-page__search-history').width()) {
+  if ($('.search-page__search-history').length) {
     const searchHistorySlider = new Swiper('.search-page__search-history', {
       // Optional parameters
       direction: 'horizontal',

@@ -28,6 +28,15 @@ body {
   }
 }
 
+.os-scrollbar {
+
+  &-handle {
+    --os-handle-bg: rgba(115, 126, 132, 0.8);
+    --os-handle-bg-hover: rgba(64, 64, 64, 0.8);
+    --os-handle-bg-active: rgba(64, 64, 64, 0.8);
+  }
+}
+
 .swiper-notification {
   position: absolute;
   left: 0;

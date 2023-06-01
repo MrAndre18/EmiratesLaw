@@ -1,5 +1,5 @@
 $(() => {
-  if ($('.marquee').width()) {
+  if ($('.marquee').length) {
     let marqueeGap = $('.marquee').width() * 0.6
 
     if ($('.marquee.about-marquee').width())

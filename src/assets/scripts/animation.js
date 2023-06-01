@@ -1,6 +1,6 @@
 $(() => {
   // Параллакс внутри блока
-  if ($('.parallax__inner').width()) {
+  if ($('.parallax__inner').length) {
     const wrapper = $('.parallax__inner')
 
     const initParallax = e => {

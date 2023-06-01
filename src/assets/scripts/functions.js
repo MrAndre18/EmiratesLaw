@@ -10,7 +10,7 @@ export const isWebp = () => {
   }
 
   // Добавление класса webp или no-webp для HTML
-  testWebP(( support ) => {
+  testWebP(support => {
     let className = support === true ? 'webp' : 'no-webp'
     document.documentElement.classList.add(className)
   })

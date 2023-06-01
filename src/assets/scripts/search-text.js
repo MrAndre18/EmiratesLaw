@@ -51,32 +51,6 @@ export const searchText = pageId => {
     }, 400)
   }
 
-  const setCurrentResult = () => {
-    $(searchResultBtns.prev).on('click', () => {
-      if (currentResultNumber == 1)
-        currentResultNumber = resultCount
-      else
-        currentResultNumber--
-      
-      $('.highlight').removeClass('selected')
-
-      selectHighlight()
-      scrollToCurrentResult()
-    })
-
-    $(searchResultBtns.next).on('click', () => {
-      if (currentResultNumber == resultCount)
-        currentResultNumber = 1
-      else
-        currentResultNumber++
-      
-      $('.highlight').removeClass('selected')
-
-      selectHighlight()
-      scrollToCurrentResult()
-    })
-  }
-
   const clearInput = () => {
     const instance = new Mark(pageContent)
     
@@ -87,6 +61,7 @@ export const searchText = pageId => {
   const activateSearchInput = () => {
     $(searchBtnBlock).addClass('active')
     $(searchInput).prop('disabled', false)
+    $(searchInput).trigger('focus')
   }
 
   const disactivateSearchInput = () => {
@@ -121,8 +96,6 @@ export const searchText = pageId => {
       selectHighlight()
       scrollToCurrentResult()
     }
-
-    setCurrentResult()
   }
 
   disactivateSearchInput()
@@ -132,6 +105,7 @@ export const searchText = pageId => {
 
     searchResultArr = []
     resultCount = 0
+    currentResultNumber = 1
 
     if ($(searchInput).val())
       $(searchCountBlock.block).addClass('active')
@@ -142,4 +116,33 @@ export const searchText = pageId => {
   })
 
   $(searchCloseBtn).on('click', disactivateSearchInput)
+
+  $(searchResultBtns.prev).on('click', () => {
+    if (currentResultNumber == 1)
+      currentResultNumber = resultCount
+    else
+      currentResultNumber--
+    
+    $('.highlight').removeClass('selected')
+
+    selectHighlight()
+    scrollToCurrentResult()
+  })
+
+  $(searchResultBtns.next).on('click', () => {
+    if (currentResultNumber == resultCount)
+      currentResultNumber = 1
+    else
+      currentResultNumber++
+    
+    $('.highlight').removeClass('selected')
+
+    selectHighlight()
+    scrollToCurrentResult()
+  })
+
+  $(searchInput).on('keydown', e => {
+    if (e.code === 'Enter')
+      $(searchBtn).trigger('click')
+  })
 }

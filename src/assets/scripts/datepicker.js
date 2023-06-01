@@ -3,7 +3,7 @@ import AirDatepicker from 'air-datepicker'
 $(() => {
   const datePickers = $('[data-type=js-datepicker]')
   
-  $(datePickers).each(function (index, element) {
+  $(datePickers).each((index, element) => {
     if ($(element).data('datepicker-type') == "all") {
       new AirDatepicker($(element)[0], {
         range: true,

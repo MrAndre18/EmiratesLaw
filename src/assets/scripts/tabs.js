@@ -105,7 +105,7 @@ $(() => {
           }
 
           if (curPage == newPage) {
-            $(element).click()
+            $(element).trigger('click')
             setPage(urlParams.toString())
           }
         })

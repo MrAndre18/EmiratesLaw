@@ -1,4 +1,4 @@
-if ($("[data-type=js-open-btn]").width()) {
+if ($("[data-type=js-open-btn]").length) {
   const openBtns = $("[data-type=js-open-btn]");
 
   $(openBtns).each(function (index, btn) {
@@ -8,7 +8,7 @@ if ($("[data-type=js-open-btn]").width()) {
       const modalType = $(btn).data("modal").replace("-btn", ""),
         modal = $(`[data-modal=${modalType}]`);
 
-      if (!$(modal).width()) return;
+      if (!$(modal).length) return;
 
       $(modal).addClass("active");
       $(btn).addClass("active");
@@ -17,8 +17,8 @@ if ($("[data-type=js-open-btn]").width()) {
 }
 
 if (
-  $("[data-type=js-modal]").width() &&
-  $("[data-type=js-close-btn]").width()
+  $("[data-type=js-modal]").length &&
+  $("[data-type=js-close-btn]").length
 ) {
   const closeBtns = $("[data-type=js-close-btn]");
 
@@ -26,7 +26,7 @@ if (
     $(btn).on("click", () => {
       const parentModal = btn.closest("[data-type=js-modal]");
 
-      if (!$(parentModal).width()) return;
+      if (!$(parentModal).length) return;
 
       $(parentModal).removeClass("active");
 

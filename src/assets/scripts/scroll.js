@@ -42,7 +42,7 @@ const changeHeaderBg = () => {
 
   if (
     $(window).scrollTop() > $(window).height() / 3 &&
-    $(window).scrollTop() >= outPosition + 300 &&
+    $(window).scrollTop() >= outPosition &&
     isScrolled &&
     !isHoverHeader
   ) {
@@ -95,7 +95,7 @@ export const scrollToAnchor = pageId => {
     const scrollDistance = $(window).scrollTop()
     
     $(targets).each((index, target) => {
-      if ($(target).offset().top <= scrollDistance + 1) {
+      if ($(target).offset().top <= scrollDistance + 130 + 1) {
         const targetBtn = $(page).find(`[data-type=js-scroll-btn][data-target=${$(target).data('ancor')}]`)
 
         $(buttonsItems).removeClass('accordion-item__active')
@@ -113,7 +113,7 @@ export const scrollToAnchor = pageId => {
     if (!targetBlock.length) return
     
     $('html, body').animate({
-      scrollTop: $(targetBlock).offset().top
+      scrollTop: $(targetBlock).offset().top - 130
     }, 1000)
   })
 }

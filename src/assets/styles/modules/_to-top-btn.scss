@@ -9,7 +9,6 @@
   height: $btn_to_top_size;
   display: flex;
   align-items: center;
-  border: 1px solid $gold;
   border-radius: $btn_to_top_size 0 0 $btn_to_top_size;
   padding: 0 20px 0 $btn_to_top_size;
   opacity: 70%;
@@ -25,6 +24,20 @@
       opacity: 100%;
       transform: translateX(0);
     }
+
+    &:hover .btn_to_top__circle {
+      background: $gold;
+
+      &-img {
+        & path {
+          fill: $dark-grey;
+        }
+      }
+    }
+
+    &:hover .btn_to_top__text {
+      color: $dark-grey;
+    }
   }
 
   &__circle {
@@ -35,7 +48,7 @@
     height: 100%;
     width: 100%;
     border-radius: $btn_to_top_size 0 0 $btn_to_top_size;
-    background: $gold;
+    background: $grey;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +63,8 @@
       transform: rotate(-90deg);
 
       & path {
-        fill: $dark-grey;
+        fill: $white;
+        @include transition();
       }
     }
   }
@@ -58,7 +72,7 @@
   &__text {
     position: relative;
     z-index: 1;
-    color: $dark-grey;
+    color: $white;
     @include transition();
   }
 }

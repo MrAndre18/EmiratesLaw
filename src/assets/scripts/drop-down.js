@@ -1,13 +1,13 @@
 $(() => {
   const dropDown = $('.drop-down')
 
-  if ($(dropDown).width()) {
-    $(dropDown).click(e => {
+  if ($(dropDown).length) {
+    $(dropDown).on('click', e => {
       const dropDownCurrent = e.currentTarget,
             elementsBlock = $(dropDownCurrent).siblings('.drop-down__list'),
             currentItem = $(dropDownCurrent).find('.drop-down__text')
 
-      e.preventDefault();
+      e.preventDefault()
 
       // Разворачивание списка
       $(dropDownCurrent).toggleClass("active")
@@ -23,7 +23,7 @@ $(() => {
 
           $(elementsBlock).addClass("active")
 
-          $(elementsItems).click(event => {
+          $(elementsItems).on('click', event => {
             if ($(event.currentTarget).text() !== $(currentItem).text()) {
               $(elementsItems).each((index, element) => {
                 $(element).removeClass('active')
@@ -43,7 +43,7 @@ $(() => {
       }
     })
 
-    $(document).click(e => {
+    $(document).on('click', e => {
       const activeBlocks = $('.drop-down__list.active'),
             target = e.target,
             targetElementsBlock = $(target).closest('.drop-down__list.active'),

@@ -1,5 +1,5 @@
 $(() => {
-  if($('.pages-pagination').width()) {
+  if($('.pages-pagination').length) {
     const paginationBlocks = $('.pages-pagination')
     
     $(paginationBlocks).each(function (index, pagination) {
@@ -25,7 +25,7 @@ $(() => {
         const currentElement = $(pagination).find('.pages-pagination__item-current'),
               prevElement = $(currentElement).prev('.pages-pagination__item')
 
-        if ($(prevElement).width()) {
+        if ($(prevElement).length) {
           clearCurrent()
           $(prevElement).addClass('pages-pagination__item-current')
           setCurrentPosition()
@@ -36,7 +36,7 @@ $(() => {
         const currentElement = $(pagination).find('.pages-pagination__item-current'),
               nextElement = $(currentElement).next('.pages-pagination__item')
 
-        if ($(nextElement).width()) {
+        if ($(nextElement).length) {
           clearCurrent()
           $(nextElement).addClass('pages-pagination__item-current')
           setCurrentPosition()

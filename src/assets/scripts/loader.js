@@ -1,11 +1,35 @@
+import { 
+  OverlayScrollbars, 
+  ScrollbarsHidingPlugin, 
+  SizeObserverPlugin, 
+  ClickScrollPlugin 
+} from 'overlayscrollbars'
+
+let scrollBaroptions = {
+  overflow: {
+    x: 'scroll',
+    y: 'hidden',
+  },
+  scrollbars: {
+    autoHide: 'scroll',
+    clickScroll: true,
+    autoHideDelay: 3000,
+  }
+}
+
+const customScrollbar = OverlayScrollbars($('body')[0], scrollBaroptions)
+
+OverlayScrollbars.plugin([SizeObserverPlugin, ClickScrollPlugin, ScrollbarsHidingPlugin])
+
 const loader = $('.loader'),
       loaderProgress = loader.find('.progress-ring'),
       circle = loaderProgress.find('.progress-ring__circle'),
       radius = circle.attr('r'),
       circumference = 2 * Math.PI * radius,
-      loaderDuration = 1500;
+      loaderDuration = 1500
 
 $(() => {
+  $('html').attr('data-overlayscrollbars-overflow-y', 'hidden')
   circle.css("strokeDasharray", `${circumference} ${circumference}`)
   circle.css("strokeDashoffset", circumference)
   circle.css(
@@ -19,7 +43,11 @@ $(() => {
 
     setTimeout(() => {
       loader.addClass("hidden")
-      $("body").css("overflow", "auto")
+      $('body').css("overflow", "")
+      customScrollbar.options({overflow: {
+        x: 'scroll',
+        y: 'scroll',
+      }})
     }, loaderDuration)
   }
 

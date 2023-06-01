@@ -3,7 +3,7 @@ import TypeIt from "typeit";
 $(() => {
   const TypeItElems = $('[data-type="js-typeit"]')
   
-  $(TypeItElems).each(function (index, element) {
+  $(TypeItElems).each((index, element) => {
     const animDuration = 2000;
     const myTypeItInstance = new TypeIt(element, {
       speed: 100,
@@ -28,6 +28,6 @@ $(() => {
     .delete()
     .type("Всё о свободных экономических зонах ОАЭ").pause(animDuration)
     .delete()
-    .go();
-  });
+    .go()
+  })
 })

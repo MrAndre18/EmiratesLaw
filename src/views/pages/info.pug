@@ -125,11 +125,87 @@ block header
     ]
 
   -
+    const territory_dropdown = [
+      {
+        emirate: 'Абу-Даби',
+        free_zones: [
+          'Abu Dhabi Global Market (ADGM)',
+          'TwoFour54 Media and Entertainment Hub',
+          'Masdar City Free Zone',
+          'Khalifa Industrial Zone Abu Dhabi (KIZAD)'
+        ]
+      },
+      {
+        emirate: 'Аджман',
+        free_zones: [
+          'Ajman Media City (AMC)',
+          'Ajman Free Zone (AFZA)'
+        ]
+      },
+      {
+        emirate: 'Эль-Фуджайра',
+        free_zones: [
+          'Fujairah Free Zone (FFZ)',
+          'International Free Zone Authority (IFZA)',
+          'Fujаirah Creative City (FCC)'
+        ]
+      },
+      {
+        emirate: 'Шарджа',
+        free_zones: [
+          'Sharjah Airport Free Zone (SAIF)',
+          'Sharjah Publishing Free Zone (SPFZ)',
+          'Hamriyah Free Zone (HAFZA)'
+        ]
+      },
+      {
+        emirate: 'Дубай',
+        free_zones: [
+          'Jebel Ali Free Zone, Jafta, в Дубае, ОАЭ',
+          'Dubai South Free Zone / DWC',
+          'Meydan Free Zone (MFZ)',
+          'Dubai Airport Free Zone (DAFZA)',
+          'Dubai Internet City (DIC)',
+          'Dubai Technology Entrepreneur Campus (DTEC)',
+          'DMCC Dubai',
+          'Dubai International Financial Centre (DIFC)',
+          'Dubai Media City (DMC)',
+          'Dubai Knowledge Park (DKP)',
+          'Dubai HealthCare City (DHCC)',
+          'Dubai Auto Zone (DAZ)',
+          'Dubai Silicon Oasis (DSO)',
+          'Dubai Production City (DPC)',
+          'Dubai World Trade Center (DWTC)',
+          'Dubai Outsource City (DOC)',
+          'Dubai Gold and Diamond Park (DGDP)',
+          'Dubai Scienсe Park (DSP)',
+          'Dubai International Academic City (DIAC)',
+          'Dubai Design District D3',
+          'Dubai International Humanitarian City (DIHC)'
+        ]
+      },
+      {
+        emirate: 'Рас-эль-Хайма',
+        free_zones: [
+          'RAK Investment Authority (RAKIA)',
+          'Ras Al Khaimah Economic Zone (RAKEZ)',
+          'RAK Free Trade Zone (RAK FTZ)'
+        ]
+      },
+      {
+        emirate: 'Умм-эль-Кайвайн',
+        free_zones: [
+          'Umm Al Quwain Free Trade Zone (UAQ FTZ)'
+        ]
+      },
+    ]
+
+  -
     const laws_result = {
       title: {
-        description: 'Описание',
-        category: 'Отрасль',
-        year: 'Год',
+        description: 'Название',
+        category: 'Тематика',
+        year: 'Территория',
       },
       items: [
         {
@@ -231,7 +307,7 @@ block content
                     button.search-btn
                       img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
                   .laws-filters__filter
-                    +datepicker("Год", "laws-filters__filter-date", "laws-filters-datepicker", "years", "yyyy")
+                    //- +drop-down(text, className, elementsList)
                   button.laws-filters__submit(type="submit") Поиск
               p.laws-result_count Найдено записей: #[span 3]
               +result(laws_result, "laws-result", "info__page-link")
@@ -333,6 +409,10 @@ block content
             .laws-detail__search-block
               .laws-detail__search
                 input.laws-detail__search-input(type="text", name="laws-detail-search", placeholder="Поиск по документу", disabled)
+                p.laws-detail__search-result
+                  span.laws-detail__search-result-current 0
+                  span.slash /
+                  span.laws-detail__search-result-total 10
                 button.laws-detail__search-btn
                   img.svg.laws-detail__search-btn-img(src="@img/svg/search.svg", alt="Search")
                 .laws-detail__search-navigation

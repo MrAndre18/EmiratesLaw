@@ -32,7 +32,7 @@ if (searchHistory.length) {
   $(searchHistoryBlocks).remove()
 }
 
-if ($("form[role=search]").width()) {
+if ($("form[role=search]").length) {
   const forms = $("form[role=search]")
 
   $(forms).on('submit', e => {
