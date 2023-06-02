@@ -127,75 +127,82 @@ block header
   -
     const territory_dropdown = [
       {
-        emirate: 'Абу-Даби',
-        free_zones: [
-          'Abu Dhabi Global Market (ADGM)',
-          'TwoFour54 Media and Entertainment Hub',
-          'Masdar City Free Zone',
-          'Khalifa Industrial Zone Abu Dhabi (KIZAD)'
+        first_level: 'Абу-Даби',
+        name: 'territory',
+        second_level: [
+          {text: 'Abu Dhabi Global Market (ADGM)'},
+          {text: 'TwoFour54 Media and Entertainment Hub'},
+          {text: 'Masdar City Free Zone'},
+          {text: 'Khalifa Industrial Zone Abu Dhabi (KIZAD)'}
         ]
       },
       {
-        emirate: 'Аджман',
-        free_zones: [
-          'Ajman Media City (AMC)',
-          'Ajman Free Zone (AFZA)'
+        first_level: 'Аджман',
+        name: 'territory',
+        second_level: [
+          {text: 'Ajman Media City (AMC)'},
+          {text: 'Ajman Free Zone (AFZA)'}
         ]
       },
       {
-        emirate: 'Эль-Фуджайра',
-        free_zones: [
-          'Fujairah Free Zone (FFZ)',
-          'International Free Zone Authority (IFZA)',
-          'Fujаirah Creative City (FCC)'
+        first_level: 'Эль-Фуджайра',
+        name: 'territory',
+        second_level: [
+          {text: 'Fujairah Free Zone (FFZ)'},
+          {text: 'International Free Zone Authority (IFZA)'},
+          {text: 'Fujаirah Creative City (FCC)'}
         ]
       },
       {
-        emirate: 'Шарджа',
-        free_zones: [
-          'Sharjah Airport Free Zone (SAIF)',
-          'Sharjah Publishing Free Zone (SPFZ)',
-          'Hamriyah Free Zone (HAFZA)'
+        first_level: 'Шарджа',
+        name: 'territory',
+        second_level: [
+          {text: 'Sharjah Airport Free Zone (SAIF)'},
+          {text: 'Sharjah Publishing Free Zone (SPFZ)'},
+          {text: 'Hamriyah Free Zone (HAFZA)'}
         ]
       },
       {
-        emirate: 'Дубай',
-        free_zones: [
-          'Jebel Ali Free Zone, Jafta, в Дубае, ОАЭ',
-          'Dubai South Free Zone / DWC',
-          'Meydan Free Zone (MFZ)',
-          'Dubai Airport Free Zone (DAFZA)',
-          'Dubai Internet City (DIC)',
-          'Dubai Technology Entrepreneur Campus (DTEC)',
-          'DMCC Dubai',
-          'Dubai International Financial Centre (DIFC)',
-          'Dubai Media City (DMC)',
-          'Dubai Knowledge Park (DKP)',
-          'Dubai HealthCare City (DHCC)',
-          'Dubai Auto Zone (DAZ)',
-          'Dubai Silicon Oasis (DSO)',
-          'Dubai Production City (DPC)',
-          'Dubai World Trade Center (DWTC)',
-          'Dubai Outsource City (DOC)',
-          'Dubai Gold and Diamond Park (DGDP)',
-          'Dubai Scienсe Park (DSP)',
-          'Dubai International Academic City (DIAC)',
-          'Dubai Design District D3',
-          'Dubai International Humanitarian City (DIHC)'
+        first_level: 'Дубай',
+        name: 'territory',
+        second_level: [
+          {text: 'Jebel Ali Free Zone, Jafta, в Дубае, ОАЭ'},
+          {text: 'Dubai South Free Zone / DWC'},
+          {text: 'Meydan Free Zone (MFZ)'},
+          {text: 'Dubai Airport Free Zone (DAFZA)'},
+          {text: 'Dubai Internet City (DIC)'},
+          {text: 'Dubai Technology Entrepreneur Campus (DTEC)'},
+          {text: 'DMCC Dubai'},
+          {text: 'Dubai International Financial Centre (DIFC)'},
+          {text: 'Dubai Media City (DMC)'},
+          {text: 'Dubai Knowledge Park (DKP)'},
+          {text: 'Dubai HealthCare City (DHCC)'},
+          {text: 'Dubai Auto Zone (DAZ)'},
+          {text: 'Dubai Silicon Oasis (DSO)'},
+          {text: 'Dubai Production City (DPC)'},
+          {text: 'Dubai World Trade Center (DWTC)'},
+          {text: 'Dubai Outsource City (DOC)'},
+          {text: 'Dubai Gold and Diamond Park (DGDP)'},
+          {text: 'Dubai Scienсe Park (DSP)'},
+          {text: 'Dubai International Academic City (DIAC)'},
+          {text: 'Dubai Design District D3'},
+          {text: 'Dubai International Humanitarian City (DIHC)'}
         ]
       },
       {
-        emirate: 'Рас-эль-Хайма',
-        free_zones: [
-          'RAK Investment Authority (RAKIA)',
-          'Ras Al Khaimah Economic Zone (RAKEZ)',
-          'RAK Free Trade Zone (RAK FTZ)'
+        first_level: 'Рас-эль-Хайма',
+        name: 'territory',
+        second_level: [
+          {text: 'RAK Investment Authority (RAKIA)'},
+          {text: 'Ras Al Khaimah Economic Zone (RAKEZ)'},
+          {text: 'RAK Free Trade Zone (RAK FTZ)'}
         ]
       },
       {
-        emirate: 'Умм-эль-Кайвайн',
-        free_zones: [
-          'Umm Al Quwain Free Trade Zone (UAQ FTZ)'
+        first_level: 'Умм-эль-Кайвайн',
+        name: 'territory',
+        second_level: [
+          {text: 'Umm Al Quwain Free Trade Zone (UAQ FTZ)'}
         ]
       },
     ]
@@ -307,7 +314,7 @@ block content
                     button.search-btn
                       img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
                   .laws-filters__filter
-                    //- +drop-down(text, className, elementsList)
+                    +drop-down("Территория", "filter", territory_dropdown, 'multiple')
                   button.laws-filters__submit(type="submit") Поиск
               p.laws-result_count Найдено записей: #[span 3]
               +result(laws_result, "laws-result", "info__page-link")

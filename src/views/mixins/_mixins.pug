@@ -1,5 +1,5 @@
 // Выпадающий список
-mixin drop-down(text, className, elementsList)
+mixin drop-down(text, className, elementsList, isMultiple)
   button.drop-down(class= className ? className : "", type="button")
     p.drop-down__text= text
     .drop-down__img
@@ -7,10 +7,62 @@ mixin drop-down(text, className, elementsList)
         img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
       else
         img.svg(src="@img/svg/drop-down.svg", alt="")
-  if elementsList
-    ul.drop-down__list
+  if isMultiple
+    ul.drop-down__list.first-level
       each element in elementsList
-        li.drop-down__list-item= element.text
+        li.first-level__item
+          .first-level__item-title
+            label.first-level__item-label= element.first_level
+              input.first-level__item-input(
+                type="checkbox",
+                name= element.name)
+            if element.second_level
+              label.drop-down__list-select-all Выбрать все
+                input.drop-down__list-select-all-input(
+                  type="checkbox",
+                  name="select-all")
+          if element.second_level
+            ul.second-level
+              each second_level_element in element.second_level
+                li.second-level__item
+                  label.second-level__item-label= second_level_element.text
+                    input.second-level__item-input(
+                      type="checkbox",
+                      name= element.name+"-second-level")
+  else
+    ul.drop-down__list.first-level
+      each element in elementsList
+        li.first-level__item
+          .first-level__item-title
+            label.first-level__item-label= element.first_level
+              if element.checked
+                input.first-level__item-input(
+                type="radio",
+                name= element.name,
+                checked)
+              else
+                input.first-level__item-input(
+                  type="radio",
+                  name= element.name)
+            if element.second_level
+              label.drop-down__list-select-all Выбрать все
+                input.drop-down__list-select-all-input(
+                  type="checkbox",
+                  name="select-all")
+          if element.second_level
+            ul.second-level
+              each second_level_element in element.second_level
+                li.second-level__item
+                  label.second-level__item-label= second_level_element.text
+                    if second_level_element.checked
+                      input.second-level__item-input(
+                        type="radio",
+                        name= element.name+"-second-level",
+                        checked)
+                    else
+                      input.second-level__item-input(
+                        type="radio",
+                        name= element.name+"-second-level")
 
 // Кнопка "Подробнее" со стрелкой
 mixin more-btn-arrow(text, url, className)
