@@ -1,68 +1,73 @@
 // Выпадающий список
 mixin drop-down(text, className, elementsList, isMultiple)
-  button.drop-down(class= className ? className : "", type="button")
-    p.drop-down__text= text
-    .drop-down__img
-      if className
-        img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
-      else
-        img.svg(src="@img/svg/drop-down.svg", alt="")
-  if isMultiple
-    ul.drop-down__list.first-level
-      each element in elementsList
-        li.first-level__item
-          .first-level__item-title
-            label.first-level__item-label= element.first_level
-              input.first-level__item-input(
-                type="checkbox",
-                name= element.name)
-            if element.second_level
-              label.drop-down__list-select-all Выбрать все
-                input.drop-down__list-select-all-input(
+  .drop-down__wrapper
+    button.drop-down(
+      class= className ? className : "",
+      class= isMultiple ? 'multiple' : 'single',
+      type="button",
+      name= text)
+      p.drop-down__text= text
+      .drop-down__img
+        if isMultiple
+          img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
+        else
+          img.svg(src="@img/svg/drop-down.svg", alt="")
+    if isMultiple
+      ul.drop-down__list.first-level
+        each element in elementsList
+          li.first-level__item
+            .first-level__item-title
+              label.first-level__item-label= element.first_level
+                input.first-level__item-input(
                   type="checkbox",
-                  name="select-all")
-          if element.second_level
-            ul.second-level
-              each second_level_element in element.second_level
-                li.second-level__item
-                  label.second-level__item-label= second_level_element.text
-                    input.second-level__item-input(
-                      type="checkbox",
-                      name= element.name+"-second-level")
-  else
-    ul.drop-down__list.first-level
-      each element in elementsList
-        li.first-level__item
-          .first-level__item-title
-            label.first-level__item-label= element.first_level
-              if element.checked
-                input.first-level__item-input(
-                type="radio",
-                name= element.name,
-                checked)
-              else
-                input.first-level__item-input(
-                  type="radio",
                   name= element.name)
+              if element.second_level
+                label.drop-down__list-select-all Выбрать все
+                  input.drop-down__list-select-all-input(
+                    type="checkbox",
+                    name="select-all")
             if element.second_level
-              label.drop-down__list-select-all Выбрать все
-                input.drop-down__list-select-all-input(
-                  type="checkbox",
-                  name="select-all")
-          if element.second_level
-            ul.second-level
-              each second_level_element in element.second_level
-                li.second-level__item
-                  label.second-level__item-label= second_level_element.text
-                    if second_level_element.checked
+              ul.second-level
+                each second_level_element in element.second_level
+                  li.second-level__item
+                    label.second-level__item-label= second_level_element.text
                       input.second-level__item-input(
-                        type="radio",
-                        name= element.name+"-second-level",
-                        checked)
-                    else
-                      input.second-level__item-input(
-                        type="radio",
+                        type="checkbox",
                         name= element.name+"-second-level")
+    else
+      ul.drop-down__list.first-level
+        each element in elementsList
+          li.first-level__item
+            .first-level__item-title
+              label.first-level__item-label= element.first_level
+                if element.checked
+                  input.first-level__item-input(
+                  type="radio",
+                  name= element.name,
+                  checked)
+                else
+                  input.first-level__item-input(
+                    type="radio",
+                    name= element.name)
+              if element.second_level
+                label.drop-down__list-select-all Выбрать все
+                  input.drop-down__list-select-all-input(
+                    type="checkbox",
+                    name="select-all")
+            if element.second_level
+              ul.second-level
+                each second_level_element in element.second_level
+                  li.second-level__item
+                    label.second-level__item-label= second_level_element.text
+                      if second_level_element.checked
+                        input.second-level__item-input(
+                          type="radio",
+                          name= element.name+"-second-level",
+                          checked)
+                      else
+                        input.second-level__item-input(
+                          type="radio",
+                          name= element.name+"-second-level")
 
 // Кнопка "Подробнее" со стрелкой
 mixin more-btn-arrow(text, url, className)
@@ -104,15 +109,26 @@ mixin accordion(list, className, navLinkClassName)
               li.accordion-item__content-item
                 a.accordion-item__content-link(href= item.url, class= navLinkClassName ? navLinkClassName : "")= item.title
 
+// Аккордеон с контентом
+mixin accordion_content(list, className)
+  ul.accordion.accordion_content(class= className ? className : "")
+    each element, index in list
+      li.accordion-item(class= element.active ? "accordion-item__active" : "")
+        a.accordion-item__trigger(href='#')
+          p.accordion-item__trigger-text= element.text
+            span.accordion-item__trigger-number= index + 1
+          .accordion-item__trigger-circle
+            span
+        if element.content
+          .accordion-item__content !{element.content}
+
 // Результаты поиска
 mixin result(list, className, linkClass)
   .result(class= className ? className : "")
     .result-title
       span.result-title__description= list.title.description
       span.result-title__category= list.title.category
-      button.result-title__year
-        span.result-title__year-text= list.title.year
-        img.result-title__year-img.svg(src="@img/svg/drop-down.svg", alt="")
+      span.result-title__year= list.title.year
     ul.result-list
       each element in list.items
         if element.category == "Закон"

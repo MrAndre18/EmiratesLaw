@@ -5,6 +5,7 @@
 <!-- Поиск-->
 <!-- Навигация-->
 <!-- Аккордеон-->
+<!-- Аккордеон с контентом-->
 <!-- Результаты поиска-->
 <!-- Бегущая строка-->
 <!-- Кнопка "Вернуться назад"-->
@@ -67,34 +68,36 @@
           <div class="header-settings"><!-- Выбор языка и поиск -->
             <button class="header-search" data-type="js-open-btn" data-modal="js-search-btn"><!-- Поиск --><img class="header-search__img svg" src="assets/images/svg/search.svg" alt="Поиск"></button>
             <div class="header-language"><!-- Выбор языка -->
-              <button class="drop-down" type="button">
-                <p class="drop-down__text">RU</p>
-                <div class="drop-down__img"><img class="svg" src="assets/images/svg/drop-down.svg" alt=""/>
-                </div>
-              </button>
-              <ul class="drop-down__list first-level">
-                <li class="first-level__item">
-                  <div class="first-level__item-title">
-                    <label class="first-level__item-label">RU
-                      <input class="first-level__item-input" type="radio" name="language" checked="checked"/>
-                    </label>
+              <div class="drop-down__wrapper">
+                <button class="drop-down single" type="button" name="RU">
+                  <p class="drop-down__text">RU</p>
+                  <div class="drop-down__img"><img class="svg" src="assets/images/svg/drop-down.svg" alt=""/>
                   </div>
-                </li>
-                <li class="first-level__item">
-                  <div class="first-level__item-title">
-                    <label class="first-level__item-label">EN
-                      <input class="first-level__item-input" type="radio" name="language"/>
-                    </label>
-                  </div>
-                </li>
-                <li class="first-level__item">
-                  <div class="first-level__item-title">
-                    <label class="first-level__item-label">عربي
-                      <input class="first-level__item-input" type="radio" name="language"/>
-                    </label>
-                  </div>
-                </li>
-              </ul>
+                </button>
+                <ul class="drop-down__list first-level">
+                  <li class="first-level__item">
+                    <div class="first-level__item-title">
+                      <label class="first-level__item-label">RU
+                        <input class="first-level__item-input" type="radio" name="language" checked="checked"/>
+                      </label>
+                    </div>
+                  </li>
+                  <li class="first-level__item">
+                    <div class="first-level__item-title">
+                      <label class="first-level__item-label">EN
+                        <input class="first-level__item-input" type="radio" name="language"/>
+                      </label>
+                    </div>
+                  </li>
+                  <li class="first-level__item">
+                    <div class="first-level__item-title">
+                      <label class="first-level__item-label">عربي
+                        <input class="first-level__item-input" type="radio" name="language"/>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

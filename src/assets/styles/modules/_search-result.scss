@@ -41,39 +41,11 @@
 
     &__year {
       width: $result-year-width;
-      display: flex;
-      align-items: center;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.05em;
       flex-shrink: 0;
       margin-left: $result-margin;
-      @include transition();
-
-      &:hover &-img {
-        scale: 1.15;
-
-        & path {
-          opacity: 100%;
-        }
-      }
-
-      &-text {
-        font-weight: 700;
-        font-size: 20px;
-        margin-right: 10px;
-        letter-spacing: 0.05em;
-        @include transition();
-      }
-
-      &-img {
-        width: 14px;
-        height: 10px;
-        @include transition();
-
-        & path {
-          fill: $grey;
-          opacity: 50%;
-          @include transition();
-        }
-      }
     }
   }
 
