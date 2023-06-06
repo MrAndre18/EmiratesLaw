@@ -1,0 +1,17 @@
+// Поле поиска по тексту закона
+.laws-detail__search-block
+  .laws-detail__search
+    input.laws-detail__search-input(type="text", name="laws-detail-search", placeholder="Поиск по документу", disabled)
+    p.laws-detail__search-result
+      span.laws-detail__search-result-current 0
+      span.slash /
+      span.laws-detail__search-result-total 10
+    button.laws-detail__search-btn
+      img.svg.laws-detail__search-btn-img(src="@img/svg/search.svg", alt="Search")
+    .laws-detail__search-navigation
+      button.laws-detail__search-navigation-btn.laws-detail__search-navigation-prev
+        img.svg(src="@img/svg/pagination-arrow.svg", alt="Prev")
+      button.laws-detail__search-navigation-btn.laws-detail__search-navigation-next
+        img.svg(src="@img/svg/pagination-arrow.svg", alt="Next")
+    button.laws-detail__search-close
+      span

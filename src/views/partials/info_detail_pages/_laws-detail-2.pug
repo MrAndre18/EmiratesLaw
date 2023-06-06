@@ -1,0 +1,54 @@
+#laws-detail-2.info__page
+  .laws-detail__title
+    h2.laws-detail__title-name Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая
+    span.laws-detail__title-year 2010
+  .laws-detail__block
+    // Поле поиска по тексту
+    .laws-detail__search-block
+      include ../../components/_text-search.pug
+
+    // Меню навигации
+    .laws-detail__navigation(data-type="js-sticky-nav-bar")
+      +accordion(laws_detail_nav_list, "nav-bar laws-detail__navigation-nav")
+      button.laws-detail__navigation-download.navigation-download
+        .navigation-download__text Скачать документ
+        img.navigation-download__img.svg(src="@img/svg/download.svg", alt="")
+      +button-back("Все законы", "#", "laws-detail__navigation-back info__page-link")
+
+    // Контент закона
+    .laws-detail__content
+      h3.law-title.center.main Law No. (19) of 2021 #[br] Amending #[br] Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone#[span.super 1]
+      .law-line.law-line-center
+      p.law-text.wide
+        | #[span.bold We, Mohammed bin Rashid Al Maktoum, Ruler of Dubai,] #[br]
+        | After perusal of: #[br]
+        | Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone and its amendments (the “#[span.bold Original Law]”), #[br]
+        | #[span.bold Do hereby issue this Law.]
+      h4.law-title.center(data-type="js-anchor-block", data-ancor="article-1")
+        | Superseded Article #[br]
+        | Article (1)
+      p.law-text.wide
+        | Article (8) of the Original Law is hereby superseded by the following: #[br]
+        | #[span.bold Article (8)]
+      p.law-text Without prejudice to the tax legislation in force in the United Arab Emirates, companies, establishments, individuals, and workers operating in the Free Zone will be subject to zero (0) tax rate for fifty (50) years from the effective date of this Law. The said period will be renewable for the same period pursuant to a resolution of the Ruler. The zero (0) tax rate will apply to:
+      ul.law-list
+        li 1. all taxes, including income tax, in relation to their operations within the Free Zone; and
+        li 2. taxes imposed on the transfer of assets, profits, salaries, or wages to any party outside of the Free Zone.
+      .law-line.law-line-left
+      p.law-text.italic
+        | ©2021 The Supreme Legislation Committee in the Emirate of Dubai #[br]
+        | #[span.super 1]Every effort has been made to produce an accurate and complete English version of this legislation. However, for the purpose of its interpretation and application, reference must be made to the original Arabic text. In case of conflict, the Arabic text will prevail.
+      p.law-text.italic Law No. (19) of 2021 Amending Law No. (2) of 1986 Concerning Business Activities in the Jebel Ali Free Zone
+      h4.law-title.center(data-type="js-anchor-block", data-ancor="article-2")
+        | Repeals #[br]
+        | Article (2)
+      p.law-text Any provision in any other legislation is hereby repealed to the extent that it contradicts the provisions of this Law.
+      h4.law-title.center(data-type="js-anchor-block", data-ancor="article-3")
+        | Publication and Commencement #[br]
+        | Article (3)
+      p.law-text This Law will be published in the Official Gazette and will come into force on the day on which it is published.
+      p.law-text.bold.wide
+        | Mohammed bin Rashid Al Maktoum #[br]
+        | Ruler of Dubai
+      p.law-text.right Issued in Dubai on 14 September 2021
+      p.law-text.right Corresponding to 7 Safar 1443 A.H.

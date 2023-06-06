@@ -1,0 +1,46 @@
+.FAQ {
+  &-block {
+    padding-right: 80px;
+  }
+
+  &-companies {
+    margin-bottom: 120px;
+
+    &__cards {
+      margin-bottom: 80px;
+      display: block;
+
+      .info__page-card {
+        height: 280px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        &-title {
+          font-weight: 700;
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+
+        &-description {
+          font-weight: 300;
+          letter-spacing: 0.05em;
+        }
+
+        & .element-arrow {
+          bottom: 30px;
+        }
+      }
+    }
+
+    &-forms {
+      &__title {
+        font-weight: 500;
+        font-size: 22px;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

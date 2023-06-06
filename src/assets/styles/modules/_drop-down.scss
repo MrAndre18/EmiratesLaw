@@ -3,10 +3,12 @@
   align-items: center;
 
   &__wrapper {
+    position: relative;
     height: 100%;
   }
 
-  &.multiple {
+  &.multiple,
+  &.filter {
     width: 100%;
     justify-content: space-between;
     padding: 0 30px;
@@ -62,19 +64,19 @@
     &:hover .drop-down__text {
       color: $white;
     }
+  }
 
-    & + .first-level {
-      .first-level__item-title {
-        position: sticky;
-        top: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 6px;
-        padding: 4px 8px;
-        background: $black;
-        border-radius: 8px;
-      }
+  &.multiple + .first-level {
+    .first-level__item-title {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      padding: 4px 8px;
+      background: $black;
+      border-radius: 8px;
     }
   }
 

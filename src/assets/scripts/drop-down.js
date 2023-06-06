@@ -46,6 +46,7 @@ $(() => {
           checkedItemLabel = $(list).find('.first-level__item-input:checked, .second-level__item-input:checked').parent('label')
 
     dropDownText.text($(checkedItemLabel).text())
+    dropDownCurrent.addClass('changed')
   }
 
   const setChoosedElems = () => {
@@ -117,49 +118,4 @@ $(() => {
   })
 
   setChoosedElems()
-
-
-
-  // if ($(dropDown).length) {
-  //   $(dropDown).on('click', e => {
-  //     const dropDownCurrent = e.currentTarget,
-  //           elementsBlock = $(dropDownCurrent).siblings('.drop-down__list'),
-  //           currentItem = $(dropDownCurrent).find('.drop-down__text')
-
-  //     e.preventDefault()
-
-  //     // Разворачивание списка
-  //     $(dropDownCurrent).toggleClass("active")
-
-  //     if (elementsBlock) {
-  //       if (!$(elementsBlock).hasClass('active')) {
-  //         const elementsItems = $(elementsBlock).find('.drop-down__list-item')
-
-  //         $(elementsItems).each((index, element) => {
-  //           if ($(element).text() === $(currentItem).text())
-  //             $(element).addClass('active')
-  //         })
-
-  //         $(elementsBlock).addClass("active")
-
-  //         $(elementsItems).on('click', event => {
-  //           if ($(event.currentTarget).text() !== $(currentItem).text()) {
-  //             $(elementsItems).each((index, element) => {
-  //               $(element).removeClass('active')
-  //             })
-
-  //             $(event.currentTarget).addClass('active')
-  //           }
-
-  //           // Выбор элемента
-  //           $(currentItem).text($(event.currentTarget).text())
-
-  //           $(dropDownCurrent).addClass("changed")
-  //         })
-  //       } else {
-  //         $(elementsBlock).removeClass('active')
-  //       }
-  //     }
-  //   })
-  // }
 })

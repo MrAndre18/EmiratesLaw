@@ -14,10 +14,28 @@ $(() => {
 
       const showContent = trigger => {
         const triggerItem = $(trigger).parent('.accordion-item'),
-              triggerItemContent = $(triggerItem).find('.accordion-item__content')
+              triggerItemContent = $(triggerItem).find('.accordion-item__content'),
+              accordionBody = $(triggerItem).parent('.accordion')
 
-        if ($(triggerItem).hasClass('accordion-item__active'))
+        if ($(triggerItem).hasClass('accordion-item__active') && !$(accordionBody).hasClass('accordion_content'))
           return
+
+        if ($(accordionBody).hasClass('accordion_content')) {
+          $(items).each((index, item) => {
+            if (item !== triggerItem[0]) {
+              $(item).removeClass('accordion-item__active')
+              $(item).find('.accordion-item__content').slideUp(400)
+            }
+          })
+
+          $(triggerItem).toggleClass('accordion-item__active')
+
+          if (triggerItemContent.length) {
+            $(triggerItemContent).slideToggle(400)
+          }
+
+          return
+        }
         
         clearActive()
         $(triggerItem).addClass('accordion-item__active')

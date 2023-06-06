@@ -8,7 +8,7 @@ mixin drop-down(text, className, elementsList, isMultiple)
       name= text)
       p.drop-down__text= text
       .drop-down__img
-        if isMultiple
+        if className
           img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
         else
           img.svg(src="@img/svg/drop-down.svg", alt="")
