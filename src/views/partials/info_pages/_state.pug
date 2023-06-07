@@ -386,9 +386,9 @@
             +drop-down("Эмират", "filter", state_emirates)
           .state-freeZones__filters-filter
             +drop-down("Категория", "filter", state_freeZones_categories)
-        .state-freeZones__content.freeZones-content
+        .state-freeZones__content.freeZones-content(data-pagination-content="freeZones-pagination", data-page-size="10")
           each item in freeZones_items
-            .freeZones-content__item
+            .freeZones-content__item(data-type="pagination-item")
               .freeZones-content__item-image
                 img.freeZones-content__item-image-img(src= item.img, alt= item.title)
               .freeZones-content__item-content
@@ -397,7 +397,7 @@
                 .freeZones-content__item-content-bottom
                   +more-btn-border("Подробнее", item.url, "freeZones-content__item-more")
                   span.freeZones-content__item-category= item.category
-        +pagination("freeZones-pagination")
+        +pagination("freeZones-pagination", "freeZones-pagination")
 
       // Преимущества свободных зон
       .state-freeZones-advantages(data-type="js-anchor-block", data-ancor="state-freeZones-advantages")

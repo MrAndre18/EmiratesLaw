@@ -43,4 +43,37 @@
       }
     }
   }
+
+  &-business {
+    margin-bottom: 120px;
+
+    &__list {
+      list-style: decimal;
+      list-style-position: outside;
+      list-style-type: decimal;
+      padding-left: 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+
+      &-title {
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 35px;
+      }
+
+      &-item {
+        display:list-item;
+        letter-spacing: 0.04em;
+        font-weight: 300;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
 }

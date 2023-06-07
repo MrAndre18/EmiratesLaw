@@ -302,8 +302,10 @@
             &:not(:last-child) {
               margin-bottom: 12px;
             }
+          }
 
-            & .content-item {
+          & .content {
+            &-item {
               &__title {
                 font-weight: 700;
                 width: 220px;
@@ -326,6 +328,21 @@
                     }
                   }
                 }
+              }
+            }
+
+            &-list {
+              list-style: disc;
+              list-style-position: inside;
+
+              &__title {
+                font-weight: 700;
+                margin-bottom: 12px;
+              }
+
+              &__item {
+                display: list-item;
+                list-style-type: "• ";
               }
             }
           }

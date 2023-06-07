@@ -1,36 +1,39 @@
 .pages-pagination {
-  display: flex;
-  align-items: center;
+
 
   &__button {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &-prev,
+    &-next {
+      & a {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    &:hover &-img {
-      scale: 1.3;
+      &:not(.pages-pagination__button-disabled) {
+        & a {
+          cursor: pointer;
+
+          &:hover .pages-pagination__button-img {
+            scale: 1.3;
+          }
+        }
+      }
+
+      &.pages-pagination__button-disabled {
+        opacity: 70%;
+      }
     }
 
     &-img {
-      width: 12px;
-      height: 12px;
+      width: 10px;
       @include transition();
-
-      & path {
-        fill: $red;
-        @include transition();
-      }
     }
 
     &-prev {
       transform: rotate(180deg);
-      margin-right: 8px;
-    }
-
-    &-next {
-      margin-left: 8px;
     }
   }
 
@@ -53,12 +56,21 @@
   }
 
   &__item {
-    position: relative;
-    width: 30px;
-    height: 30px;
+    & a {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    &-current a {
+      color: $red;
+    }
   }
 
-  &__dots {
+  .paginationjs-ellipsis a {
     height: 22px;
     margin: 0 8px;
     letter-spacing: 0.1em;
