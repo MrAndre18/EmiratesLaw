@@ -37,24 +37,20 @@
       letter-spacing: 0.05em;
       flex-shrink: 0;
       margin-left: $result-margin;
-    }
 
-    &__year {
-      width: $result-year-width;
-      font-weight: 700;
-      font-size: 20px;
-      letter-spacing: 0.05em;
-      flex-shrink: 0;
-      margin-left: $result-margin;
+      &-2 {
+        width: $result-category-width;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        flex-shrink: 0;
+        margin-left: $result-margin;
+      }
     }
-  }
-
-  &-list {
-    display: flex;
-    flex-direction: column;
   }
 
   &-item {
+    height: 150px;
     display: flex;
     padding: 25px 0;
     border-bottom: 1px solid $grey;
@@ -79,6 +75,9 @@
 
     &__description {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       &-text {
         margin-bottom: 20px;
@@ -106,13 +105,13 @@
       flex-shrink: 0;
       margin-left: $result-margin;
       letter-spacing: 0.05em;
-    }
 
-    &__year {
-      width: $result-year-width;
-      flex-shrink: 0;
-      margin-left: $result-margin;
-      letter-spacing: 0.05em;
+      &-2 {
+        width: $result-category-width;
+        flex-shrink: 0;
+        margin-left: $result-margin;
+        letter-spacing: 0.05em;
+      }
     }
   }
 }

@@ -119,9 +119,12 @@
       display: flex;
       justify-content: center;
       margin-top: 15px;
+      font-weight: 300;
+      font-size: 14px;
 
       & span {
         margin-left: 6px;
+        font-size: inherit;
       }
     }
   }

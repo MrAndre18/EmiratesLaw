@@ -8,91 +8,91 @@ block header
       title: {
         description: 'Описание',
         category: 'Категория',
-        year: 'Дата',
+        category_2: 'Дата',
       },
       items: [
         {
           description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
           category: 'Закон',
-          year: '14.09.2021',
+          category_2: '14.09.2021',
           url: 'info?page=laws&detail=laws-detail-1'
         },
         {
           description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
           category: 'Закон',
-          year: '04.02.2010',
+          category_2: '04.02.2010',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Виды компаний',
           category: 'Справка',
-          year: '',
+          category_2: '',
           url: 'info?page=state'
         },
         {
           description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
           category: 'Закон',
-          year: '19.09.2018',
+          category_2: '19.09.2018',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
           category: 'Закон',
-          year: '14.09.2021',
+          category_2: '14.09.2021',
           url: 'info?page=laws&detail=laws-detail-1'
         },
         {
           description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
           category: 'Закон',
-          year: '04.02.2010',
+          category_2: '04.02.2010',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
           category: 'Закон',
-          year: '19.09.2018',
+          category_2: '19.09.2018',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Государственное и политическое устройство',
           category: 'Справка',
-          year: '',
+          category_2: '',
           url: 'info?page=state'
         },
         {
           description: 'Преимущества свободных зон',
           category: 'Справка',
-          year: '',
+          category_2: '',
           url: 'info?page=state'
         },
         {
           description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
           category: 'Закон',
-          year: '19.09.2018',
+          category_2: '19.09.2018',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Закон No (19) от 2021 года о внесении изменений в Закон No (2) 1986 года о предпринимательской деятельности в свободной зоне Джебель Али',
           category: 'Закон',
-          year: '14.09.2021',
+          category_2: '14.09.2021',
           url: 'info?page=laws&detail=laws-detail-1'
         },
         {
           description: 'Закон № (6) от 2010 года, отменяющий закон № (19) от 2006 года, касающийся подписания и издания законов о Международном финансовом центре Дубая',
           category: 'Закон',
-          year: '04.02.2010',
+          category_2: '04.02.2010',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Закон № (12) от 2018 года, отменяющий закон № (4) от 2001 года о свободных зонах',
           category: 'Закон',
-          year: '19.09.2018',
+          category_2: '19.09.2018',
           url: 'info?page=laws&detail=laws-detail-2'
         },
         {
           description: 'Оншорные компании',
           category: 'Справка',
-          year: '',
+          category_2: '',
           url: 'info?page=state'
         }
       ]
@@ -125,8 +125,10 @@ block content
               label.search-page__filters-item Справка
                 input(type="checkbox", name="info")
         .search-page__content
-          +result(search_page_result, "search-page__content-result", "")
-          +pagination("search-page__content-pagination")
+          +result(search_page_result, "search-page__content-result", "", "search-page__content-pagination")
+        .pages-pagination.search-page__content-pagination(
+          data-type="js-pagination", data-pagination-target="search-page__content-pagination")
+          .pages-pagination__bg
 
 block footer
   include ../partials/_footer.pug

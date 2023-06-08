@@ -9,7 +9,6 @@
 <!-- Результаты поиска-->
 <!-- Бегущая строка-->
 <!-- Кнопка "Вернуться назад"-->
-<!-- Пагинация по страницам-->
 <!-- Селектор даты--><!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -57,17 +56,24 @@
       </button>
       <header class="header">
         <div class="header-content">
-          <div class="header-logo"><!-- лого --><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
-          <div class="header-menu"><!-- Меню с ссылками на страницы -->
+          <!-- лого-->
+          <div class="header-logo"><a class="logo" href="/"><span class="logo-title">EmiratesLaw</span><span class="logo-subtitle">Real Help</span></a></div>
+          <!-- Меню с ссылками на страницы-->
+          <div class="header-menu">
             <ul class="navigation">
               <li class="navigation__item"><a class="navigation__item-link" href="/about">О портале</a></li>
               <li class="navigation__item"><a class="navigation__item-link" href="/info">FAQ / INFO о бизнесе</a></li>
               <li class="navigation__item"><a class="navigation__item-link" href="/events">События</a></li>
             </ul>
           </div>
-          <div class="header-settings"><!-- Выбор языка и поиск -->
-            <button class="header-search" data-type="js-open-btn" data-modal="js-search-btn"><!-- Поиск --><img class="header-search__img svg" src="assets/images/svg/search.svg" alt="Поиск"></button>
-            <div class="header-language"><!-- Выбор языка -->
+          <!-- Выбор языка, поиск и курс валют-->
+          <div class="header-settings">
+            <!-- Курс валют-->
+            <button class="header-settings__item header-exchange-rates" data-type="js-open-btn" data-modal="js-exchange-rates-btn"><img class="svg header-exchange-rates__img" src="assets/images/svg/exchange_rates_icon.svg" alt="Курс валют"></button>
+            <!-- Поиск-->
+            <button class="header-settings__item header-search" data-type="js-open-btn" data-modal="js-search-btn"><img class="svg header-search__img" src="assets/images/svg/search.svg" alt="Поиск"></button>
+            <!-- Выбор языка-->
+            <div class="header-settings__item header-language">
               <div class="drop-down__wrapper">
                 <button class="drop-down single" type="button" name="RU">
                   <p class="drop-down__text">RU</p>

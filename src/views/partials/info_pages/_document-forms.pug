@@ -1,4 +1,317 @@
-#document-forms.info__page
-  h2.info__page-title Формы документов
-  a.info__page-link(href="/info?page=document-forms&detail=document-forms-detail-1") Документ 1
-  a.info__page-link(href="/info?page=document-forms&detail=document-forms-detail-2") Документ 2
+-
+  const document_forms_nav_list = [
+    {
+      text: 'Документы для открытия ИП',
+      url: '#',
+      active: true,
+      items: [
+        {
+          title: 'Документ 1',
+          url: 'info?page=laws&detail=laws-detail-1'
+        },
+        {
+          title: 'Документ 2',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          title: 'Документ 3',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+      ]
+    },
+    {
+      text: 'Документы для открытия ООО',
+      url: '#',
+      active: false,
+      items: [
+        {
+          title: 'Документ 1',
+          url: 'info?page=laws&detail=laws-detail-1'
+        },
+        {
+          title: 'Документ 2',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          title: 'Документ 3',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          title: 'Документ 4',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+        {
+          title: 'Документ 5',
+          url: 'info?page=laws&detail=laws-detail-2'
+        },
+      ]
+    },
+  ]
+
+-
+  const document_forms_result = {
+    title: {
+      description: 'Название',
+      category: 'Тематика',
+    },
+    items: [
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 1',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 2',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 3',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ООО',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+      {
+        description: 'Форма документа 4',
+        category: 'Документы для открытия ИП',
+        url: 'info?page=laws&detail=laws-detail-1'
+      },
+    ]
+  }
+
+#document-forms.info__page.document-forms
+  .info__page-content
+    .info__page-content__navigation(data-type="js-sticky-nav-bar")
+      +accordion(document_forms_nav_list, "nav-bar", "info__page-link")
+    .info__page-content__block.document-forms-block
+      .document-forms-filters
+        form.document-forms-filters__form(role="search")
+          .search.transparent
+            input.search-input(type="search", name="search" placeholder="Поиск по формам документов", minlength="4")
+            button.search-btn
+              img.search-btn__img.svg(src="@img/svg/search.svg", alt="Поиск")
+          button.document-forms-filters__submit(type="submit") Поиск
+      p.document-forms-result_count Найдено записей: #[span 3]
+      +result(document_forms_result, "document-forms-result", "info__page-link", "document-forms-pagination", "10")
+      .pages-pagination.document-forms-pagination(
+        data-type="js-pagination", data-pagination-target="document-forms-pagination")
+        .pages-pagination__bg

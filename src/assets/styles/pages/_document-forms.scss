@@ -1,4 +1,4 @@
-.laws {
+.document-forms {
   &-filters {
     padding: 30px 40px;
     background: $dark-grey;
@@ -94,5 +94,21 @@
 
   &-result {
     margin: 60px 0 50px;
+
+    .result-title {
+      padding: 0 40px 40px;
+
+      &__category {
+        width: 40%;
+      }
+    }
+
+    .result-item {
+      padding: 25px 40px;
+
+      &__category {
+        width: 40%;
+      }
+    }
   }
 }

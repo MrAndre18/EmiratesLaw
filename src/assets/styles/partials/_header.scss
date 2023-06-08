@@ -59,17 +59,39 @@
   }
 
   &-settings {
-    width: 90px;
+    //width: 90px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    //justify-content: space-between;
+
+    &__item {
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &-exchange-rates {
+    position: relative;
+    width: 30px;
+    height: 30px;
+
+    &__img {
+      path {
+        fill: $white;
+        @include transition();
+      }
+
+      .background {
+        fill: none;
+      }
+    }
   }
 
   &-search {
     position: relative;
     width: 20px;
     height: 20px;
-    z-index: 100;
 
     &__img {
       path {

@@ -21,6 +21,7 @@
     margin: 0 auto;
 
     &-title {
+      height: 400px;
       border-radius: 0;
       border: 1px solid $gold;
       display: flex;
@@ -134,6 +135,7 @@
       &__count {
         display: flex;
         justify-content: center;
+        font-weight: 300;
         font-size: 14px;
 
         & span {
@@ -148,12 +150,11 @@
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(4, 400px);
     grid-gap: 30px;
-    margin-bottom: 80px;
   }
 
   &-item {
+    height: 400px;
     position: relative;
     background: $dark-grey;
     border-radius: 20px;

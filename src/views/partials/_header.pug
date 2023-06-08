@@ -33,12 +33,22 @@
 
 header.header
   .header-content
-    .header-logo|<!-- лого -->
+    // лого
+    .header-logo
       include ../components/_logo.pug
-    .header-menu|<!-- Меню с ссылками на страницы -->
+    // Меню с ссылками на страницы
+    .header-menu
       +navigation(navigation)
-    .header-settings|<!-- Выбор языка и поиск -->
-      button.header-search(data-type="js-open-btn", data-modal="js-search-btn")|<!-- Поиск -->
-        img.header-search__img.svg(src="@img/svg/search.svg", alt="Поиск")
-      .header-language|<!-- Выбор языка -->
+    // Выбор языка, поиск и курс валют
+    .header-settings
+      // Курс валют
+      button.header-settings__item.header-exchange-rates(data-type="js-open-btn", data-modal="js-exchange-rates-btn")
+        img.svg.header-exchange-rates__img(src="@img/svg/exchange_rates_icon.svg", alt="Курс валют")
+
+      // Поиск
+      button.header-settings__item.header-search(data-type="js-open-btn", data-modal="js-search-btn")
+        img.svg.header-search__img(src="@img/svg/search.svg", alt="Поиск")
+
+      // Выбор языка
+      .header-settings__item.header-language
         +drop-down("RU", "", languages)

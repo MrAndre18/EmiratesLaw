@@ -1,12 +1,28 @@
 .pages-pagination {
+  $pagination_item_width: 30px;
 
+  position: relative;
+  margin-top: 80px;
+  transform: translateX(-20px);
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: $pagination_item_width;
+    z-index: 0;
+    width: $pagination_item_width;
+    height: 100%;
+    background: $red;
+    border-radius: 2px;
+    @include transition($duration: 300ms);
+  }
 
   &__button {
     &-prev,
     &-next {
       & a {
-        width: 30px;
-        height: 30px;
+        width: $pagination_item_width + 20px;
+        height: $pagination_item_width;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -41,24 +57,12 @@
     position: relative;
     display: flex;
     align-items: center;
-
-    &-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      width: 30px;
-      height: 100%;
-      background: $red;
-      border-radius: 2px;
-      @include transition($duration: 300ms);
-    }
   }
 
   &__item {
     & a {
-      width: 30px;
-      height: 30px;
+      width: $pagination_item_width;
+      height: $pagination_item_width;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -66,7 +70,7 @@
     }
 
     &-current a {
-      color: $red;
+      cursor: default;
     }
   }
 
@@ -74,5 +78,6 @@
     height: 22px;
     margin: 0 8px;
     letter-spacing: 0.1em;
+    cursor: default;
   }
 }

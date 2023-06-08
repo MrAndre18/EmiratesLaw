@@ -67,7 +67,84 @@ block header
         description: 'Султан Аль Нейяди станет первым арабом, который совершит выход в открытый космос.',
         img: '@img/events/news-1.webp',
         url: '/events-detail'
-      }
+      },
+      {
+        title: 'В ОАЭ поступили в обращение новые банкноты',
+        date: '10.04.2023',
+        description: 'В Объединенных Арабских Эмиратах поступили в обращение новые банкноты номиналом 1000 дирхамов – они уже доступны в банках и обменных пунктах',
+        img: '@img/events/news-3.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ ввели новые сборы для претендентов на «золотые» визы',
+        date: '10.04.2023',
+        description: 'Федеральное управление по вопросам идентификации, гражданства, таможенной и портовой безопасности (ICP) Объединенных Арабских Эмиратов ввело новый сбор в размере 1250 дирхамов за выдачу шестимесячного разрешения на въезд претендентам на получение 10-летней «золотой» визы.',
+        img: '@img/events/news-4.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'Гражданин ОАЭ впервые выйдет в открытый космос',
+        date: '12.04.2023',
+        description: 'Султан Аль Нейяди станет первым арабом, который совершит выход в открытый космос.',
+        img: '@img/events/news-1.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'Гражданин ОАЭ впервые выйдет в открытый космос',
+        date: '12.04.2023',
+        description: 'Султан Аль Нейяди станет первым арабом, который совершит выход в открытый космос.',
+        img: '@img/events/news-1.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ приобретут новые самолеты для засева облаков',
+        date: '11.04.2023',
+        description: 'Национальный центр метеорологии Объединенных Арабских Эмиратов обновит флот самолетов, выполняющих операции по засеву облаков.',
+        img: '@img/events/news-2.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ поступили в обращение новые банкноты',
+        date: '10.04.2023',
+        description: 'В Объединенных Арабских Эмиратах поступили в обращение новые банкноты номиналом 1000 дирхамов – они уже доступны в банках и обменных пунктах',
+        img: '@img/events/news-3.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ ввели новые сборы для претендентов на «золотые» визы',
+        date: '10.04.2023',
+        description: 'Федеральное управление по вопросам идентификации, гражданства, таможенной и портовой безопасности (ICP) Объединенных Арабских Эмиратов ввело новый сбор в размере 1250 дирхамов за выдачу шестимесячного разрешения на въезд претендентам на получение 10-летней «золотой» визы.',
+        img: '@img/events/news-4.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'Гражданин ОАЭ впервые выйдет в открытый космос',
+        date: '12.04.2023',
+        description: 'Султан Аль Нейяди станет первым арабом, который совершит выход в открытый космос.',
+        img: '@img/events/news-1.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ приобретут новые самолеты для засева облаков',
+        date: '11.04.2023',
+        description: 'Национальный центр метеорологии Объединенных Арабских Эмиратов обновит флот самолетов, выполняющих операции по засеву облаков.',
+        img: '@img/events/news-2.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ поступили в обращение новые банкноты',
+        date: '10.04.2023',
+        description: 'В Объединенных Арабских Эмиратах поступили в обращение новые банкноты номиналом 1000 дирхамов – они уже доступны в банках и обменных пунктах',
+        img: '@img/events/news-3.webp',
+        url: '/events-detail'
+      },
+      {
+        title: 'В ОАЭ ввели новые сборы для претендентов на «золотые» визы',
+        date: '10.04.2023',
+        description: 'Федеральное управление по вопросам идентификации, гражданства, таможенной и портовой безопасности (ICP) Объединенных Арабских Эмиратов ввело новый сбор в размере 1250 дирхамов за выдачу шестимесячного разрешения на въезд претендентам на получение 10-летней «золотой» визы.',
+        img: '@img/events/news-4.webp',
+        url: '/events-detail'
+      },
     ]
 
 block content
@@ -84,7 +161,9 @@ block content
     .events__body
       .events__wrapper
         .events__content
-          .events__items
+          .events__items(data-pagination-content="events-pagination", data-page-size="9")
+
+            // Карточка с поиском и фильтром
             .events__content-filters.events-filters
               form.events-filters__search-form(role="search")
                 .events-filters__search.search.transparent
@@ -95,10 +174,14 @@ block content
                   +datepicker("Дата", "events-filters__buttons-filters-date", "events-filters-datepicker", "all", "dd.MM.yy")
                   button.events-filters__submit(type="submit") Поиск
               p.events-filters__count Найдено записей: #[span 3]
+
+            // Карточка с заголовком
             .events__content-title
               h2.events-item__title Последние новости и события ОАЭ
+
+            // Карточки с новостями
             each event in events_list
-              a.events-item(href= event.url)
+              a.events-item(href= event.url, data-type="pagination-item")
                 .events-item__image
                   img.events-item__image-img(src= event.img, alt="")
                 .events-item__content
@@ -108,7 +191,9 @@ block content
                   .events-item__more.more-btn-arrow
                     p.more-btn-arrow__text Читать далее
                     img.more-btn-arrow__img.svg(src="@img/svg/arrow-right-thin.svg", alt="")
-          +pagination("events-pagination")
+          .pages-pagination.events-pagination(
+            data-type="js-pagination", data-pagination-target="events-pagination")
+            .pages-pagination__bg
 
 block footer
   include ../partials/_footer.pug
