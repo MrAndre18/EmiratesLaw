@@ -36,6 +36,7 @@ $(() => {
       slidesPerView: 1,
       autoplay: {
         delay: delay,
+        disableOnInteraction: false,
       },
       updateOnWindowResize: false,
     

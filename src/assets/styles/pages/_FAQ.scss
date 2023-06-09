@@ -76,4 +76,197 @@
       }
     }
   }
+
+  &-exchange {
+    margin-top: 120px;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+
+      &-title {
+        position: relative;
+        font-weight: 700;
+        font-size: 36px;
+        margin-bottom: 36px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          height: 1px;
+          width: 160px;
+          background: $gold;
+        }
+      }
+
+      &-subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        color: $light-grey-1;
+      }
+
+      &-update {
+        font-weight: 300;
+      }
+    }
+  
+    &__content {
+      width: fit-content;
+      margin: 100px auto 0;
+
+      & .calculator {
+        position: relative;
+        display: flex;
+        margin-bottom: 100px;
+
+        &-item {
+          width: 520px;
+          padding: 40px;
+          border-radius: 10px;
+          background: $dark-grey;
+          display: flex;
+          align-items: center;
+
+          &:not(:first-child) {
+            margin-left: 30px;
+          }
+
+          &__flag {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            overflow: hidden;
+
+            &-img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          &__value {
+            margin-left: 40px;
+
+            &-input {
+              width: 160px;
+              height: 40px;
+              padding: 4px 10px;
+              color: $white;
+              font-size: 16px;
+              font-weight: 300;
+              border-bottom: 1px solid $grey;
+              box-sizing: border-box;
+            }
+          }
+
+          &__currency {
+            margin: 0 0 0 auto;
+
+            .drop-down__list {
+              width: 300px;
+              right: 0;
+            }
+          }
+        }
+
+        &-change {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: $yellow;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include transition();
+
+          &:hover {
+            background: $gold;
+
+            .calculator-change__img {
+              transform: rotate(-180deg);
+              fill: $black;
+            }
+          }
+
+          &__img {
+            fill: $dark-grey;
+            @include transition();
+          }
+        }
+      }
+
+      & .currencies {
+        width: 800px;
+        margin: 0 auto;
+
+        &-header {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 16px;
+          border-bottom: 1px solid $grey;
+
+          &__text {
+            color: $light-grey-1;
+          }
+        }
+
+        &-item {
+          padding: 20px 0;
+          border-bottom: 1px solid $grey;
+
+          &__top {
+            display: flex;
+            align-items: center;
+          }
+
+          &__flag {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            &-img {
+              position: absolute;
+              width: auto;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          &__title {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-left: 30px;
+          }
+
+          &__value {
+            margin: 0 0 0 auto;
+            font-size: 18px;
+            font-weight: 300;
+          }
+
+          &__subtitle {
+            text-transform: uppercase;
+            font-weight: 300;
+            color: $light-grey-1;
+            margin-left: 70px;
+            margin-top: 5px;
+          }
+
+          &.china {
+            .currencies-item__flag-img {
+              left: 0;
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
 }

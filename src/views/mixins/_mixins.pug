@@ -15,7 +15,7 @@ mixin drop-down(text, className, elementsList, isMultiple)
     if isMultiple
       ul.drop-down__list.first-level
         each element in elementsList
-          li.first-level__item
+          li.first-level__item(data-country= element.country ? element.country : "")
             .first-level__item-title
               label.first-level__item-label= element.first_level
                 input.first-level__item-input(
@@ -37,7 +37,7 @@ mixin drop-down(text, className, elementsList, isMultiple)
     else
       ul.drop-down__list.first-level
         each element in elementsList
-          li.first-level__item
+          li.first-level__item(data-country= element.country ? element.country : "")
             .first-level__item-title
               label.first-level__item-label= element.first_level
                 if element.checked

@@ -21,7 +21,9 @@ $(() => {
     })
 
     $(pages).removeClass('active')
+    $(pages).fadeOut(0)
     $(curPage).addClass('active')
+    $(curPage).fadeIn(600)
   }
 
   const setPage = (params) => {

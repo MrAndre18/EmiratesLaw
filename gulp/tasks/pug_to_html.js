@@ -4,14 +4,6 @@ import pug              from "gulp-pug"
 
 export const pug_to_html = () => {
   return app.gulp.src(app.path.src.pug, { sourcemaps: app.isDev })
-  
-    // вывод сообщений об ошибках
-    .pipe(app.plugins.plumber(
-      app.plugins.notify.onError({
-        title: "Еблуша, тут ошибочка",
-        message: "PUG: <%= error.message %>"
-      })
-    ))
 
     // Обработка pug
     .pipe(pug({

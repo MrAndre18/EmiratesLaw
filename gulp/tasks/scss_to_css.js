@@ -11,14 +11,6 @@ const sass = gulpSass(dartSass)
 export const scss_to_css = () => {
   return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
 
-    // вывод сообщений об ошибках
-    .pipe(app.plugins.plumber(
-      app.plugins.notify.onError({
-        title: "Еблуша, тут ошибочка",
-        message: "SCSS: <%= error.message %>"
-      })
-    ))
-
     // Преобразование в CSS
     .pipe(sass({
       outputStyle: 'expanded'

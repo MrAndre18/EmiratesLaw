@@ -3921,7 +3921,7 @@ body .content .title-block__title {
 .search-modal__content {
   width: 800px;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 75px;
   display: flex;
   flex-direction: column;
 }
@@ -4620,7 +4620,6 @@ body .content .title-block__title {
   position: relative;
   background: #404040;
   border-radius: 20px;
-  transform-style: preserve-3d;
   transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
 }
 .index-laws__element-title-block {
@@ -4679,7 +4678,6 @@ body .content .title-block__title {
 }
 .index-laws__element:not(.index-laws__element-title-block):hover {
   box-shadow: 0px -6px 20px -2px rgba(225, 233, 240, 0.1);
-  transform: translateZ(30px);
 }
 .index-laws__element:hover .element-arrow__img {
   transform: translateX(10px);
@@ -5938,21 +5936,6 @@ body .content .title-block__title {
   width: 100%;
   overflow: clip;
 }
-.info__page {
-  position: absolute;
-  top: 0;
-  z-index: -100;
-  width: 100%;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
-}
-.info__page.active {
-  position: relative;
-  z-index: auto;
-  transform: translateX(0);
-  opacity: 100%;
-}
 .info__page-content {
   width: 100%;
   display: flex;
@@ -5994,7 +5977,6 @@ body .content .title-block__title {
   position: relative;
   background: #404040;
   border-radius: 20px;
-  transform-style: preserve-3d;
   transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
   padding: 40px 40px 30px;
 }
@@ -6005,7 +5987,6 @@ body .content .title-block__title {
 }
 .info__page-card:hover {
   box-shadow: 0px -6px 20px -2px rgba(225, 233, 240, 0.1);
-  transform: translateZ(20px);
 }
 .info__page-card:hover .element-arrow__img {
   transform: translateX(10px);
@@ -6341,7 +6322,6 @@ body .content .title-block__title {
 .state-freeZones .freeZones-content__item-image-img {
   object-fit: cover;
   object-position: left;
-  mix-blend-mode: color;
 }
 .state-freeZones .freeZones-content__item:hover .freeZones-content__item-content {
   transform: translateY(0);
@@ -6456,6 +6436,166 @@ body .content .title-block__title {
 }
 .FAQ-business__list-item:not(:last-child) {
   margin-bottom: 8px;
+}
+.FAQ-exchange {
+  margin-top: 120px;
+}
+.FAQ-exchange__header {
+  display: flex;
+  justify-content: space-between;
+}
+.FAQ-exchange__header-title {
+  position: relative;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 36px;
+}
+.FAQ-exchange__header-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 1px;
+  width: 160px;
+  background: #FFD700;
+}
+.FAQ-exchange__header-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #AEBAC3;
+}
+.FAQ-exchange__header-update {
+  font-weight: 300;
+}
+.FAQ-exchange__content {
+  width: fit-content;
+  margin: 100px auto 0;
+}
+.FAQ-exchange__content .calculator {
+  position: relative;
+  display: flex;
+  margin-bottom: 100px;
+}
+.FAQ-exchange__content .calculator-item {
+  width: 520px;
+  padding: 40px;
+  border-radius: 10px;
+  background: #404040;
+  display: flex;
+  align-items: center;
+}
+.FAQ-exchange__content .calculator-item:not(:first-child) {
+  margin-left: 30px;
+}
+.FAQ-exchange__content .calculator-item__flag {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.FAQ-exchange__content .calculator-item__flag-img {
+  width: 100%;
+  height: 100%;
+}
+.FAQ-exchange__content .calculator-item__value {
+  margin-left: 40px;
+}
+.FAQ-exchange__content .calculator-item__value-input {
+  width: 160px;
+  height: 40px;
+  padding: 4px 10px;
+  color: #EDF8FF;
+  font-size: 16px;
+  font-weight: 300;
+  border-bottom: 1px solid #737e84;
+  box-sizing: border-box;
+}
+.FAQ-exchange__content .calculator-item__currency {
+  margin: 0 0 0 auto;
+}
+.FAQ-exchange__content .calculator-item__currency .drop-down__list {
+  width: 300px;
+  right: 0;
+}
+.FAQ-exchange__content .calculator-change {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #FCDE77;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.FAQ-exchange__content .calculator-change:hover {
+  background: #FFD700;
+}
+.FAQ-exchange__content .calculator-change:hover .calculator-change__img {
+  transform: rotate(-180deg);
+  fill: #272727;
+}
+.FAQ-exchange__content .calculator-change__img {
+  fill: #404040;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.FAQ-exchange__content .currencies {
+  width: 800px;
+  margin: 0 auto;
+}
+.FAQ-exchange__content .currencies-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #737e84;
+}
+.FAQ-exchange__content .currencies-header__text {
+  color: #AEBAC3;
+}
+.FAQ-exchange__content .currencies-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #737e84;
+}
+.FAQ-exchange__content .currencies-item__top {
+  display: flex;
+  align-items: center;
+}
+.FAQ-exchange__content .currencies-item__flag {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.FAQ-exchange__content .currencies-item__flag-img {
+  position: absolute;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.FAQ-exchange__content .currencies-item__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-left: 30px;
+}
+.FAQ-exchange__content .currencies-item__value {
+  margin: 0 0 0 auto;
+  font-size: 18px;
+  font-weight: 300;
+}
+.FAQ-exchange__content .currencies-item__subtitle {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #AEBAC3;
+  margin-left: 70px;
+  margin-top: 5px;
+}
+.FAQ-exchange__content .currencies-item.china .currencies-item__flag-img {
+  left: 0;
+  transform: translateX(0);
 }
 
 .document-forms-filters {

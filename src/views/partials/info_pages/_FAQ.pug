@@ -18,6 +18,12 @@
       target: 'FAQ-licenses',
       url: '#',
     },
+    {
+      text: 'Курсы валют',
+      data_type: 'js-scroll-btn',
+      target: 'FAQ-exchange',
+      url: '#',
+    },
   ]
 
 -
@@ -539,6 +545,122 @@
     },
   ]
 
+-
+  const currency_left = [
+    {
+      first_level: 'Дирхам ОАЭ',
+      name: 'currency_left',
+      checked: true,
+      country: 'emirates'
+    },
+    {
+      first_level: 'Китайский юань',
+      name: 'currency_left',
+      country: 'china'
+    },
+    {
+      first_level: 'Доллар США',
+      name: 'currency_left',
+      country: 'usa'
+    },
+    {
+      first_level: 'Евро',
+      name: 'currency_left',
+      country: 'europ'
+    },
+    {
+      first_level: 'Российский рубль',
+      name: 'currency_left',
+      country: 'russia'
+    },
+    {
+      first_level: 'Фунт стерлингов',
+      name: 'currency_left',
+      country: 'britain'
+    },
+  ]
+
+-
+  const currency_right = [
+    {
+      first_level: 'Дирхам ОАЭ',
+      name: 'currency_right',
+      country: 'emirates'
+    },
+    {
+      first_level: 'Китайский юань',
+      name: 'currency_right',
+      country: 'china'
+    },
+    {
+      first_level: 'Доллар США',
+      name: 'currency_right',
+      country: 'usa'
+    },
+    {
+      first_level: 'Евро',
+      name: 'currency_right',
+      country: 'europ'
+    },
+    {
+      first_level: 'Российский рубль',
+      name: 'currency_right',
+      checked: true,
+      country: 'russia'
+    },
+    {
+      first_level: 'Фунт стерлингов',
+      name: 'currency_right',
+      country: 'britain'
+    },
+  ]
+
+-
+  const currencies_list = [
+    {
+      title: 'AED',
+      subtitle: 'Дирхам ОАЭ',
+      img: '@img/flags/emirates.png',
+      rate: '1',
+      country: 'emirates'
+    },
+    {
+      title: 'CNY',
+      subtitle: 'Китайский юань',
+      img: '@img/flags/china.png',
+      rate: '1,94',
+      country: 'china'
+    },
+    {
+      title: 'Usd',
+      subtitle: 'Доллар США',
+      img: '@img/flags/usa.png',
+      rate: '0,27',
+      country: 'usa'
+    },
+    {
+      title: 'EUR',
+      subtitle: 'Евро',
+      img: '@img/flags/europ.png',
+      rate: '0,25',
+      country: 'europ'
+    },
+    {
+      title: 'Rub',
+      subtitle: 'Российский рубль',
+      img: '@img/flags/russia.png',
+      rate: '22,51',
+      country: 'russia'
+    },
+    {
+      title: 'GBP',
+      subtitle: 'Фунт стерлингов',
+      img: '@img/flags/britain.png',
+      rate: '0,22',
+      country: 'britain'
+    },
+  ]
+
 #FAQ.info__page.FAQ
   .info__page-content
     // Меню навигации
@@ -602,3 +724,44 @@
       .FAQ-licenses(data-type="js-anchor-block", data-ancor="FAQ-licenses")
         h2.info__page-content__block-title Виды лицензий
         +accordion_content(FAQ_licenses, 'FAQ-licenses__accordion')
+
+      // Курсы валют
+      .FAQ-exchange(data-type="js-anchor-block", data-ancor="FAQ-exchange")
+        .FAQ-exchange__header
+          .FAQ-exchange__header-left
+            h2.FAQ-exchange__header-title Курсы валют
+            p.FAQ-exchange__header-subtitle Собраны из различных коммерческих источников и банков
+          .FAQ-exchange__header-right
+            p.FAQ-exchange__header-update Обновлено 18.04.2023 11:40
+
+        .FAQ-exchange__content
+          .calculator.FAQ-exchange__calculator
+            .calculator-item.FAQ-exchange__calculator-item(data-type="calculator-source", data-country="emirates")
+              .calculator-item__flag
+                img.calculator-item__flag-img(src="@img/flags/emirates.png", alt="AED")
+              .calculator-item__value
+                input.calculator-item__value-input(type="text", name="currency", value="1")
+              .calculator-item__currency
+                +drop-down("Дирхам ОАЭ", "", currency_left)
+            .calculator-item.FAQ-exchange__calculator-item(data-type="calculator-target")
+              .calculator-item__flag
+                img.calculator-item__flag-img(src="@img/flags/russia.png", alt="RUB")
+              span.calculator-item__value 2223,80
+              .calculator-item__currency
+                +drop-down("Российский рубль", "", currency_right)
+            button.calculator-change
+              img.svg.calculator-change__img(src="@img/svg/reverse.svg", alt="Reverse")
+
+          .currencies.FAQ-exchange__currencies
+            .currencies-header
+              span.currencies-header__text Валюта
+              span.currencies-header__text Стоимость
+            ul.currencies-list
+              each currency in currencies_list
+                li.currencies-item(class= currency.country, data-country= currency.country)
+                  .currencies-item__top
+                    .currencies-item__flag
+                      img.currencies-item__flag-img(src= currency.img, alt= currency.title)
+                    span.currencies-item__title= currency.title
+                    span.currencies-item__value 100,00
+                  span.currencies-item__subtitle= currency.subtitle
