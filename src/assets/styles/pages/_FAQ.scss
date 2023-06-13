@@ -109,6 +109,11 @@
 
       &-update {
         font-weight: 300;
+        display: flex;
+
+        & span {
+          margin-left: 10px;
+        }
       }
     }
   
@@ -157,6 +162,15 @@
               font-weight: 300;
               border-bottom: 1px solid $grey;
               box-sizing: border-box;
+              @include transition();
+
+              &:focus {
+                border-bottom: 1px solid $white;
+              }
+
+              &:is(:disabled) {
+                border-bottom: none;
+              }
             }
           }
 

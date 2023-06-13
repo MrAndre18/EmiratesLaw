@@ -40,7 +40,7 @@
     "mark.js": "latest",
     "moment": "latest",
     "overlayscrollbars": "latest",
-    "paginationjs": "^2.6.0",
+    "paginationjs": "latest",
     "sass": "latest",
     "sass-loader": "latest",
     "style-loader": "latest",

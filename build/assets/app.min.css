@@ -6466,6 +6466,10 @@ body .content .title-block__title {
 }
 .FAQ-exchange__header-update {
   font-weight: 300;
+  display: flex;
+}
+.FAQ-exchange__header-update span {
+  margin-left: 10px;
 }
 .FAQ-exchange__content {
   width: fit-content;
@@ -6509,6 +6513,13 @@ body .content .title-block__title {
   font-weight: 300;
   border-bottom: 1px solid #737e84;
   box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0s;
+}
+.FAQ-exchange__content .calculator-item__value-input:focus {
+  border-bottom: 1px solid #EDF8FF;
+}
+.FAQ-exchange__content .calculator-item__value-input:is(:disabled) {
+  border-bottom: none;
 }
 .FAQ-exchange__content .calculator-item__currency {
   margin: 0 0 0 auto;
