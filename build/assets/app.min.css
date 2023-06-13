@@ -6492,14 +6492,25 @@ body .content .title-block__title {
   margin-left: 30px;
 }
 .FAQ-exchange__content .calculator-item__flag {
+  position: relative;
   width: 40px;
   height: 40px;
   border-radius: 5px;
   overflow: hidden;
 }
 .FAQ-exchange__content .calculator-item__flag-img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.FAQ-exchange__content .calculator-item[data-currency-code=AED] .calculator-item__flag-img {
+  left: 0;
+  transform: translateX(-10px);
+}
+.FAQ-exchange__content .calculator-item[data-currency-code=CNY] .calculator-item__flag-img {
+  left: 0;
+  transform: translateX(0);
 }
 .FAQ-exchange__content .calculator-item__value {
   margin-left: 40px;

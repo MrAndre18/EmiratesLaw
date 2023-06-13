@@ -66,6 +66,7 @@ $(() => {
 
         $(curListInputs).on('click', () => {
           setChoosedText($(element))
+          $(dropDownCurrent).trigger('click')
         })
       }
     })

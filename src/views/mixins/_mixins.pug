@@ -4,8 +4,7 @@ mixin drop-down(text, className, elementsList, isMultiple)
     button.drop-down(
       class= className ? className : "",
       class= isMultiple ? 'multiple' : 'single',
-      type="button",
-      name= text)
+      type="button")
       p.drop-down__text= text
       .drop-down__img
         if className
